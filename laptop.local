@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# Homebrew
+fancy_echo "Installing additional brews"
+brew_install_or_upgrade 'fish'
+brew_install_or_upgrade 'hub'
+brew_install_or_upgrade 'mongodb'
+brew_install_or_upgrade 'phantomjs'
+brew_install_or_upgrade 'tig'
+brew_install_or_upgrade 'trash'
+brew_install_or_upgrade 'tree'
+brew_install_or_upgrade 'urlview'
+
+# Brew Cask
+fancy_echo "Installing brew cask, to install Mac apps via the command line ..."
+brew tap caskroom/cask
+brew install brew-cask
+brew tap caskroom/versions
+brew upgrade cask
+
+# NeoVim
+fancy_echo "Installing neovim, since all plugins seem to be supported."
+brew tap neovim/homebrew-neovim
+brew install --HEAD neovim
+
+fancy_echo "Installing OSX apps ..."
+brew cask install \
+airfoil alfred bartender caffeine dash dropbox firefox \
+google-chrome google-chrome-canary iterm2 little-snitch \
+moom onepassword rdio totalfinder
+
+# Heroku
+heroku plugins:install git://github.com/ddollar/heroku-config.git
+
+# Gems
+gem_install_or_update 'jekyll'
+gem_install_or_update 'tmuxinator'
+
+# NPM
+npm install -g \
+babel bower browser-sync divshot-cli ember-cli foreman \
+gulp grunt-cli

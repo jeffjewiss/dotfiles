@@ -1,0 +1,3 @@
+local arrow="%(?,%{$fg_bold[cyan]%}❯%{$reset_color%},%{$fg_bold[red]%}❯%{$reset_color%})"
+
+PROMPT="${arrow} "

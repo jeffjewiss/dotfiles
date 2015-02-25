@@ -1,0 +1,37 @@
+# Load things
+[[ -f "$HOME/.aliasrc" ]] && source "$HOME/.aliasrc"
+
+# Add custom scripts
+export PATH=$HOME/.dotfiles/bin:$PATH
+
+# Locale
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# Misc settings
+export EDITOR=vim
+
+# Initialize rbenv
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)";
+fi
+
+# Node
+export NODE_PATH="/usr/local/lib/node"
+export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
+export PATH=/usr/local/share/npm/bin:$PATH
+
+# Mappings for Ctrl/Option-left-arrow and Ctrl/Option-right-arrow for
+# moving across words.
+bindkey "\e\e[C" forward-word
+bindkey "\e\e[D" backward-word
+
+# Tmuxinator
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+export TERM=screen-256color
+
+# Initialize autoparts
+if which parts > /dev/null; then
+  export PATH="$HOME/.parts/autoparts/bin:$PATH"
+  eval "$(parts env)"
+fi
