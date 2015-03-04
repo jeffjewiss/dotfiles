@@ -3,6 +3,7 @@
 # Homebrew
 fancy_echo "Installing additional brews"
 brew_install_or_upgrade 'fish'
+brew_install_or_upgrade 'gibo'
 brew_install_or_upgrade 'hub'
 brew_install_or_upgrade 'mongodb'
 brew_install_or_upgrade 'phantomjs'
@@ -26,8 +27,8 @@ brew install --HEAD neovim
 fancy_echo "Installing OSX apps ..."
 brew cask install \
 airfoil alfred bartender caffeine dash dropbox firefox \
-google-chrome google-chrome-canary iterm2 little-snitch \
-moom onepassword rdio totalfinder
+flux google-chrome google-chrome-canary iterm2 keepingyouawake \
+little-snitch moom onepassword rdio slack totalfinder
 
 # Heroku
 heroku plugins:install git://github.com/ddollar/heroku-config.git
