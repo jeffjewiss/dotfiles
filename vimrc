@@ -86,7 +86,7 @@ endif
 " Basic Settings
 " =========================================================================
 
-let mapleader=","
+let mapleader=" "
 set nocompatible " Make vim more useful
 set autoindent " Copy indent from last line when starting new line.
 set backspace=indent,eol,start
