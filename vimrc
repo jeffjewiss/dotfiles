@@ -368,8 +368,12 @@ xnoremap <silent> <leader>t2 :call <SID>tmux_send('.2')<cr>gv
 " ----------------------------------------------------------------------------
 " vim-fugitive
 " ----------------------------------------------------------------------------
-nnoremap <Leader>g :Gstatus<CR>
-nnoremap <Leader>d :Gdiff<CR>
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gc :Gcommit<CR>
+nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gl :Glog<CR>
+nnoremap <Leader>gp :Gpull<CR>
+nnoremap <Leader>gu :Gpush<CR>
 
 " ----------------------------------------------------------------------------
 " vim-lexical
