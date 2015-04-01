@@ -26,9 +26,9 @@ brew install --HEAD neovim
 
 fancy_echo "Installing OSX apps ..."
 brew cask install \
-airfoil alfred bartender caffeine dash dropbox firefox \
+airfoil alfred bartender caffeine cloudup dash dropbox firefox \
 flux google-chrome google-chrome-canary iterm2 keepingyouawake \
-little-snitch moom onepassword rdio slack totalfinder
+little-snitch moom onepassword rdio slack spectacle totalfinder
 
 # Heroku
 heroku plugins:install git://github.com/ddollar/heroku-config.git
