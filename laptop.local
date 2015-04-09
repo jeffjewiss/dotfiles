@@ -4,6 +4,7 @@
 fancy_echo "Installing additional brews"
 brew_install_or_upgrade 'fish'
 brew_install_or_upgrade 'gibo'
+brew_install_or_upgrade 'hg'
 brew_install_or_upgrade 'hub'
 brew_install_or_upgrade 'mongodb'
 brew_install_or_upgrade 'phantomjs'
