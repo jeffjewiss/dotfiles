@@ -5,7 +5,12 @@ set -x LC_ALL en_US.UTF-8
 set -x LANG en_US.UTF-8
 set -x RBENV_ROOT /usr/local/var/rbenv
 
+set -x GOPATH $HOME/Go
+set -x GOROOT /usr/local/opt/go/libexec
+
 # Paths
+test -d $GOPATH/bin              ; and set PATH $GOPATH/bin $PATH
+test -d $GOROOT/bin              ; and set PATH $GOROOT/bin $PATH
 test -d /usr/local/share/npm/bin ; and set PATH /usr/local/share/npm/bin $PATH
 test -d /usr/local/heroku/bin    ; and set PATH /usr/local/heroku/bin $PATH
 test -d /usr/local/sbin          ; and set PATH /usr/local/sbin $PATH
