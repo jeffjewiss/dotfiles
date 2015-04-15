@@ -197,12 +197,6 @@ if bufwinnr(1)
   map - <C-W>-
 endif
 
-" Better split switching (Ctrl-j, Ctrl-k, Ctrl-h, Ctrl-l)
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-H> <C-W>h
-map <C-L> <C-W>l
-
 " Sudo write (,W)
 noremap <leader>W :w !sudo tee %<CR>
 
