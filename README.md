@@ -56,7 +56,7 @@ rcup -v
 
 ### Install Font
 
-Download and install (Input Mono)[http://input.fontbureau.com/download/]
+Download and install [Input Mono](http://input.fontbureau.com/download/)
 
 
 ### Vim Plug-ins
