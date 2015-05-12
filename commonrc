@@ -25,7 +25,3 @@ export PATH=/usr/local/share/npm/bin:$PATH
 # moving across words.
 bindkey "\e\e[C" forward-word
 bindkey "\e\e[D" backward-word
-
-# Tmuxinator
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
-export TERM=screen-256color
