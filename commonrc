@@ -29,9 +29,3 @@ bindkey "\e\e[D" backward-word
 # Tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 export TERM=screen-256color
-
-# Initialize autoparts
-if which parts > /dev/null; then
-  export PATH="$HOME/.parts/autoparts/bin:$PATH"
-  eval "$(parts env)"
-fi
