@@ -2,7 +2,6 @@
 
 # Homebrew
 fancy_echo "Installing additional brews"
-brew_install_or_upgrade 'fish'
 brew_install_or_upgrade 'gibo'
 brew_install_or_upgrade 'hg'
 brew_install_or_upgrade 'hub'
@@ -41,4 +40,4 @@ gem_install_or_update 'tmuxinator'
 # NPM
 npm install -g \
 babel bower browser-sync divshot-cli ember-cli foreman \
-gulp grunt-cli
+gulp grunt-cli surge
