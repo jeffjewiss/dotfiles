@@ -166,7 +166,7 @@ set shell=/bin/zsh
 set t_Co=256
 set background=dark
 syntax on
-let g:seoul256_background = 233
+"let g:seoul256_background = 233
 silent! colorscheme seoul256
 
 " Local dirs

@@ -2,7 +2,7 @@
 [[ -f "$HOME/.aliasrc" ]] && source "$HOME/.aliasrc"
 
 # Add custom scripts
-export PATH=$HOME/.dotfiles/bin:$PATH
+export PATH=$HOME/.bin:$PATH
 
 # Locale
 export LC_ALL=en_US.UTF-8
@@ -10,6 +10,9 @@ export LANG=en_US.UTF-8
 
 # Misc settings
 export EDITOR=vim
+export RBENV_ROOT=/usr/local/var/rbenv
+export GOPATH=$HOME/Go
+export GOROOT=/usr/local/opt/go/libexec
 
 # Initialize rbenv
 if which rbenv > /dev/null; then
@@ -20,6 +23,10 @@ fi
 export NODE_PATH="/usr/local/lib/node"
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 export PATH=/usr/local/share/npm/bin:$PATH
+
+# Go
+export PATH=$GOPATH/bin:$PATH
+export PATH=$GOROOT/bin:$PATH
 
 # Mappings for Ctrl/Option-left-arrow and Ctrl/Option-right-arrow for
 # moving across words.
