@@ -15,7 +15,7 @@ local b="antigen-bundle"
 # fast prompt
 $b sindresorhus/pure
 
-# Tracks your most used directories, based on 'frecency'. 
+# Tracks your most used directories, based on 'frecency'.
 $b rupa/z
 
 # Archives
