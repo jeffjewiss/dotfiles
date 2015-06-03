@@ -11,6 +11,7 @@ brew_install_or_upgrade 'tig'
 brew_install_or_upgrade 'trash'
 brew_install_or_upgrade 'tree'
 brew_install_or_upgrade 'urlview'
+brew_install_or_upgrade 'zsh'
 
 # Brew Cask
 fancy_echo "Installing brew cask, to install Mac apps via the command line ..."
@@ -39,5 +40,5 @@ gem_install_or_update 'tmuxinator'
 
 # NPM
 npm install -g \
-babel bower browser-sync divshot-cli ember-cli foreman \
-gulp grunt-cli surge
+babel bower browser-sync caniuse-cmd clif david divshot-cli ember-cli \
+foreman gulp grunt-cli surge up vmd
