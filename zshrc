@@ -8,7 +8,7 @@ export PATH=$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH
 [[ -s "$HOME/.commonrc" ]] && source "$HOME/.commonrc"
 
 # Antigen
-source ~/.antigen.zsh
+source `brew --prefix`/share/antigen.zsh
 
 local b="antigen-bundle"
 
