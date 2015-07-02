@@ -197,7 +197,10 @@ if bufwinnr(1)
   map - <C-W>-
 endif
 
-" Sudo write (,W)
+" <,w> | Write file
+noremap <leader>w :w<CR> 
+
+" <,W> | Sudo write
 noremap <leader>W :w !sudo tee %<CR>
 
 if &term == "xterm-ipad"
