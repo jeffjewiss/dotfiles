@@ -203,14 +203,6 @@ noremap <leader>w :w<CR>
 " <,W> | Sudo write
 noremap <leader>W :w !sudo tee %<CR>
 
-if &term == "xterm-ipad"
-  nnoremap <Tab> <Esc>
-  vnoremap <Tab> <Esc>gV
-  onoremap <Tab> <Esc>
-  inoremap <Tab> <Esc>`^
-  inoremap <Leader><Tab> <Tab>
-endif
-
 " <,bs> | Prompt for buffer to select
 nnoremap <leader>bs :CtrlPBuffer<CR>
 
