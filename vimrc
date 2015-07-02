@@ -196,8 +196,11 @@ if bufwinnr(1)
   map - <C-W>-
 endif
 
+" <,h> | Clear last search highlight
+noremap <leader>h :noh<CR>
+
 " <,w> | Write file
-noremap <leader>w :w<CR> 
+noremap <leader>w :w<CR>
 
 " <,W> | Sudo write
 noremap <leader>W :w !sudo tee %<CR>
