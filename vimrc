@@ -385,6 +385,6 @@ let g:lexical#thesaurus_key = '<leader>t'
 " ----------------------------------------------------------------------------
 " vim-notes
 " ----------------------------------------------------------------------------
-let g:notes_directories = '~/Dropbox/Documents/Writing/Notes']
+let g:notes_directories = ['~/Dropbox/Documents/Writing/Notes']
 let g:notes_suffix = '.md'
 let g:notes_title_sync = 'change_title'
