@@ -216,6 +216,9 @@ set lcs=tab:›\ ,trail:·,eol:¬,nbsp:_
 set fcs=fold:-
 nnoremap <silent> <leader>c :set nolist!<CR>
 
+" <,mp> | Preview current markdown file (GitHub Flavored)
+nnoremap <leader>mp :!vmd %:p<CR>
+
 " <F8> | Tagbar.vim
 if v:version >= 703
   inoremap <F8> <esc>:TagbarToggle<cr>
