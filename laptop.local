@@ -3,6 +3,7 @@
 # Homebrew
 fancy_echo "Installing additional brews"
 brew_install_or_upgrade 'antigen'
+brew_install_or_upgrade 'entr'
 brew_install_or_upgrade 'gibo'
 brew_install_or_upgrade 'hg'
 brew_install_or_upgrade 'hub'
