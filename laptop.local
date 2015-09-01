@@ -15,6 +15,10 @@ brew_install_or_upgrade 'tree'
 brew_install_or_upgrade 'urlview'
 brew_install_or_upgrade 'zsh'
 
+# Update GPL Software
+brew tap homebrew/dupes
+brew_install_or_upgrade 'rsync'
+
 # Brew Cask
 fancy_echo "Installing brew cask, to install Mac apps via the command line ..."
 brew tap caskroom/cask
