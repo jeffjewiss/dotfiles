@@ -13,6 +13,7 @@ source `brew --prefix`/share/antigen.zsh
 local b="antigen-bundle"
 
 # fast prompt
+$b mafredri/zsh-async
 $b sindresorhus/pure
 
 # Tracks your most used directories, based on 'frecency'.
