@@ -47,4 +47,4 @@ gem_install_or_update 'tmuxinator'
 # NPM
 npm install -g \
 babel bower browser-sync caniuse-cmd clif david divshot-cli ember-cli \
-foreman gulp grunt-cli sails standard surge up vmd
+forecast-cli foreman gulp grunt-cli sails standard surge up vmd
