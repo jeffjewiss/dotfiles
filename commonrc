@@ -23,6 +23,12 @@ fi
 export NODE_PATH="/usr/local/lib/node"
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 export PATH=/usr/local/share/npm/bin:$PATH
+export npm_config_engine_strict=true
+export npm_config_save=true
+export npm_config_save_exact=true
+export npm_config_init_license=MIT
+export npm_config_init_author_name=Jeff Jewiss
+export npm_config_init_author_email=jeff@jeffjewiss.com
 
 # Go
 export PATH=$GOPATH/bin:$PATH
