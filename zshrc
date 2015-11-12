@@ -7,6 +7,9 @@ export PATH=$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH
 # Common
 [[ -s "$HOME/.commonrc" ]] && source "$HOME/.commonrc"
 
+# 
+bindkey "^P" up-line-or-search
+
 # Antigen
 source `brew --prefix`/share/antigen.zsh
 
