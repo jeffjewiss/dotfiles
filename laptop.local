@@ -7,7 +7,7 @@ brew_install_or_upgrade 'entr'
 brew_install_or_upgrade 'gibo'
 brew_install_or_upgrade 'hg'
 brew_install_or_upgrade 'hub'
-brew_install_or_upgrade 'mongodb'
+brew_install_or_upgrade 'mutt'
 brew_install_or_upgrade 'phantomjs'
 brew_install_or_upgrade 'tig'
 brew_install_or_upgrade 'trash'
@@ -33,16 +33,15 @@ brew install --HEAD neovim
 
 fancy_echo "Installing OSX apps ..."
 brew cask install \
-airfoil alfred bartender caffeine cloudup dash dropbox firefox \
+alfred bartender caffeine cloudup dash dropbox firefox \
 flux google-chrome google-chrome-canary iterm2 keepingyouawake \
-little-snitch moom onepassword rdio slack spectacle totalfinder
+little-snitch onepassword rdio slack spectacle
 
 # Heroku
 heroku plugins:install git://github.com/ddollar/heroku-config.git
 
 # Gems
 gem_install_or_update 'jekyll'
-gem_install_or_update 'tmuxinator'
 
 # NPM
 npm install -g \
