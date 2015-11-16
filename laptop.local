@@ -48,3 +48,6 @@ gem_install_or_update 'tmuxinator'
 npm install -g \
 babel bower browser-sync caniuse-cmd clif david divshot-cli ember-cli \
 forecast-cli foreman gulp grunt-cli sails standard surge up vmd
+
+# Tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
