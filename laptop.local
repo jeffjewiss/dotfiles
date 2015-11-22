@@ -8,7 +8,6 @@ brew_install_or_upgrade 'gibo'
 brew_install_or_upgrade 'hg'
 brew_install_or_upgrade 'hub'
 brew_install_or_upgrade 'mutt'
-brew_install_or_upgrade 'phantomjs'
 brew_install_or_upgrade 'tig'
 brew_install_or_upgrade 'trash'
 brew_install_or_upgrade 'tree'
@@ -20,11 +19,8 @@ brew tap homebrew/dupes
 brew_install_or_upgrade 'rsync'
 
 # Brew Cask
-fancy_echo "Installing brew cask, to install Mac apps via the command line ..."
-brew tap caskroom/cask
-brew install brew-cask
-brew tap caskroom/versions
-brew upgrade cask
+brew_tap 'caskroom/cask'
+brew_install_or_upgrade 'brew-cask'
 
 # NeoVim
 fancy_echo "Installing neovim, since all plugins seem to be supported."
@@ -33,7 +29,7 @@ brew install --HEAD neovim
 
 fancy_echo "Installing OSX apps ..."
 brew cask install \
-alfred bartender caffeine cloudup dash dropbox firefox \
+alfred bartender cloudup dash dropbox firefox \
 flux google-chrome google-chrome-canary iterm2 keepingyouawake \
 little-snitch onepassword rdio slack spectacle
 
@@ -45,8 +41,8 @@ gem_install_or_update 'jekyll'
 
 # NPM
 npm install -g \
-babel bower browser-sync caniuse-cmd clif david divshot-cli ember-cli \
-forecast-cli foreman gulp grunt-cli sails standard surge up vmd
+babel browser-sync caniuse-cmd clif david divshot-cli ember-cli \
+forecast-cli foreman gulp sails standard surge up vmd
 
 # Tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
