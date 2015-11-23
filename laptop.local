@@ -8,6 +8,8 @@ brew_install_or_upgrade 'gibo'
 brew_install_or_upgrade 'hg'
 brew_install_or_upgrade 'hub'
 brew_install_or_upgrade 'mutt'
+brew_install_or_upgrade 'notmuch'
+brew_install_or_upgrade 'python'
 brew_install_or_upgrade 'tig'
 brew_install_or_upgrade 'trash'
 brew_install_or_upgrade 'tree'
@@ -17,6 +19,9 @@ brew_install_or_upgrade 'zsh'
 # Update GPL Software
 brew tap homebrew/dupes
 brew_install_or_upgrade 'rsync'
+
+# Weechat
+brew_install_or_upgrade 'weechat --with-perl --with-python'
 
 # Brew Cask
 brew_tap 'caskroom/cask'
@@ -31,7 +36,7 @@ fancy_echo "Installing OSX apps ..."
 brew cask install \
 alfred bartender cloudup dash dropbox firefox \
 flux google-chrome google-chrome-canary iterm2 keepingyouawake \
-little-snitch onepassword rdio slack spectacle
+little-snitch 1password slack spectacle
 
 # Heroku
 heroku plugins:install git://github.com/ddollar/heroku-config.git
