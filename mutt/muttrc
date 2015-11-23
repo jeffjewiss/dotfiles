@@ -90,6 +90,14 @@ macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to s
 macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
 macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"<Paste>
 
+# Quickly change mailboxes
+macro index c "<change-folder>?<toggle-mailboxes>" "change folder"
+macro index \' "<change-folder>+INBOX<enter>"      "go to INBOX"
+macro index \" "<change-folder>+archive<enter>"    "go to archive"
+
+# Search with notmuch
+macro index S "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py -G ~/Mail/search<enter><change-folder-readonly>~/Mail/search<enter>" "search mail (using notmuch)"
+
 # Pager View Options
 set pager_index_lines = 10 # number of index lines to show
 set pager_context = 3      # number of context lines to show
