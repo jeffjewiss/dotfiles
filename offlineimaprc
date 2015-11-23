@@ -1,0 +1,73 @@
+[general]
+ui = ttyui
+accounts = Personal, Work
+pythonfile = ~/.mutt/offlineimap.py
+fsync = False
+
+[Account Personal]
+localrepository = Personal-Local
+remoterepository = Personal-Remote
+status_backend = sqlite
+postsynchook = notmuch new
+
+[Account Work]
+localrepository = Work-Local
+remoterepository = Work-Remote
+status_backend = sqlite
+postsynchook = notmuch new
+
+[Repository Personal-Local]
+type = Maildir
+localfolders = ~/Mail/jeffjewiss@gmail.com
+nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
+                            'sent':    '[Gmail]/Sent Mail',
+                            'flagged': '[Gmail]/Starred',
+                            'trash':   '[Gmail]/Trash',
+                            'archive': '[Gmail]/All Mail',
+                            }.get(folder, folder)
+
+[Repository Personal-Remote]
+maxconnections = 1
+type = Gmail
+remoteuser = jeffjewiss@gmail.com
+remotepasseval = get_keychain_pass(account="jeffjewiss@gmail.com", server="imap.gmail.com")
+realdelete = no
+sslcacertfile = /usr/local/etc/openssl/cert.pem
+nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
+                            '[Gmail]/Sent Mail': 'sent',
+                            '[Gmail]/Starred':   'flagged',
+                            '[Gmail]/Trash':     'trash',
+                            '[Gmail]/All Mail':  'archive',
+                            }.get(folder, folder)
+folderfilter = lambda folder: folder not in ['[Gmail]/Trash',
+                                             '[Gmail]/Important',
+                                             '[Gmail]/Spam',
+                                             ]
+
+[Repository Work-Local]
+type = Maildir
+localfolders = ~/Mail/jeff.jewiss@precisionnutrition.com
+nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
+                            'sent':    '[Gmail]/Sent Mail',
+                            'flagged': '[Gmail]/Starred',
+                            'trash':   '[Gmail]/Trash',
+                            'archive': '[Gmail]/All Mail',
+                            }.get(folder, folder)
+
+[Repository Work-Remote]
+maxconnections = 1
+type = Gmail
+remoteuser = jeff.jewiss@precisionnutrition.com
+remotepasseval = get_keychain_pass(account="jeff.jewiss@precisionnutrition.com", server="imap.gmail.com")
+realdelete = no
+sslcacertfile = /usr/local/etc/openssl/cert.pem
+nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
+                            '[Gmail]/Sent Mail': 'sent',
+                            '[Gmail]/Starred':   'flagged',
+                            '[Gmail]/Trash':     'trash',
+                            '[Gmail]/All Mail':  'archive',
+                            }.get(folder, folder)
+folderfilter = lambda folder: folder not in ['[Gmail]/Trash',
+                                             '[Gmail]/Important',
+                                             '[Gmail]/Spam',
+                                             ]
