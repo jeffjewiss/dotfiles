@@ -23,6 +23,15 @@ brew_install_or_upgrade 'rsync'
 # Weechat
 brew_install_or_upgrade 'weechat --with-perl --with-python'
 
+# Weechat / Slack Integration
+pip install websocket-client
+
+# Mutt / Notmuch Integration
+pip install mutt-notmuch
+
+# Rainbowstream Twitter client
+pip install rainbowstream
+
 # Brew Cask
 brew_tap 'caskroom/cask'
 brew_install_or_upgrade 'brew-cask'
