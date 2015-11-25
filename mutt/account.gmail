@@ -1,0 +1,4 @@
+set from=jeffjewiss@gmail.com
+set mbox      = "+jeffjewiss@gmail.com/archive"
+set postponed = "+jeffjewiss@gmail.com/drafts"
+set sendmail = "/usr/local/bin/msmtp -a gmail"

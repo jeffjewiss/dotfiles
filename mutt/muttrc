@@ -1,5 +1,6 @@
 source ~/.mutt/colors.muttrc
 source ~/.mutt/sidebar.muttrc
+source ~/.mutt/account.gmail
 
 # Paths
 set folder           = ~/Mail               # mailbox location
@@ -62,6 +63,10 @@ mailboxes +-----Personal----- \
 set mbox      = "+jeffjewiss@gmail.com/archive"
 set postponed = "+jeffjewiss@gmail.com/drafts"
 
+# Sending email.
+set sendmail_wait = 0 # no please don't silently fail, email is important
+unset record
+
 # Index View Options
 set date_format = "%m/%d"
 set index_format = "[%Z]  %D  %-20.20F  %s"
@@ -74,7 +79,7 @@ set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 # Index Key Bindings
 bind index gg       first-entry
 bind index G        last-entry
-
+bind index p        recall-message
 bind index R        group-reply
 bind index <tab>    sync-mailbox
 bind index <space>  collapse-thread
@@ -137,5 +142,12 @@ set reverse_name                     # reply as whomever it was to
 set include                          # include message in replies
 set forward_quote                    # include message in forwards
 
+set query_command = "contacts -Sf '%eTOKEN%n' '%s' | sed -e 's/TOKEN/\t/g'"
+bind editor <Tab> complete-query
+bind editor ^T    complete
 
 macro index,pager V "|nvim -c 'setlocal ft=mail' -c 'setlocal buftype=nofile' -<enter>"
+
+# Load account settings when switching folders
+folder-hook 'jeffjewiss@gmail.com' 'source ~/.mutt/account.gmail'
+folder-hook 'jeff.jewiss@precisionnutrition.com' 'source ~/.mutt/account.precisionnutrition'
