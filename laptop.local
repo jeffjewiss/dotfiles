@@ -9,11 +9,13 @@ brew_install_or_upgrade 'hg'
 brew_install_or_upgrade 'hub'
 brew_install_or_upgrade 'mutt'
 brew_install_or_upgrade 'notmuch'
+brew_install_or_upgrade 'offline-imap'
 brew_install_or_upgrade 'python'
 brew_install_or_upgrade 'tig'
 brew_install_or_upgrade 'trash'
 brew_install_or_upgrade 'tree'
 brew_install_or_upgrade 'urlview'
+brew_install_or_upgrade 'weechat'
 brew_install_or_upgrade 'zsh'
 
 # Update GPL Software
@@ -44,8 +46,8 @@ brew install --HEAD neovim
 fancy_echo "Installing OSX apps ..."
 brew cask install \
 alfred bartender cloudup dash dropbox firefox \
-flux google-chrome google-chrome-canary iterm2 keepingyouawake \
-little-snitch 1password slack spectacle
+flux google-chrome google-chrome-canary iterm2 karabiner keepingyouawake \
+little-snitch 1password slack spectacle vyprvpn
 
 # Heroku
 heroku plugins:install git://github.com/ddollar/heroku-config.git
