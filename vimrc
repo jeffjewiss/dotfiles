@@ -27,6 +27,7 @@ Plug 'isRuslan/vim-es6'
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'kchmck/vim-coffee-script'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/vim-easy-align'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'majutsushi/tagbar'
 Plug 'moll/vim-node'
@@ -398,3 +399,12 @@ let g:notes_title_sync = 'change_title'
 " goyo
 " ----------------------------------------------------------------------------
 let g:goyo_width = 100
+
+" ----------------------------------------------------------------------------
+" Easy Align
+" ----------------------------------------------------------------------------
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
