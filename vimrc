@@ -56,7 +56,7 @@ Plug 'vim-scripts/jade.vim',      { 'for': 'jade' }
 Plug 'wavded/vim-stylus',         { 'for': 'stylus' }
 
 " Themes & Colours
-Plug 'reedes/vim-thematic'
+ Plug 'reedes/vim-thematic'
 Plug 'junegunn/seoul256.vim'
 Plug 'tomasr/molokai'
 Plug 'reedes/vim-colors-pencil'
@@ -408,3 +408,17 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" ----------------------------------------------------------------------------
+" Syntastic
+" ----------------------------------------------------------------------------
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['standard']
+autocmd FileType javascript let b:syntastic_checkers = findfile('.jshintrc', '.;') != '' ? ['jshint'] : ['standard']
