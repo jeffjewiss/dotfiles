@@ -10,6 +10,9 @@ alias ll='tree --dirsfirst -ChFupDaLg 1'
 alias whats-my-ip="curl -s checkip.dyndns.org | grep -Eo '[0-9\.]+'"
 alias whats-my-local-ip="ipconfig getifaddr en0"
 
+# Git
+alias fix="git diff --name-only | uniq | xargs nvim"
+
 # Utilities
 alias a="ag --ignore=.git --ignore=log --ignore=tags --ignore=tmp --ignore=vendor"
 alias b="bundle exec"
