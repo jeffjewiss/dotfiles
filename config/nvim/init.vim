@@ -9,7 +9,7 @@ let s:ag     = executable('ag')
 " Vim Plug-ins
 " =========================================================================
 
-silent! if plug#begin('~/.vim/plugged')
+silent! if plug#begin('~/.config/nvim/plugged')
 
 if s:darwin
   let g:plug_url_format = 'git@github.com:%s.git'
@@ -172,9 +172,9 @@ syntax on
 silent! colorscheme seoul256
 
 " Local dirs
-set backupdir=~/.vim/backups
-set directory=~/.vim/swaps
-set undodir=~/.vim/undo
+set backupdir=~/.config/nvim/backups
+set directory=~/.config/nvim/swaps
+set undodir=~/.config/nvim/undo
 
 " Open a file or url
 noremap ,o :!open <cfile><CR>
