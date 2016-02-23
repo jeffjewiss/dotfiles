@@ -423,3 +423,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['standard']
 autocmd FileType javascript let b:syntastic_checkers = findfile('.jshintrc', '.;') != '' ? ['jshint'] : ['standard']
+
+" ----------------------------------------------------------------------------
+" Editor Config
+" ----------------------------------------------------------------------------
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
