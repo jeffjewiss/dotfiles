@@ -13,7 +13,7 @@
   ui = auto
 
 [core]
-  pager = less
+  pager = "diff-so-fancy | less --tabs=4 -RFX"
   quotepath = false
   whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
   trustctime = false

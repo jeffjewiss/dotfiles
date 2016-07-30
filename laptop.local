@@ -59,7 +59,7 @@ gem_install_or_update 'jekyll'
 
 # NPM
 npm install -g \
-babel browser-sync caniuse-cmd clif david divshot-cli ember-cli \
+babel browser-sync caniuse-cmd clif david diff-so-fancy divshot-cli ember-cli \
 forecast-cli foreman gulp sails standard surge up vmd
 
 # Tmux
