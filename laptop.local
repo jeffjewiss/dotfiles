@@ -3,21 +3,24 @@
 # Homebrew
 fancy_echo "Installing additional brews"
 brew_install_or_upgrade 'antigen'
+brew_install_or_upgrade 'contacts'
 brew_install_or_upgrade 'entr'
 brew_install_or_upgrade 'gibo'
+brew_install_or_upgrade 'go'
 brew_install_or_upgrade 'hg'
 brew_install_or_upgrade 'hub'
 brew_install_or_upgrade 'msmtp'
 brew_install_or_upgrade 'mutt'
 brew_install_or_upgrade 'notmuch'
 brew_install_or_upgrade 'nvm'
-brew_install_or_upgrade 'offline-imap'
+brew_install_or_upgrade 'offlineimap'
 brew_install_or_upgrade 'python'
 brew_install_or_upgrade 'tig'
 brew_install_or_upgrade 'trash'
 brew_install_or_upgrade 'tree'
 brew_install_or_upgrade 'urlview'
 brew_install_or_upgrade 'weechat'
+brew_install_or_upgrade 'youtube-dl'
 brew_install_or_upgrade 'zsh'
 
 # Update GPL Software
@@ -47,9 +50,9 @@ brew install --HEAD neovim
 
 fancy_echo "Installing OSX apps ..."
 brew cask install \
-alfred bartender cloudup dash dropbox firefox \
-flux google-chrome google-chrome-canary iterm2 karabiner keepingyouawake \
-little-snitch 1password slack spectacle vyprvpn
+1password ableton-live adobe-creative-live alfred bartender cloudup dash \
+dropbox firefox flux google-chrome google-chrome-canary iterm2 karabiner \
+keepingyouawake keybase little-snitch slack spectacle vyprvpn
 
 # Heroku
 heroku plugins:install git://github.com/ddollar/heroku-config.git
@@ -59,8 +62,8 @@ gem_install_or_update 'jekyll'
 
 # NPM
 npm install -g \
-babel browser-sync caniuse-cmd clif david diff-so-fancy divshot-cli ember-cli \
-forecast-cli foreman gulp sails standard surge up vmd
+babel browser-sync caniuse-cmd clif dokku-toolbelt diff-so-fancy ember-cli \
+forecast-cli foreman greenkeeper gulp sails standard surge up vmd
 
 # Tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
