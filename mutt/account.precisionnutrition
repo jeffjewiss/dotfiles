@@ -1,4 +1,0 @@
-set from=jeff.jewiss@precisionnutrition.com
-set mbox      = "+jeff.jewiss@precisionnutrition.com/archive"
-set postponed = "+jeff.jewiss@precisionnutrition.com/drafts"
-set sendmail = "/usr/local/bin/msmtp -a precisionnutrition"

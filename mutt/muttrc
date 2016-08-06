@@ -1,5 +1,4 @@
 source ~/.mutt/colors.muttrc
-source ~/.mutt/sidebar.muttrc
 source ~/.mutt/account.gmail
 
 # Paths
@@ -45,19 +44,13 @@ set editor = "/usr/local/bin/nvim"
 set spoolfile = "+jeffjewiss@gmail.com/INBOX"
 
 # Alternate email addresses.
-# alternates 
+# alternates
 
 # Mailboxes to show in the sidebar.
-mailboxes +-----Personal----- \
-          +jeffjewiss@gmail.com/INBOX \
+mailboxes +jeffjewiss@gmail.com/INBOX \
           +jeffjewiss@gmail.com/archive \
           +jeffjewiss@gmail.com/sent \
           +jeffjewiss@gmail.com/drafts \
-          +-----Work----- \
-          +jeff.jewiss@precisionnutrition.com/INBOX \
-          +jeff.jewiss@precisionnutrition.com/archive \
-          +jeff.jewiss@precisionnutrition.com/sent \
-          +jeff.jewiss@precisionnutrition.com/drafts \
 
 # Other special folders.
 set mbox      = "+jeffjewiss@gmail.com/archive"
@@ -150,4 +143,3 @@ macro index,pager V "|nvim -c 'setlocal ft=mail' -c 'setlocal buftype=nofile' -<
 
 # Load account settings when switching folders
 folder-hook 'jeffjewiss@gmail.com' 'source ~/.mutt/account.gmail'
-folder-hook 'jeff.jewiss@precisionnutrition.com' 'source ~/.mutt/account.precisionnutrition'
