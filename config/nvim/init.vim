@@ -58,7 +58,7 @@ Plug 'vim-scripts/jade.vim',      { 'for': 'jade' }
 Plug 'wavded/vim-stylus',         { 'for': 'stylus' }
 
 " Themes & Colours
- Plug 'reedes/vim-thematic'
+Plug 'reedes/vim-thematic'
 Plug 'junegunn/seoul256.vim'
 Plug 'tomasr/molokai'
 Plug 'reedes/vim-colors-pencil'
@@ -299,6 +299,9 @@ let g:airline#extensions#tmuxline#enabled = 0
 
 " Gist.vim
 let g:gist_post_private = 1
+
+" <,A> | Airline.vim
+nnoremap <Leader>A :AirlineToggle<CR>
 
 " <, > | Goyo.vim
 nnoremap <Leader><Space> :Goyo<CR>
