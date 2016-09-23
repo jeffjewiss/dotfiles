@@ -7,11 +7,14 @@ export PATH=$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH
 # Common
 [[ -s "$HOME/.commonrc" ]] && source "$HOME/.commonrc"
 
-# 
+# Fuzzy search
 bindkey "^P" up-line-or-search
 
 # Antigen
-source `brew --prefix`/share/antigen.zsh
+source `brew --prefix`/share/antigen/antigen.zsh
+
+# oh-my-zsh
+antigen use oh-my-zsh
 
 local b="antigen-bundle"
 
@@ -25,7 +28,7 @@ $b rupa/z
 # Archives
 $b extract
 
-# homebrew
+# Homebrew
 $b brew
 $b brew-cask
 
