@@ -4,7 +4,8 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ~='cd ~'
 alias la='ls -la'
-alias ll='tree --dirsfirst -ChFupDaLg 1'
+alias ll='ls -lh'
+alias ld='tree --dirsfirst -ChFupDaLg 1'
 
 # Network
 alias whats-my-ip="curl -s checkip.dyndns.org | grep -Eo '[0-9\.]+'"
