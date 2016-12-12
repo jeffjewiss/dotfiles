@@ -40,3 +40,6 @@ export PATH=$GOROOT/bin:$PATH
 # moving across words.
 bindkey "\e\e[C" forward-word
 bindkey "\e\e[D" backward-word
+
+# GPG
+export GPG_TTY=$(tty)
