@@ -1,6 +1,3 @@
-# Use local executables
-export PATH=$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH
-
 # Prompt
 [[ -f "$HOME/.zsh_prompt" ]] && source "$HOME/.zsh_prompt"
 
@@ -16,27 +13,28 @@ source `brew --prefix`/share/antigen/antigen.zsh
 # oh-my-zsh
 antigen use oh-my-zsh
 
-local b="antigen-bundle"
+# nvm
+antigen bundle lukechilds/zsh-nvm
 
 # fast prompt
-$b mafredri/zsh-async
-$b sindresorhus/pure
+antigen bundle mafredri/zsh-async
+antigen bundle sindresorhus/pure
 
 # Tracks your most used directories, based on 'frecency'.
-$b rupa/z
+antigen bundle rupa/z
 
 # Archives
-$b extract
+antigen bundle extract
 
 # Homebrew
-$b brew
-$b brew-cask
+antigen bundle brew
+antigen bundle brew-cask
 
 # fish-like syntax highlighting
-$b zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-syntax-highlighting
 
 # suggestions as you type
-$b tarruda/zsh-autosuggestions
+antigen bundle tarruda/zsh-autosuggestions
 
 antigen apply
 

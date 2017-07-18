@@ -19,15 +19,14 @@ endif
 
 
 " Selected plugins
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'alexlafroscia/vim-ember-cli'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'elixir-lang/vim-elixir'
 Plug 'elzr/vim-json'
 Plug 'ervandew/supertab'
-Plug 'isRuslan/vim-es6'
 Plug 'jszakmeister/vim-togglecursor'
-Plug 'kchmck/vim-coffee-script'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'junegunn/vim-easy-align'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'majutsushi/tagbar'
@@ -35,33 +34,23 @@ Plug 'moll/vim-node'
 Plug 'fatih/vim-go'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'pangloss/vim-javascript'
+Plug 'radenling/vim-dispatch-neovim'
 Plug 'rizzatti/dash.vim'
 Plug 'rking/ag.vim'
-Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'shougo/unite.vim'
-Plug 'thoughtbot/vim-rspec'
-Plug 'tpope/vim-rails'
+Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug 'xolox/vim-session'
 
 " Syntax
-Plug 'scrooloose/syntastic'
-Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
-Plug 'slim-template/vim-slim',    { 'for': 'slim' }
-Plug 'tpope/vim-markdown',        { 'for': 'markdown' }
-Plug 'vim-scripts/jade.vim',      { 'for': 'jade' }
-Plug 'wavded/vim-stylus',         { 'for': 'stylus' }
-
-" Themes & Colours
-Plug 'reedes/vim-thematic'
-Plug 'junegunn/seoul256.vim'
-Plug 'tomasr/molokai'
-Plug 'reedes/vim-colors-pencil'
+Plug 'w0rp/ale'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -98,7 +87,6 @@ set backspace=indent,eol,start
 set diffopt=filler " Add vertical spaces to keep right and left aligned
 set diffopt+=iwhite " Ignore whitespace changes (focus on code changes)
 set encoding=utf-8 nobomb " BOM often causes trouble
-set esckeys " Allow cursor keys in insert mode.
 set expandtab " Expand tabs to spaces
 set foldcolumn=4 " Column to show folds
 set foldenable
@@ -170,8 +158,7 @@ set shell=/bin/zsh
 set t_Co=256
 set background=dark
 syntax on
-"let g:seoul256_background = 233
-silent! colorscheme seoul256
+silent! colorscheme badwolf
 
 " Local dirs
 set backupdir=~/.config/nvim/backups
@@ -290,18 +277,12 @@ endif
 " Session.vim
 let g:session_autosave = 'no'
 
-" Airline.vim
-let g:airline_powerline_fonts = 0
-let g:airline_theme = 'luna'
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline#extensions#tmuxline#enabled = 0
-
 " Gist.vim
 let g:gist_post_private = 1
 
 " <,A> | Airline.vim
 nnoremap <Leader>A :AirlineToggle<CR>
+let g:airline_theme='badwolf'
 
 " <, > | Goyo.vim
 nnoremap <Leader><Space> :Goyo<CR>
@@ -332,7 +313,9 @@ function! s:goyo_before()
 endfunction
 
 function! s:goyo_after()
-  silent !tmux set status on
+  if exists('$TMUX')
+    silent !tmux set status on
+  endif
   set showmode
   set showcmd
   set cursorline
@@ -385,6 +368,7 @@ nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gl :Glog<CR>
 nnoremap <Leader>gp :Gpull<CR>
 nnoremap <Leader>gu :Gpush<CR>
+nnoremap <Leader>gb :Gblame<CR>
 
 " ----------------------------------------------------------------------------
 " vim-lexical
@@ -396,7 +380,7 @@ let g:lexical#thesaurus_key = '<leader>t'
 " ----------------------------------------------------------------------------
 " vim-notes
 " ----------------------------------------------------------------------------
-let g:notes_directories = ['~/Dropbox/Documents/Writing/Notes']
+let g:notes_directories = ['~/Dropbox/Notes']
 let g:notes_suffix = '.md'
 let g:notes_title_sync = 'change_title'
 
@@ -415,18 +399,18 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " ----------------------------------------------------------------------------
-" Syntastic
+" ALE
 " ----------------------------------------------------------------------------
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+let g:ale_linters = {
+        \ 'html': ['ember-template-lint', 'htmlhint'],
+        \ 'css': ['stylelint'],
+        \ 'javascript': ['eslint'],
+        \}
+let g:ale_fixers = {
+        \ 'javascript': ['eslint'],
+        \}
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['standard']
-autocmd FileType javascript let b:syntastic_checkers = findfile('.jshintrc', '.;') != '' ? ['jshint'] : ['standard']
+nmap <Leader>d <Plug>(ale_fix)
 
 " ----------------------------------------------------------------------------
 " Editor Config

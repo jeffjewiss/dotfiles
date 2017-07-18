@@ -2,7 +2,8 @@
 [[ -f "$HOME/.aliasrc" ]] && source "$HOME/.aliasrc"
 
 # Add custom scripts
-export PATH=$HOME/.bin:$PATH
+export PATH=$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH
+# export PATH=$HOME/.bin:$PATH
 
 # Locale
 export LC_ALL=en_US.UTF-8
@@ -20,8 +21,7 @@ if which rbenv > /dev/null; then
 fi
 
 # Node
-export NVM_DIR=~/.nvm
-. $(brew --prefix nvm)/nvm.sh
+export NVM_AUTO_USE=true
 export NODE_PATH="/usr/local/lib/node"
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 export PATH=/usr/local/share/npm/bin:$PATH
@@ -43,3 +43,15 @@ bindkey "\e\e[D" backward-word
 
 # GPG
 export GPG_TTY=$(tty)
+
+# Tiny Care Terminal
+export TTC_BOTS='tinycarebot,selfcare_bot,magicrealismbot'
+export TTC_SAY_BOX='yeoman'
+export TTC_REPOS='~/Code'
+export TTC_REPOS_DEPTH=3
+export TTC_GITBOT='gitlog'
+export TTC_WEATHER='Reading, UK'
+export TTC_CELSIUS=true
+export TTC_APIKEYS=false
+export TTC_UPDATE_INTERVAL=20
+export TTC_TERMINAL_TITLE=false

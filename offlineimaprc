@@ -7,7 +7,6 @@ fsync = False
 [Account Personal]
 localrepository = Personal-Local
 remoterepository = Personal-Remote
-status_backend = sqlite
 postsynchook = notmuch new
 
 [Repository Personal-Local]
