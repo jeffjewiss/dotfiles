@@ -43,6 +43,7 @@ bindkey "\e\e[D" backward-word
 
 # GPG
 export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.ssh
 
 # Tiny Care Terminal
 export TTC_BOTS='tinycarebot,selfcare_bot,magicrealismbot'
