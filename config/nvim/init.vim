@@ -26,6 +26,7 @@ Plug 'elzr/vim-json'
 Plug 'ervandew/supertab'
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'jceb/vim-orgmode'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'junegunn/vim-easy-align'
 Plug 'kien/rainbow_parentheses.vim'
@@ -40,6 +41,7 @@ Plug 'radenling/vim-dispatch-neovim'
 Plug 'rizzatti/dash.vim'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
 Plug 'shougo/unite.vim'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-repeat'
@@ -246,6 +248,11 @@ nnoremap <F2> :NERDTreeToggle<cr>
 " NERDTree settings
 let NERDTreeShowHidden=1
 
+" NerdCommenter settings
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDTrimTrailingWhitespace = 1
+
 " Writing related settings
 " soft wrap text in markdown files to the window size
 " hard wrap text to 80 characters using Visual mode and then 'gq'
@@ -412,7 +419,7 @@ let g:ale_fixers = {
         \ 'javascript': ['eslint'],
         \}
 
-nmap <Leader>d <Plug>(ale_fix)
+nmap <Leader>af <Plug>(ale_fix)
 
 " ----------------------------------------------------------------------------
 " Editor Config
