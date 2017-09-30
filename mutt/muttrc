@@ -1,5 +1,6 @@
 source ~/.mutt/colors.muttrc
 source ~/.mutt/account.gmail
+source ~/.mutt/account.fastmail
 
 # Paths
 set folder           = ~/Mail               # mailbox location
@@ -41,20 +42,20 @@ set editor = "/usr/local/bin/nvim"
 # Account Settings
 
 # Default inbox.
-set spoolfile = "+jeffjewiss@gmail.com/INBOX"
+set spoolfile = "+jeff@jeffjewiss.com/INBOX"
 
 # Alternate email addresses.
 # alternates
 
 # Mailboxes to show in the sidebar.
-mailboxes +jeffjewiss@gmail.com/INBOX \
-          +jeffjewiss@gmail.com/archive \
-          +jeffjewiss@gmail.com/sent \
-          +jeffjewiss@gmail.com/drafts \
+mailboxes +jeff@jeffjewiss.com/INBOX \
+          +jeff@jeffjewiss.com/archive \
+          +jeff@jeffjewiss.com/sent \
+          +jeff@jeffjewiss.com/drafts \
 
 # Other special folders.
-set mbox      = "+jeffjewiss@gmail.com/archive"
-set postponed = "+jeffjewiss@gmail.com/drafts"
+set mbox      = "+jeff@jeffjewiss.com/archive"
+set postponed = "+jeff@jeffjewiss.com/drafts"
 
 # Sending email.
 set sendmail_wait = 0 # no please don't silently fail, email is important
@@ -143,3 +144,4 @@ macro index,pager V "|nvim -c 'setlocal ft=mail' -c 'setlocal buftype=nofile' -<
 
 # Load account settings when switching folders
 folder-hook 'jeffjewiss@gmail.com' 'source ~/.mutt/account.gmail'
+folder-hook 'jeff@jeffjewiss.com' 'source ~/.mutt/account.fastmail'

@@ -1,15 +1,15 @@
 [general]
 ui = ttyui
-accounts = Personal
+accounts = Personal, Google
 pythonfile = ~/.mutt/offlineimap.py
 fsync = False
 
-[Account Personal]
-localrepository = Personal-Local
-remoterepository = Personal-Remote
+[Account Google]
+localrepository = Google-Local
+remoterepository = Google-Remote
 postsynchook = notmuch new
 
-[Repository Personal-Local]
+[Repository Google-Local]
 type = Maildir
 localfolders = ~/Mail/jeffjewiss@gmail.com
 nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
@@ -19,7 +19,7 @@ nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
                             'archive': '[Gmail]/All Mail',
                             }.get(folder, folder)
 
-[Repository Personal-Remote]
+[Repository Google-Remote]
 maxconnections = 1
 type = Gmail
 remoteuser = jeffjewiss@gmail.com
@@ -35,4 +35,35 @@ nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
 folderfilter = lambda folder: folder not in ['[Gmail]/Trash',
                                              '[Gmail]/Important',
                                              '[Gmail]/Spam',
+                                             ]
+
+[Account Personal]
+localrepository = Personal-Local
+remoterepository = Personal-Remote
+postsynchook = notmuch new
+
+[Repository Personal-Local]
+type = Maildir
+localfolders = ~/Mail/jeff@jeffjewiss.com
+nametrans = lambda folder: {'drafts':  'Drafts',
+                            'sent':    'Sent',
+                            'trash':   'Trash',
+                            'archive': 'Archive',
+                            }.get(folder, folder)
+
+[Repository Personal-Remote]
+maxconnections = 1
+type = IMAP
+remotehost = imap.fastmail.com
+remoteuser = jeff@jeffjewiss.com
+remotepasseval = get_keychain_pass(account="jeff@jeffjewiss.com", server="imap.fastmail.com")
+realdelete = no
+sslcacertfile = /usr/local/etc/openssl/cert.pem
+nametrans = lambda folder: {'/Drafts':    'drafts',
+                            '/Sent':      'sent',
+                            '/Trash':     'trash',
+                            '/Archive':   'archive',
+                            }.get(folder, folder)
+folderfilter = lambda folder: folder not in ['/Trash',
+                                             '/Spam',
                                              ]

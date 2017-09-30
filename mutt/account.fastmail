@@ -1,0 +1,4 @@
+set from      = jeff@jeffjewiss.com
+set mbox      = "+jeff@jeffjewiss.com/archive"
+set postponed = "+jeff@jeffjewiss.com/drafts"
+set sendmail  = "/usr/local/bin/msmtp -a fastmail"
