@@ -3,7 +3,7 @@ source ~/.mutt/account.gmail
 source ~/.mutt/account.fastmail
 
 # Paths
-set folder           = ~/Mail               # mailbox location
+set folder           = ~/Mail                # mailbox location
 set alias_file       = ~/.mutt/alias         # where to store aliases
 set header_cache     = ~/.mutt/cache/headers # where to store headers
 set message_cachedir = ~/.mutt/cache/bodies  # where to store bodies
@@ -40,6 +40,17 @@ hdr_order from: to: cc: date: subject:  # and in this order
 set editor = "/usr/local/bin/nvim"
 
 # Account Settings
+mailboxes Personal \
+          +jeff@jeffjewiss.com/INBOX \
+          +jeff@jeffjewiss.com/archive \
+          +jeff@jeffjewiss.com/github \
+          +jeff@jeffjewiss.com/sent \
+          +jeff@jeffjewiss.com/drafts \
+          Gmail \
+          +jeffjewiss@gmail.com/INBOX \
+          +jeffjewiss@gmail.com/archive \
+          +jeffjewiss@gmail.com/sent \
+          +jeffjewiss@gmail.com/drafts \
 
 # Default inbox.
 set spoolfile = "+jeff@jeffjewiss.com/INBOX"
@@ -47,11 +58,21 @@ set spoolfile = "+jeff@jeffjewiss.com/INBOX"
 # Alternate email addresses.
 # alternates
 
-# Mailboxes to show in the sidebar.
-mailboxes +jeff@jeffjewiss.com/INBOX \
-          +jeff@jeffjewiss.com/archive \
-          +jeff@jeffjewiss.com/sent \
-          +jeff@jeffjewiss.com/drafts \
+
+# Sidebar settings
+set sidebar_visible = yes
+set mail_check_stats = yes
+set mail_check_stats_interval = 1
+set sidebar_format = '%B%?F? [%F]?%* %?N?%N/?%S'
+set sidebar_short_path = no
+set sidebar_width= 30
+set sidebar_indent_string=".."
+set sidebar_folder_indent=yes
+set sidebar_short_path=yes
+bind index,pager <up> sidebar-prev
+bind index,pager <down> sidebar-next
+bind index,pager <right> sidebar-open
+bind index,pager B sidebar-toggle-visible # Use 'B' to switch the Sidebar on and off
 
 # Other special folders.
 set mbox      = "+jeff@jeffjewiss.com/archive"
@@ -71,6 +92,7 @@ set sort_re                                # thread based on regex
 set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 
 # Index Key Bindings
+bind index g        noop
 bind index gg       first-entry
 bind index G        last-entry
 bind index p        recall-message
@@ -111,6 +133,7 @@ alternative_order text/plain text/enriched text/html
 # Pager Key Bindings
 bind pager k  previous-line
 bind pager j  next-line
+bind pager g  noop
 bind pager gg top
 bind pager G  bottom
 
