@@ -68,6 +68,7 @@ Plug 'tpope/vim-tbone'
 Plug 'tpope/vim-dispatch'
 
 " Writing
+Plug 'dbmrq/vim-ditto'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'reedes/vim-lexical'
@@ -259,8 +260,9 @@ let g:NERDTrimTrailingWhitespace = 1
 if has("autocmd")
 
   " Turn on spell checking for markdown files
-  autocmd BufRead,BufNewFile *.md,*.markdown setlocal spell
-  autocmd FileType markdown setlocal spell
+  autocmd BufRead,BufNewFile *.md,*.markdown,*.txt setlocal spell
+  autocmd FileType markdown,text,tex setlocal spell
+  autocmd FileType markdown,text,tex DittoOn  " Turn on Ditto's autocmds
 
   " Turn on word completion to use kspell
   set complete+=kspell
@@ -384,7 +386,20 @@ nnoremap <Leader>gb :Gblame<CR>
 " ----------------------------------------------------------------------------
 let g:lexical#spell_key = '<leader>s'
 let g:lexical#spelllang = ['en_us','en_ca',]
+let g:lexical#dictionary_key = '<leader>k'
 let g:lexical#thesaurus_key = '<leader>t'
+
+" ----------------------------------------------------------------------------
+" vim-ditto
+" ----------------------------------------------------------------------------
+nnoremap <leader>di :ToggleDitto<CR> " Turn it on and off
+
+nmap =d :DittoNext                   " Jump to the next word
+nmap -d :DittoPrev                   " Jump to the previous word
+nmap +d :DittoGood                   " Ignore the word under the cursor
+nmap _d :DittoBad                    " Stop ignoring the word under the cursor
+nmap ]d :DittoMore                   " Show the next matches
+nmap [d :DittoLess                   " Show the previous matches
 
 " ----------------------------------------------------------------------------
 " vim-notes
