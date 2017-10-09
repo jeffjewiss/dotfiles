@@ -1,6 +1,7 @@
 source ~/.mutt/colors.muttrc
 source ~/.mutt/account.gmail
 source ~/.mutt/account.fastmail
+source ~/.mutt/account.work
 
 # Paths
 set folder           = ~/Mail                # mailbox location
@@ -51,6 +52,11 @@ mailboxes Personal \
           +jeffjewiss@gmail.com/archive \
           +jeffjewiss@gmail.com/sent \
           +jeffjewiss@gmail.com/drafts \
+          Work \
+          +jeff@tallarium.com/INBOX \
+          +jeff@tallarium.com/archive \
+          +jeff@tallarium.com/sent \
+          +jeff@tallarium.com/drafts \
 
 # Default inbox.
 set spoolfile = "+jeff@jeffjewiss.com/INBOX"
@@ -168,3 +174,4 @@ macro index,pager V "|nvim -c 'setlocal ft=mail' -c 'setlocal buftype=nofile' -<
 # Load account settings when switching folders
 folder-hook 'jeffjewiss@gmail.com' 'source ~/.mutt/account.gmail'
 folder-hook 'jeff@jeffjewiss.com' 'source ~/.mutt/account.fastmail'
+folder-hook 'jeff@tallarium.com' 'source ~/.mutt/account.work'

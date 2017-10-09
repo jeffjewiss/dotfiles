@@ -1,0 +1,4 @@
+set from      = jeff@tallarium.com
+set mbox      = "+jeff@tallarium.com/archive"
+set postponed = "+jeff@tallarium.com/drafts"
+set sendmail  = "/usr/local/bin/msmtp -a work"
