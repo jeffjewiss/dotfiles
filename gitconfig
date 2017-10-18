@@ -1,6 +1,6 @@
 [user]
-  name = Jeff Jewiss
-  email = jeffjewiss@gmail.com
+	name = Jeff Jewiss
+	email = github@jeffjewiss.com
   signingkey = jeffjewiss@gmail.com
 
 [alias]
@@ -85,3 +85,8 @@
 	user = jeffjewiss
 [ghi]
 	token = !security find-internet-password -a jeffjewiss -s github.com -l 'ghi token' -w
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
