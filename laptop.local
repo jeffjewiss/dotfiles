@@ -50,9 +50,34 @@ brew install --HEAD neovim
 
 fancy_echo "Installing OSX apps ..."
 brew cask install \
-1password ableton-live adobe-creative-live alfred bartender cloudup dash \
-dropbox firefox flux google-chrome google-chrome-canary iterm2 karabiner \
-keepingyouawake keybase little-snitch slack spectacle vyprvpn
+1password \
+ableton-live \
+adobe-creative-live \
+alfred \
+bartender \
+dash \
+dropbox \
+firefox \
+firefoxdeveloperedition \
+flux \
+github-desktop \
+google-chrome \
+google-chrome-canary \
+insomnia \
+iterm2 \
+jadengeller-helium \
+kap \
+karabiner-elements \
+keepingyouawake \
+keybase \
+little-snitch \
+sketch \
+slack \
+spectacle \
+transmit \
+tyke \
+vlc \
+vyprvpn
 
 # Heroku
 heroku plugins:install git://github.com/ddollar/heroku-config.git
