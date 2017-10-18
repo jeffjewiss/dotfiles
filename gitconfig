@@ -81,3 +81,7 @@
 
 [commit]
   gpgsign = true
+[github]
+	user = jeffjewiss
+[ghi]
+	token = !security find-internet-password -a jeffjewiss -s github.com -l 'ghi token' -w
