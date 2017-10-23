@@ -14,6 +14,7 @@ export EDITOR=nvim
 export RBENV_ROOT=/usr/local/var/rbenv
 export GOPATH=$HOME/Go
 export GOROOT=/usr/local/opt/go/libexec
+export TERM=xterm-256color
 
 # Initialize rbenv
 if which rbenv > /dev/null; then

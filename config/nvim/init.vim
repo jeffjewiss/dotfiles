@@ -3,7 +3,6 @@
 " =========================================================================
 
 let s:darwin = has('mac')
-let s:ag     = executable('ag')
 
 " =========================================================================
 " Vim Plug-ins
@@ -21,46 +20,46 @@ endif
 " Selected plugins
 Plug 'alexlafroscia/vim-ember-cli'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'elixir-lang/vim-elixir'
-Plug 'elzr/vim-json'
 Plug 'ervandew/supertab'
-Plug 'ekalinin/Dockerfile.vim'
 Plug 'jszakmeister/vim-togglecursor'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jceb/vim-orgmode'
-Plug 'joukevandermaas/vim-ember-hbs'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'kchmck/vim-coffee-script'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'Quramy/tsuquyomi'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
-Plug 'moll/vim-node'
-Plug 'fatih/vim-go'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'pangloss/vim-javascript'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'rizzatti/dash.vim'
-Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
+Plug 'severin-lemaignan/vim-minimap'
 Plug 'shougo/unite.vim'
 Plug 'sjl/gundo.vim'
+Plug 'slashmili/alchemist.vim'
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'vim-ruby/vim-ruby'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug 'xolox/vim-session'
 
+" Color
+Plug 'KeitaNakamura/neodark.vim'
+Plug 'flazz/vim-colorschemes'
+
 " Syntax
 Plug 'w0rp/ale'
+Plug 'sheerun/vim-polyglot'
+Plug 'Quramy/tsuquyomi' " Typescript IDE features
+Plug 'joukevandermaas/vim-ember-hbs'
+Plug 'ap/vim-css-color'
 
 " Git
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'gregsexton/gitv'
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
@@ -137,7 +136,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim " Use ctrlp fuzzy file search
 set scrolloff=3 " Start scrolling three lines before horizontal border of window.
 set shiftwidth=4 " The # of spaces for indenting.
 set shortmess=atI " Don't show the intro message when starting vim.
-set showmode " Show the current mode.
+set noshowmode " Don't show the current mode.
 set showtabline=2 " Always show tab bar.
 set sidescrolloff=3 " Start scrolling three columns before vertical border of window.
 set smartcase " Ignore 'ignorecase' if search patter contains uppercase characters.
@@ -163,10 +162,13 @@ set wrapscan " Searches wrap around end of file
 set shell=/bin/zsh
 
 " Set syntax highlighting and colour options.
-set t_Co=256
+if !has('gui_running')
+  set t_Co=256
+endif
 set background=dark
+set termguicolors
 syntax on
-silent! colorscheme badwolf
+silent! colorscheme onedark
 
 " Local dirs
 set backupdir=~/.config/nvim/backups
@@ -196,54 +198,71 @@ if bufwinnr(1)
   map - <C-W>-
 endif
 
-" <,h> | Clear last search highlight
-noremap <leader>h :noh<CR>
+" < h> | Clear last search highlight
+noremap <Leader>h :noh<CR>
 
-" <,w> | Write file
-noremap <leader>w :w<CR>
+" < w> | Write file
+noremap <Leader>w :w<CR>
 
-" <,W> | Sudo write
-noremap <leader>W :w !sudo tee %<CR>
+" < W> | Sudo write
+noremap <Leader>W :w !sudo tee %<CR>
 
-" <,bs> | Prompt for buffer to select
-nnoremap <leader>bs :CtrlPBuffer<CR>
+" < qq> | Close Quickfix window
+map <Leader>qq :cclose<CR>
 
-" <,qq> | Close Quickfix window
-map <leader>qq :cclose<CR>
-
-" <,c> | Toggle show tabs and trailing spaces
+" < c> | Toggle show tabs and trailing spaces
 set lcs=tab:›\ ,trail:·,eol:¬,nbsp:_
 set fcs=fold:-
-nnoremap <silent> <leader>c :set nolist!<CR>
+nnoremap <silent> <Leader>c :set nolist!<CR>
 
-" <,mp> | Preview current markdown file (GitHub Flavored)
-nnoremap <leader>mp :!vmd %:p<CR>
+" < mp> | Preview current markdown file (GitHub Flavored)
+nnoremap <Leader>mp :!vmd %:p<CR>
+" <F7> | Gundo.vim
+inoremap <F7> <ESC>:GundoToggle<CR>
+nnoremap <F7> :GundoToggle<CR>
 
 " <F8> | Tagbar.vim
-if v:version >= 703
-  inoremap <F8> <esc>:TagbarToggle<cr>
-  nnoremap <F8> :TagbarToggle<cr>
-  let g:tagbar_sort = 0
-endif
+inoremap <F8> <ESC>:TagbarToggle<CR>
+nnoremap <F8> :TagbarToggle<CR>
+let g:tagbar_sort = 0
 
-" <C-p> | Ctrl-P.vim
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_match_window_bottom = 0 " Show at top of window
-let g:ctrlp_jump_to_buffer = 'Et' " Jump to tab AND buffer if already open
-let g:ctrlp_open_new_file = 't' " Open newly created files in a new tab
-let g:ctrlp_open_multiple_files = 't' " Open multiple files in new tabs
-let g:ctrlp_show_hidden = 1 " Index hidden files
-let g:ctrlp_use_caching = 0
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-else
-  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-  let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
-    \ }
-endif
+" <F9> | Minimap.vim
+inoremap <F9> <esc>:MinimapToggle<CR>
+nnoremap <F9> :MinimapToggle<CR>
+
+" Autocomplete
+" Move up and down in autocomplete with <c-j> and <c-k>
+inoremap <expr> <c-j> ("\<C-n>")
+inoremap <expr> <c-k> ("\<C-p>")
+
+" FZF
+nmap ; :Buffers<CR>
+nmap <c-p> :Files<CR>
+nmap <Leader>f :Files<CR>
+nmap <Leader>t :Tags<CR>
+
+noremap <Leader>s :Ag<CR>
+noremap <Leader>S :Ag!<CR>
+
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \                 <bang>0)
+
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \                 <bang>0)
+
+let g:fzf_nvim_statusline = 0 " disable statusline overwriting
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+
 
 " <F2> | NERDTree mappings
 inoremap <F2> <esc>:NERDTreeToggle<cr>
@@ -256,6 +275,60 @@ let NERDTreeShowHidden=1
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
 let g:NERDTrimTrailingWhitespace = 1
+
+" Terminal-mode settings
+tnoremap <Leader><Esc> <C-\><C-n> " Space Escape to exit
+nnoremap <Leader>tv :vsp term://zsh<CR>
+nnoremap <Leader>ts :sp term://zsh<CR>
+
+" Lightline settings
+let g:lightline = {
+\ 'colorscheme': 'neodark',
+\ 'active': {
+\   'left': [['mode', 'paste'], ['filename', 'modified']],
+\   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
+\ },
+\ 'component_expand': {
+\   'linter_warnings': 'LightlineLinterWarnings',
+\   'linter_errors': 'LightlineLinterErrors',
+\   'linter_ok': 'LightlineLinterOK'
+\ },
+\ 'component_type': {
+\   'readonly': 'error',
+\   'linter_warnings': 'warning',
+\   'linter_errors': 'error'
+\ },
+\ }
+
+function! LightlineLinterWarnings() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? '' : printf('%d ◆', all_non_errors)
+endfunction
+
+function! LightlineLinterErrors() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? '' : printf('%d ✗', all_errors)
+endfunction
+
+function! LightlineLinterOK() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? '✓ ' : ''
+endfunction
+
+autocmd User ALELint call s:MaybeUpdateLightline()
+
+" Update and show lightline but only if it's visible (e.g., not in Goyo)
+function! s:MaybeUpdateLightline()
+  if exists('#lightline')
+    call lightline#update()
+  end
+endfunction
 
 " Writing related settings
 " soft wrap text in markdown files to the window size
@@ -294,18 +367,15 @@ let g:session_autosave = 'no'
 " Gist.vim
 let g:gist_post_private = 1
 
-" <,A> | Airline.vim
-nnoremap <Leader>A :AirlineToggle<CR>
-let g:airline_theme='badwolf'
+" <,G> | Goyo.vim
+nnoremap <Leader>G :Goyo<CR>
+nnoremap <Leader>P :Goyo<CR>
 
-" <, > | Goyo.vim
-nnoremap <Leader><Space> :Goyo<CR>
+" <,l> | Limelight.vim (enable)
+nnoremap <Leader>l :Limelight<CR>
 
-" <,f> | Limelight.vim (enable)
-nnoremap <Leader>f :Limelight<CR>
-
-" <,F> | Limelight.vim (disable)
-nnoremap <Leader>F :Limelight!<CR>
+" <,L> | Limelight.vim (disable)
+nnoremap <Leader>L :Limelight!<CR>
 
 function! s:goyo_before()
   if has('gui_running')
@@ -385,6 +455,15 @@ nnoremap <Leader>gu :Gpush<CR>
 nnoremap <Leader>gb :Gblame<CR>
 
 " ----------------------------------------------------------------------------
+" GHI
+" ----------------------------------------------------------------------------
+nnoremap <Leader>gi :Dis ghi list<CR>
+nnoremap <Leader>gig :Dis ghi list -g<CR>
+nnoremap <Leader>giga :Dis ghi list --mine -g<CR>
+nnoremap <Leader>gim :Dis ghi list --mine<CR>
+nnoremap <Leader>gip :Dis ghi list --mine -p<CR>
+
+" ----------------------------------------------------------------------------
 " vim-lexical
 " ----------------------------------------------------------------------------
 let g:lexical#spell_key = '<leader>s'
@@ -432,9 +511,11 @@ let g:ale_linters = {
         \ 'html': ['ember-template-lint', 'htmlhint'],
         \ 'css': ['stylelint'],
         \ 'javascript': ['eslint'],
+        \ 'swift': ['swiftlint'],
         \}
 let g:ale_fixers = {
         \ 'javascript': ['eslint'],
+        \ 'swift': ['swiftformat'],
         \}
 
 nmap <Leader>af <Plug>(ale_fix)
@@ -443,3 +524,13 @@ nmap <Leader>af <Plug>(ale_fix)
 " Editor Config
 " ----------------------------------------------------------------------------
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
+" ----------------------------------------------------------------------------
+" CSS Color
+" ----------------------------------------------------------------------------
+nnoremap <Leader>css :call css_color#toggle()<CR>
+
+" ----------------------------------------------------------------------------
+" Dash.vim
+" ----------------------------------------------------------------------------
+:nmap <silent> <Leader>d <Plug>DashSearch
