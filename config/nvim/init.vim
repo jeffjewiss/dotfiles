@@ -455,6 +455,11 @@ nnoremap <Leader>gu :Gpush<CR>
 nnoremap <Leader>gb :Gblame<CR>
 
 " ----------------------------------------------------------------------------
+" Hub (GitHub)
+" ----------------------------------------------------------------------------
+nnoremap <Leader>gpr :Dis hub pull-request<CR>
+
+" ----------------------------------------------------------------------------
 " GHI
 " ----------------------------------------------------------------------------
 nnoremap <Leader>gi :Dis ghi list<CR>
@@ -467,7 +472,7 @@ nnoremap <Leader>gip :Dis ghi list --mine -p<CR>
 " vim-lexical
 " ----------------------------------------------------------------------------
 let g:lexical#spell_key = '<leader>s'
-let g:lexical#spelllang = ['en_us','en_ca',]
+let g:lexical#spelllang = ['en_ca','en_us']
 let g:lexical#dictionary_key = '<leader>k'
 let g:lexical#thesaurus_key = '<leader>t'
 
