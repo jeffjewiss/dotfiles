@@ -14,12 +14,6 @@ bindkey "^P" up-line-or-search
 # Antigen
 source `brew --prefix`/share/antigen/antigen.zsh
 
-# oh-my-zsh
-antigen use oh-my-zsh
-
-# nvm
-antigen bundle lukechilds/zsh-nvm
-
 # fast prompt
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
