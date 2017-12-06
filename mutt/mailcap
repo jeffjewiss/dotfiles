@@ -27,8 +27,14 @@ image/gif; ~/.mutt/view_attachment.sh %s gif
 # PDF
 application/pdf; ~/.mutt/view_attachment.sh %s pdf
 
+# RTF
+application/rtf; ~/.mutt/view_attachment.sh %s rtf
+
 # HTML
 text/html; ~/.mutt/view_attachment.sh %s html
 
+# Text
+text/plain; nvim %s
+
 # Unidentified.
-application/octet-stream; ~/.mutt/view_attachment.sh %s "-" 
+application/octet-stream; ~/.mutt/view_attachment.sh %s "-"
