@@ -29,6 +29,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
+Plug 'mattn/calendar-vim'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/nerdtree'
@@ -39,6 +40,7 @@ Plug 'sjl/gundo.vim'
 Plug 'slashmili/alchemist.vim'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'itchyny/lightline.vim'
@@ -88,6 +90,7 @@ endif
 " =========================================================================
 
 let mapleader=" "
+let maplocalleader=" "
 set nocompatible " Make vim more useful
 set autoindent " Copy indent from last line when starting new line.
 set backspace=indent,eol,start
@@ -176,7 +179,7 @@ set directory=~/.config/nvim/swaps
 set undodir=~/.config/nvim/undo
 
 " Open a file or url
-noremap ,o :!open <cfile><CR>
+noremap <Leader>o :!open <cfile><CR>
 
 " Speed up transition from modes
 if ! has('gui_running')
@@ -285,7 +288,7 @@ nnoremap <Leader>ts :sp term://zsh<CR>
 let g:lightline = {
 \ 'colorscheme': 'neodark',
 \ 'active': {
-\   'left': [['mode', 'paste'], ['filename', 'modified']],
+\   'left': [['mode', 'paste'], ['readonly', 'relativepath']],
 \   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
 \ },
 \ 'component_expand': {
@@ -299,6 +302,10 @@ let g:lightline = {
 \   'linter_errors': 'error'
 \ },
 \ }
+
+function! LightlineReadonly()
+  return &readonly && &filetype !=# 'help' ? 'RO' : ''
+endfunction
 
 function! LightlineLinterWarnings() abort
   let l:counts = ale#statusline#Count(bufnr(''))

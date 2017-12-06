@@ -24,7 +24,6 @@ alias grep='GREP_COLOR="1;37;45" LANG=C grep --color=auto'
 alias h="history"
 alias nv="nvim ."
 alias view="vim -p -R"
-alias tmux="tmux -2"
 alias tma='tmux attach -d -t'
 
 # Node Related
