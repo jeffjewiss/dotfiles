@@ -56,6 +56,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'w0rp/ale'
 Plug 'sheerun/vim-polyglot'
 Plug 'Quramy/tsuquyomi' " Typescript IDE features
+Plug 'slime-lang/vim-slime-syntax'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'ap/vim-css-color'
 
