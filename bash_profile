@@ -9,3 +9,5 @@ PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
 # Common junk
 [[ -s "$HOME/.commonrc" ]] && source "$HOME/.commonrc"
+
+export PATH="$HOME/.cargo/bin:$PATH"
