@@ -4,14 +4,21 @@
 fancy_echo "Installing additional brews"
 brew_install_or_upgrade 'antigen'
 brew_install_or_upgrade 'asdf'
+brew_install_or_upgrade 'buku'
 brew_install_or_upgrade 'contacts'
 brew_install_or_upgrade 'entr'
 brew_install_or_upgrade 'gibo'
+brew_install_or_upgrade 'ghi'
+brew_install_or_upgrade 'gnupg2'
+brew_install_or_upgrade 'gnutls'
 brew_install_or_upgrade 'go'
 brew_install_or_upgrade 'hg'
 brew_install_or_upgrade 'hub'
+brew_install_or_upgrade 'mosh'
 brew_install_or_upgrade 'msmtp'
-brew_install_or_upgrade 'mutt'
+brew_install_or_upgrade 'neomutt'
+brew_install_or_upgrade 'neovim'
+brew_install_or_upgrade 'nordvpn'
 brew_install_or_upgrade 'notmuch'
 brew_install_or_upgrade 'offlineimap'
 brew_install_or_upgrade 'python'
@@ -25,13 +32,6 @@ brew_install_or_upgrade 'zsh'
 
 # Update GPL Software
 brew tap homebrew/dupes
-brew_install_or_upgrade 'rsync'
-
-# Weechat
-brew_install_or_upgrade 'weechat --with-perl --with-python'
-
-# Weechat / Slack Integration
-pip install websocket-client
 
 # Mutt / Notmuch Integration
 pip install mutt-notmuch
@@ -43,15 +43,9 @@ pip install rainbowstream
 brew_tap 'caskroom/cask'
 brew_install_or_upgrade 'brew-cask'
 
-# NeoVim
-fancy_echo "Installing neovim, since all plugins seem to be supported."
-brew tap neovim/homebrew-neovim
-brew install --HEAD neovim
-
 fancy_echo "Installing OSX apps ..."
 brew cask install \
 1password \
-ableton-live \
 adobe-creative-live \
 alfred \
 bartender \
@@ -60,7 +54,6 @@ dropbox \
 firefox \
 firefoxdeveloperedition \
 flux \
-github-desktop \
 google-chrome \
 google-chrome-canary \
 insomnia \
@@ -71,13 +64,32 @@ karabiner-elements \
 keepingyouawake \
 keybase \
 little-snitch \
+little-snitch \
 sketch \
 slack \
 spectacle \
 transmit \
 tyke \
 vlc \
-vyprvpn
+
+# ableton-live-intro            handbrake                     rightfont
+# adobe-creative-cloud          houdahgeo                     screenhero
+# alfred                        hyper                         screens
+# avocode                       insomnia                      sdl-framework
+# beaker-browser                iterm2                        sdl-ttf-framework
+# brave                         jadengeller-helium            sketch
+# calibre                       java                          spectacle
+# dash                          java8                         steam
+# docker                        kap                           superduper
+# dropbox                       karabiner-elements            the-unarchiver
+# firefox                       keepingyouawake               transmit
+# firefoxdeveloperedition       keybase                       tyke
+# flume                         little-snitch                 vagrant
+# flux                          logitech-control-center       virtualbox
+# ghost                         logitech-gaming-software      visual-studio-code
+# github-desktop                nordvpn                       vlc
+# google-chrome                 patchwork                     webtorrent
+# google-chrome-canary          postgres                      zcash4mac
 
 # Heroku
 heroku plugins:install git://github.com/ddollar/heroku-config.git
@@ -87,8 +99,8 @@ gem_install_or_update 'jekyll'
 
 # NPM
 npm install -g \
-babel browser-sync caniuse-cmd clif dokku-toolbelt diff-so-fancy ember-cli \
-forecast-cli foreman greenkeeper gulp sails standard surge up vmd
+babel browser-sync caniuse-cmd clif diff-so-fancy ember-cli \
+forecast-cli foreman gulp standard vmd
 
 # Tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
