@@ -245,8 +245,8 @@ nmap <c-p> :Files<CR>
 nmap <Leader>f :Files<CR>
 nmap <Leader>t :Tags<CR>
 
-noremap <Leader>s :Ag<CR>
-noremap <Leader>S :Ag!<CR>
+" noremap <Leader>s :Ag<CR>
+" noremap <Leader>S :Ag!<CR>
 
 command! -bang -nargs=* Ag
   \ call fzf#vim#ag(<q-args>,
