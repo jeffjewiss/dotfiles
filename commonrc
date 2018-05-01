@@ -2,7 +2,7 @@
 [[ -f "$HOME/.aliasrc" ]] && source "$HOME/.aliasrc"
 
 # Add custom scripts
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/opt/asdf/shims:/usr/local/bin:/usr/local/sbin:$PATH
 
 # Locale
 export LC_ALL=en_US.UTF-8
@@ -37,18 +37,6 @@ export PATH=${HOME}/.cargo/bin:$PATH
 # GPG
 export GPG_TTY=$(tty)
 export SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.ssh
-
-# Tiny Care Terminal
-export TTC_BOTS='tinycarebot,selfcare_bot,magicrealismbot'
-export TTC_SAY_BOX='yeoman'
-export TTC_REPOS='~/Code'
-export TTC_REPOS_DEPTH=3
-export TTC_GITBOT='gitlog'
-export TTC_WEATHER='Reading, UK'
-export TTC_CELSIUS=true
-export TTC_APIKEYS=false
-export TTC_UPDATE_INTERVAL=20
-export TTC_TERMINAL_TITLE=false
 
 # Initialize asdf
 source /usr/local/opt/asdf/asdf.sh
