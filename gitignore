@@ -2,6 +2,7 @@
 *.sw[nop]
 .bundle
 .env
+.tern-port
 db/*.sqlite3
 log/*.log
 rerun.txt
@@ -11,3 +12,4 @@ tags.*
 tmp/**/*
 !tmp/cache/.keep
 tmux-client-*.log
+TODO.org
