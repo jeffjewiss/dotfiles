@@ -33,3 +33,4 @@ alias nombom="nom && bom"
 
 alias mutt="cd ~/Desktop && neomutt"
 alias email="cd ~/Desktop && neomutt"
+alias emacs='emacs -nw'
