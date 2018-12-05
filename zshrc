@@ -51,3 +51,6 @@ fi
 
 # Disable command corrections
 setopt nocorrectall
+
+# direnv
+eval "$(direnv hook zsh)"
