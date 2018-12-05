@@ -2,6 +2,7 @@
 *.sw[nop]
 .bundle
 .env
+.envrc
 .tern-port
 db/*.sqlite3
 log/*.log
