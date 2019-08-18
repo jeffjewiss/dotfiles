@@ -4,8 +4,10 @@
 fancy_echo "Installing additional brews"
 brew_install_or_upgrade 'antigen'
 brew_install_or_upgrade 'asdf'
+brew_install_or_upgrade 'bat'
 brew_install_or_upgrade 'buku'
 brew_install_or_upgrade 'contacts'
+brew_install_or_upgrade 'diff-so-fancy'
 brew_install_or_upgrade 'entr'
 brew_install_or_upgrade 'gibo'
 brew_install_or_upgrade 'ghi'
@@ -14,6 +16,7 @@ brew_install_or_upgrade 'gnutls'
 brew_install_or_upgrade 'go'
 brew_install_or_upgrade 'hg'
 brew_install_or_upgrade 'hub'
+brew_install_or_upgrade 'jq'
 brew_install_or_upgrade 'mosh'
 brew_install_or_upgrade 'msmtp'
 brew_install_or_upgrade 'neomutt'
@@ -26,7 +29,6 @@ brew_install_or_upgrade 'tig'
 brew_install_or_upgrade 'trash'
 brew_install_or_upgrade 'tree'
 brew_install_or_upgrade 'urlview'
-brew_install_or_upgrade 'weechat'
 brew_install_or_upgrade 'youtube-dl'
 brew_install_or_upgrade 'zsh'
 
@@ -35,9 +37,6 @@ brew tap homebrew/dupes
 
 # Mutt / Notmuch Integration
 pip install mutt-notmuch
-
-# Rainbowstream Twitter client
-pip install rainbowstream
 
 # Brew Cask
 brew_tap 'caskroom/cask'
@@ -50,7 +49,7 @@ adobe-creative-live \
 alfred \
 bartender \
 dash \
-dropbox \
+docker \
 firefox \
 firefoxdeveloperedition \
 flux \
@@ -58,38 +57,16 @@ google-chrome \
 google-chrome-canary \
 insomnia \
 iterm2 \
-jadengeller-helium \
 kap \
 karabiner-elements \
 keepingyouawake \
 keybase \
 little-snitch \
-little-snitch \
+nordvpn \
 sketch \
-slack \
 spectacle \
 transmit \
-tyke \
 vlc \
-
-# ableton-live-intro            handbrake                     rightfont
-# adobe-creative-cloud          houdahgeo                     screenhero
-# alfred                        hyper                         screens
-# avocode                       insomnia                      sdl-framework
-# beaker-browser                iterm2                        sdl-ttf-framework
-# brave                         jadengeller-helium            sketch
-# calibre                       java                          spectacle
-# dash                          java8                         steam
-# docker                        kap                           superduper
-# dropbox                       karabiner-elements            the-unarchiver
-# firefox                       keepingyouawake               transmit
-# firefoxdeveloperedition       keybase                       tyke
-# flume                         little-snitch                 vagrant
-# flux                          logitech-control-center       virtualbox
-# ghost                         logitech-gaming-software      visual-studio-code
-# github-desktop                nordvpn                       vlc
-# google-chrome                 patchwork                     webtorrent
-# google-chrome-canary          postgres                      zcash4mac
 
 # Heroku
 heroku plugins:install git://github.com/ddollar/heroku-config.git
@@ -99,8 +76,13 @@ gem_install_or_update 'jekyll'
 
 # NPM
 npm install -g \
-babel browser-sync caniuse-cmd clif diff-so-fancy ember-cli \
-forecast-cli foreman gulp standard vmd
+browser-sync \
+caniuse-cmd \
+ember-cli \
+foreman \
+gulp \
+standard \
+vmd
 
 # Tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
