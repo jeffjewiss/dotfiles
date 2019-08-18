@@ -8,10 +8,10 @@
  user-full-name    "Jeff Jewiss"
  user-mail-address "jeff@jeffjewiss.com"
  +workspaces-switch-project-function #'ignore
- +pretty-code-enabled-modes '(emacs-lisp-mode org-mode)
- doom-font (font-spec :family "Input Mono" :size 12)
- doom-variable-pitch-font (font-spec :family "Inter UI")
- doom-big-font (font-spec :family "Input Mono" :size 20))
+ +pretty-code-enabled-modes t
+ doom-font (font-spec :family "Fira Code" :size 12)
+ doom-variable-pitch-font (font-spec :family "Noto Sans")
+ doom-big-font (font-spec :family "Fira Code" :size 20))
 
 (require 'doom-themes)
 
@@ -47,15 +47,10 @@
 ;; Helm Dash Docsets
 (setq helm-dash-common-docsets '("EmberJS" "Elixir" "JavaScript"))
 
-;; Magithub
-(setq magithub-api-timeout 10)
-
 ;; MacOS Settings
 (when IS-MAC
   (setq ns-use-thin-smoothing t)
-  (add-hook 'window-setup-hook #'toggle-frame-maximized)
-  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
-  (add-to-list 'default-frame-alist '(ns-appearance . dark)))
+  (add-hook 'window-setup-hook #'toggle-frame-maximized))
 
 ;; Alchemist
 (setq alchemist-mix-command "~/.asdf/shims/mix")
@@ -107,7 +102,14 @@ SCHEDULED: %t")))
 
 ;; Email
 (setq +mu4e-backend 'offlineimap)
+(setq send-mail-function 'smtpmail-send-it)
+(setq message-send-mail-function 'smtpmail-send-it)
+(setq mu4e-sent-messages-behavior 'delete)
+(setq mu4e-view-show-addresses 't)
+(setq mu4e-compose-format-flowed t)
+; (setq mu4e-compose-in-new-frame t)
 (setq mu4e-maildir "~/Mail"
+      mu4e-drafts-folder "~/Mail/drafts"
       mu4e-attachment-dir "~/Mail/.attachments")
 
 (set-email-account! "Personal"
@@ -115,12 +117,31 @@ SCHEDULED: %t")))
     (mu4e-drafts-folder     . "/jeff@jeffjewiss.com/Drafts")
     (mu4e-trash-folder      . "/jeff@jeffjewiss.com/Trash")
     (mu4e-refile-folder     . "/jeff@jeffjewiss.com/Archive")
+    (user-mail-address      . "jeff@jeffjewiss.com")
     (smtpmail-smtp-user     . "jeff@jeffjewiss.com")
-    (user-mail-address      . "jeff@jeffjewiss.com"))
+    (smtpmail-smtp-server   . "smtp.fastmail.com")
+    (smtpmail-smtp-service  . 465)
+    (smtpmail-stream-type   . ssl))
   t)
+
+;; Bookmarks for common searches that I use.
+(setq mu4e-bookmarks '(("\\\\Inbox" "Inbox" ?i)
+                       ("flag:unread" "Unread messages" ?u)
+                       ("date:today..now" "Today's messages" ?t)
+                       ("date:7d..now" "Last 7 days" ?w)
+                       ("mime:image/*" "Messages with images" ?p)))
 
 (setq org-journal-dir "~/org")
 
 
 ;; Temp Fixes Waiting on upstream
 (after! org (setq org-agenda-window-setup 'popup-window))
+
+;; Keybinds
+
+;; Leader key
+(map! :leader
+      (:prefix-map ("o" . "open")
+        :desc "Open Mail"             "M" #'=mu4e
+        )
+      )
