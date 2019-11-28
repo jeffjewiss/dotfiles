@@ -14,3 +14,4 @@ tmp/**/*
 !tmp/cache/.keep
 tmux-client-*.log
 TODO.org
+.dir-locals.el
