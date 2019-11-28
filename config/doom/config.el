@@ -10,7 +10,7 @@
  +workspaces-switch-project-function #'ignore
  +pretty-code-enabled-modes t
  doom-font (font-spec :family "Fira Code" :size 12)
- doom-variable-pitch-font (font-spec :family "Noto Sans")
+ doom-variable-pitch-font (font-spec :family "Noto Sans" :size 16)
  doom-big-font (font-spec :family "Fira Code" :size 20))
 
 (require 'doom-themes)
@@ -59,10 +59,6 @@
 (setq alchemist-iex-program-name "~/.asdf/shims/iex")
 ; (setq alchemist-hooks-compile-on-save t)
 
-;; Flycheck
-(custom-set-variables
- '(flycheck-typescript-tslint-executable "~/.asdf/shims/tslint"))'
-
 ;; Org Mode Config
 (setq org-todo-keywords
       '((sequence "TODO" "IN-PROGRESS" "WAITING" "|" "DONE" "CANCELED")))
@@ -75,7 +71,7 @@ SCHEDULED: %t")))
 
 ;; Nov.el
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
-(setq nov-text-width most-positive-fixnum)
+(setq nov-text-width t)
 (setq nov-save-place-file "~/SynologyDrive/config/nov-places")
 (setq visual-fill-column-center-text t)
 (add-hook 'nov-mode-hook 'visual-line-mode)
@@ -107,17 +103,27 @@ SCHEDULED: %t")))
 (setq mu4e-sent-messages-behavior 'delete)
 (setq mu4e-view-show-addresses 't)
 (setq mu4e-compose-format-flowed t)
+(setq mu4e-compose-dont-reply-to-self t)
+(setq mu4e-html2text-command "w3m -dump -T text/html -o display_link_number=true")
+(setq mu4e-view-show-images t)
+(setq mu4e-attachment-dir  "~/Downloads")
+;; Use imagemagick, if available.
+  (when (fboundp 'imagemagick-register-types)
+    (imagemagick-register-types))
 ; (setq mu4e-compose-in-new-frame t)
+;; Add option to open message in a browser
+(after! mu4e
+  (add-to-list 'mu4e-view-actions '("View in browser" . mu4e-action-view-in-browser) t))
 (setq mu4e-maildir "~/Mail"
       mu4e-drafts-folder "~/Mail/drafts"
       mu4e-attachment-dir "~/Mail/.attachments")
 
 (set-email-account! "Personal"
-  '((mu4e-sent-folder       . "/jeff@jeffjewiss.com/Sent")
+  '((user-mail-address      . "jeff@jeffjewiss.com")
+    (mu4e-sent-folder       . "/jeff@jeffjewiss.com/Sent")
     (mu4e-drafts-folder     . "/jeff@jeffjewiss.com/Drafts")
     (mu4e-trash-folder      . "/jeff@jeffjewiss.com/Trash")
-    (mu4e-refile-folder     . "/jeff@jeffjewiss.com/Archive")
-    (user-mail-address      . "jeff@jeffjewiss.com")
+    ;; (mu4e-refile-folder     . "/jeff@jeffjewiss.com/Archive")
     (smtpmail-smtp-user     . "jeff@jeffjewiss.com")
     (smtpmail-smtp-server   . "smtp.fastmail.com")
     (smtpmail-smtp-service  . 465)

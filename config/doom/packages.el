@@ -12,6 +12,7 @@
 (package! lsp-ui)
 (package! company-lsp)
 (package! circadian)
+;; (package! atomic-chrome)
 ;; (package!
 ;;     greview
 ;;     :recipe

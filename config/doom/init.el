@@ -25,8 +25,8 @@
        (popup            ; tame sudden yet inevitable temporary windows
         +all             ; catch all popups that start with an asterix
         +defaults)       ; default popup rules
-       (pretty-code      ; replace bits of code with pretty symbols
-         +fira)
+      ;(pretty-code      ; replace bits of code with pretty symbols
+      ;  +fira)
       ;tabbar            ; FIXME an (incomplete) tab bar for Emacs
       ;unicode           ; extended unicode support for various languages
        treemacs          ; a project drawer, like neotree but cooler
@@ -53,10 +53,12 @@
          +icons          ; colorful icons for dired-mode
         )
        electric          ; smarter, keyword-based electric-indent
+       ibuffer           ; interactive buffer management
        vc                ; version-control and Emacs, sitting in a tree
 
        :term
       ;eshell            ; a consistent, cross-platform shell (WIP)
+       ;;shell             ; a terminal REPL for Emacs
        term              ; terminals in Emacs
       ;vterm             ; another terminals in Emacs
 
@@ -65,7 +67,7 @@
        ;;docker
        editorconfig      ; let someone else argue about tabs vs spaces
        ;ein              ; tame Jupyter notebooks with emacs
-       eval              ; run code, run (also, repls)
+       (eval +overlay)   ; run code, run (also, repls)
        flycheck          ; tasing you for every semicolon you forget
        flyspell          ; tasing you for misspelling mispelling
        gist              ; interacting with github gists
@@ -112,6 +114,7 @@
         +capture         ; org-capture in and outside of Emacs
         +export          ; Exporting org to whatever you want
         +habit           ; Keep track of your habits
+        ;+hugo           ; use Emacs for hugo blogging
         +present)        ; Emacs for presentations
       ;perl              ; write code no one else can comprehend
        php               ; perl's insecure younger brother
@@ -143,7 +146,7 @@
         +wordnut         ; wordnet (wn) search
         +langtool)       ; a proofreader (grammar/style check) for Emacs
 
-       :collab
+      ;:collab
       ;floobits          ; peer programming for a price
       ;impatient-mode    ; show off code over HTTP
 
@@ -153,3 +156,17 @@
        ;; and additional ex commands for evil-mode. Use it as a reference for
        ;; your own modules.
        (default +bindings +smartparens))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ ;; '(safe-local-variable-values (quote ((magit-todos-exclude-globs "*.map")))))
+)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
