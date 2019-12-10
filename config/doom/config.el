@@ -33,8 +33,10 @@
 (doom-themes-org-config)
 
 ;; Circadian
-(setq circadian-themes '(("9:00" . doom-nord-light)
-                         ("19:00" . doom-nord)))
+(setq calendar-latitude 43.653225)
+(setq calendar-longitude -79.383186)
+(setq circadian-themes '((:sunrise . doom-nord-light)
+                         (:sunset . doom-nord)))
 (circadian-setup)
 
 ;; Org Journal
