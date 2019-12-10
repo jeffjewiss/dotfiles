@@ -32,6 +32,9 @@
 ;; Corrects (and improves) org-mode's native fontification.
 (doom-themes-org-config)
 
+;; Reduce the delay for showing help popup
+(setq which-key-idle-delay 0.1)
+
 ;; Circadian
 (setq calendar-latitude 43.653225)
 (setq calendar-longitude -79.383186)
