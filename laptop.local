@@ -2,9 +2,6 @@
 
 fancy_echo "Installing additional brews"
 
-# Update GPL Software
-brew tap homebrew/dupes
-
 brew bundle --file=- <<EOF
 brew "antigen"
 brew "aspell"
