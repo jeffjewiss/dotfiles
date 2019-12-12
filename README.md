@@ -19,8 +19,9 @@ These are my dotfiles. There are many like them but these ones are mine.
 2. [Symlink Local Laptop](#symlink-local-laptop)
 3. [Thoughtbot’s Laptop Script](#thoughtbots-laptop-script)
 4. [RCM](#rcm)
-5. [Install Font](#install-font)
-6. [Vim Plug-ins](#vim-plug-ins)
+5. [Install Fonts](#install-fonts)
+6. [Emacs](#emacs)
+7. [Vim](#vim)
 
 
 ### Clone Repo
@@ -54,12 +55,21 @@ rcup -v
 ```
 
 
-### Install Font
+### Install Fonts
 
-Download and install [Input Mono](http://input.fontbureau.com/download/)
+* [Input Mono](http://input.fontbureau.com/download/)
+* [Fira Code](https://github.com/tonsky/FiraCode)
+* [Noto Sans](https://fonts.google.com/specimen/Noto+Sans)
 
 
-### Vim Plug-ins
+### Emacs
+
+``` shell
+git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
+~/.emacs.d/bin/doom install
+```
+
+### Vim
 
 ```shell
 vim
