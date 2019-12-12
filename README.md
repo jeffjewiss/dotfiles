@@ -33,7 +33,7 @@ git clone https://github.com/jeffjewiss/dotfiles ~/.dotfiles
 ### Symlink Local Laptop
 
 ```shell
-ln -s ~/.laptop.local ~/.dotfiles/laptop.local
+ln -s ~/.dotfiles/laptop.local ~/.laptop.local
 ```
 
 
