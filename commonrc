@@ -39,7 +39,7 @@ export GPG_TTY=$(tty)
 export SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.ssh
 
 # Initialize asdf
-source /usr/local/opt/asdf/asdf.sh
+source $HOME/.asdf/asdf.sh
 
 # Elixir
 export ERL_AFLAGS="-kernel shell_history enabled"
