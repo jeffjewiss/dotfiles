@@ -10,6 +10,7 @@ brew "bat"
 brew "buku"
 brew "contacts"
 brew "diff-so-fancy"
+brew "direnv"
 brew "editorconfig"
 brew "gibo"
 brew "gnupg2"
@@ -62,7 +63,12 @@ standard \
 vmd
 
 # Elixir
+# TODO: fix (no such language)
 install_asdf_language "elixir"
 
 # Tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Python
+pip install virtualenv
+pip install virtualenvwrapper
