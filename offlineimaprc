@@ -1,6 +1,6 @@
 [general]
 ui = ttyui
-accounts = Personal, Google
+accounts = Personal
 pythonfile = ~/.mutt/offlineimap.py
 fsync = False
 
