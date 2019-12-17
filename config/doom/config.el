@@ -4,6 +4,7 @@
 
 ;;; Code:
 
+;; Global settings (defaults)
 (setq-default
  user-full-name    "Jeff Jewiss"
  user-mail-address "jeff@jeffjewiss.com"
@@ -15,8 +16,8 @@
 
 (require 'doom-themes)
 
-;; Global settings (defaults)
 (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+      projectile-project-search-path '("~/Code")
       doom-themes-enable-italic t) ; if nil, italics is universally disabled
 
 ;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each theme
@@ -102,45 +103,49 @@ SCHEDULED: %t")))
 
 
 ;; Email
-(setq +mu4e-backend 'offlineimap)
-(setq send-mail-function 'smtpmail-send-it)
-(setq message-send-mail-function 'smtpmail-send-it)
-(setq mu4e-sent-messages-behavior 'delete)
-(setq mu4e-view-show-addresses 't)
-(setq mu4e-compose-format-flowed t)
-(setq mu4e-compose-dont-reply-to-self t)
-(setq mu4e-html2text-command "w3m -dump -T text/html -o display_link_number=true")
-(setq mu4e-view-show-images t)
-(setq mu4e-attachment-dir  "~/Downloads")
-;; Use imagemagick, if available.
-  (when (fboundp 'imagemagick-register-types)
-    (imagemagick-register-types))
-; (setq mu4e-compose-in-new-frame t)
-;; Add option to open message in a browser
+(add-to-list 'load-path "/usr/local/share/emacs/site-lisp/mu/mu4e")
 (after! mu4e
-  (add-to-list 'mu4e-view-actions '("View in browser" . mu4e-action-view-in-browser) t))
-(setq mu4e-maildir "~/Mail"
-      mu4e-drafts-folder "~/Mail/drafts"
-      mu4e-attachment-dir "~/Mail/.attachments")
+  (setq +mu4e-backend 'offlineimap)
+  (setq mu4e-mu-binary "/usr/local/bin/mu")
+  (setq mu4e-installation-path "/usr/local/share/emacs/site-lisp/mu/mu4e")
+  (setq send-mail-function 'smtpmail-send-it)
+  (setq message-send-mail-function 'smtpmail-send-it)
+  (setq mu4e-sent-messages-behavior 'delete)
+  (setq mu4e-view-show-addresses 't)
+  (setq mu4e-compose-format-flowed t)
+  (setq mu4e-compose-dont-reply-to-self t)
+  (setq mu4e-html2text-command "w3m -dump -T text/html -o display_link_number=true")
+  (setq mu4e-view-show-images t)
+  (setq mu4e-attachment-dir  "~/Downloads")
 
-(set-email-account! "Personal"
-  '((user-mail-address      . "jeff@jeffjewiss.com")
-    (mu4e-sent-folder       . "/jeff@jeffjewiss.com/Sent")
-    (mu4e-drafts-folder     . "/jeff@jeffjewiss.com/Drafts")
-    (mu4e-trash-folder      . "/jeff@jeffjewiss.com/Trash")
-    ;; (mu4e-refile-folder     . "/jeff@jeffjewiss.com/Archive")
-    (smtpmail-smtp-user     . "jeff@jeffjewiss.com")
-    (smtpmail-smtp-server   . "smtp.fastmail.com")
-    (smtpmail-smtp-service  . 465)
-    (smtpmail-stream-type   . ssl))
-  t)
+  ;; Use imagemagick, if available.
+  (when (fboundp 'imagemagick-register-types)
+      (imagemagick-register-types))
+  ; (setq mu4e-compose-in-new-frame t)
+  ;; Add option to open message in a browser
+  (add-to-list 'mu4e-view-actions '("View in browser" . mu4e-action-view-in-browser) t)
+  (setq mu4e-maildir "~/Mail"
+        mu4e-drafts-folder "~/Mail/drafts"
+        mu4e-attachment-dir "~/Mail/.attachments")
 
-;; Bookmarks for common searches that I use.
-(setq mu4e-bookmarks '(("\\\\Inbox" "Inbox" ?i)
-                       ("flag:unread" "Unread messages" ?u)
-                       ("date:today..now" "Today's messages" ?t)
-                       ("date:7d..now" "Last 7 days" ?w)
-                       ("mime:image/*" "Messages with images" ?p)))
+  (set-email-account! "Personal"
+    '((user-mail-address      . "jeff@jeffjewiss.com")
+      (mu4e-sent-folder       . "/jeff@jeffjewiss.com/Sent")
+      (mu4e-drafts-folder     . "/jeff@jeffjewiss.com/Drafts")
+      (mu4e-trash-folder      . "/jeff@jeffjewiss.com/Trash")
+      (mu4e-refile-folder     . "/jeff@jeffjewiss.com/Archive")
+      (smtpmail-smtp-user     . "jeff@jeffjewiss.com")
+      (smtpmail-smtp-server   . "smtp.fastmail.com")
+      (smtpmail-smtp-service  . 465)
+      (smtpmail-stream-type   . ssl))
+    t)
+
+  ;; Bookmarks for common searches that I use.
+  (setq mu4e-bookmarks '(("\\\\Inbox" "Inbox" ?i)
+                        ("flag:unread" "Unread messages" ?u)
+                        ("date:today..now" "Today's messages" ?t)
+                        ("date:7d..now" "Last 7 days" ?w)
+                        ("mime:image/*" "Messages with images" ?p))))
 
 (setq org-journal-dir "~/org")
 
