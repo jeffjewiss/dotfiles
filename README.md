@@ -59,6 +59,7 @@ rcup -v
 
 * [Input Mono](http://input.fontbureau.com/download/)
 * [Fira Code](https://github.com/tonsky/FiraCode)
+* [Fira Code Symbol](https://github.com/tonsky/FiraCode/files/412440/FiraCode-Regular-Symbol.zip)
 * [Noto Sans](https://fonts.google.com/specimen/Noto+Sans)
 
 
