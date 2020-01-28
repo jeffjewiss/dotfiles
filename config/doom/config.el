@@ -6,13 +6,13 @@
 
 ;; Global settings (defaults)
 (setq-default
- user-full-name    "Jeff Jewiss"
- user-mail-address "jeff@jeffjewiss.com"
- +workspaces-switch-project-function #'ignore
- +pretty-code-enabled-modes t
- doom-font (font-spec :family "Fira Code" :size 12)
- doom-variable-pitch-font (font-spec :family "Noto Sans" :size 16)
- doom-big-font (font-spec :family "Fira Code" :size 20))
+  user-full-name    "Jeff Jewiss"
+  user-mail-address "jeff@jeffjewiss.com"
+  +workspaces-switch-project-function #'ignore
+  +pretty-code-enabled-modes t
+  doom-font (font-spec :family "Fira Code" :size 12)
+  doom-variable-pitch-font (font-spec :family "Noto Sans" :size 16)
+  doom-big-font (font-spec :family "Fira Code" :size 20))
 
 (require 'doom-themes)
 
@@ -30,25 +30,32 @@
 ;; or for treemacs users
 (doom-themes-treemacs-config)
 
-;; Corrects (and improves) org-mode's native fontification.
-(doom-themes-org-config)
-
 ;; Reduce the delay for showing help popup
 (setq which-key-idle-delay 0.1)
 
 ;; Circadian
-(setq calendar-latitude 43.653225)
-(setq calendar-longitude -79.383186)
-(setq circadian-themes '((:sunrise . doom-nord-light)
-                         (:sunset . doom-nord)))
+(setq calendar-latitude 43.653225
+  calendar-longitude -79.383186
+  circadian-themes '((:sunrise . doom-nord-light)
+                      (:sunset . doom-nord)))
 (circadian-setup)
 
-;; Org Journal
-(setq org-journal-dir "~/org")
-(setq org-journal-enable-agenda-integration t)
-(setq org-journal-date-prefix "#+TITLE: Daily Notes ")
-(setq org-agenda-file-regexp "\\`[^.].*\\.org\\'\\|\\`[0-9]+\\'")
-(setq org-journal-file-format "%Y%m%d.org")
+;; Org Mode Config
+(load-library "find-lisp")
+(setq org-directory "~/org/"
+  org-agenda-files (append
+    (find-lisp-find-files "~/Code" "\.org$")
+    (find-lisp-find-files "~/org" "\.org$"))
+  org-agenda-file-regexp "\\`[^.].*\\.org\\'\\|\\`[0-9]+\\'"
+  org-journal-dir "~/org"
+  org-journal-file-format "%Y%m%d.org"
+  org-journal-enable-agenda-integration t
+  org-todo-keywords
+  '((sequence "TODO" "IN-PROGRESS" "WAITING" "|" "DONE" "CANCELED")))
+
+(after! org
+  (add-to-list 'org-modules 'org-checklist)
+  (add-to-list 'org-modules 'org-habit t))
 
 ;; Helm Dash Docsets
 (setq helm-dash-common-docsets '("EmberJS" "Elixir" "JavaScript"))
@@ -65,15 +72,6 @@
 (setq alchemist-iex-program-name "~/.asdf/shims/iex")
 ; (setq alchemist-hooks-compile-on-save t)
 
-;; Org Mode Config
-(setq org-todo-keywords
-      '((sequence "TODO" "IN-PROGRESS" "WAITING" "|" "DONE" "CANCELED")))
-(setq org-agenda-files '("~/org/"))
-(setq org-capture-templates
-      '(("a" "My TODO task format." entry
-         (file "todo.org")
-         "* TODO %?
-SCHEDULED: %t")))
 
 ;; Nov.el
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
@@ -85,21 +83,21 @@ SCHEDULED: %t")))
 
 ;; Backup / Temp file config
 (setq backup-directory-alist
-      `((".*" . ,"~/.emacs-backups")))
+  `((".*" . ,"~/.emacs-backups")))
 (setq auto-save-file-name-transforms
-      `((".*" ,"~/.emacs-backups" t)))
-(setq make-backup-files t               ; backup of a file the first time it is saved.
-      create-lockfiles nil              ; don't create lockfiles
-      backup-by-copying t               ; don't clobber symlinks
-      version-control t                 ; version numbers for backup files
-      delete-old-versions t             ; delete excess backup files silently
-      delete-by-moving-to-trash t
-      kept-old-versions 6               ; oldest versions to keep when a new numbered backup is made (default: 2)
-      kept-new-versions 9               ; newest versions to keep when a new numbered backup is made (default: 2)
-      auto-save-default t               ; auto-save every buffer that visits a file
-      auto-save-timeout 20              ; number of seconds idle time before auto-save (default: 30)
-      auto-save-interval 200            ; number of keystrokes between auto-saves (default: 300)
-      )
+  `((".*" ,"~/.emacs-backups" t)))
+(setq make-backup-files t           ; backup of a file the first time it is saved.
+  create-lockfiles nil              ; don't create lockfiles
+  backup-by-copying t               ; don't clobber symlinks
+  version-control t                 ; version numbers for backup files
+  delete-old-versions t             ; delete excess backup files silently
+  delete-by-moving-to-trash t
+  kept-old-versions 6               ; oldest versions to keep when a new numbered backup is made (default: 2)
+  kept-new-versions 9               ; newest versions to keep when a new numbered backup is made (default: 2)
+  auto-save-default t               ; auto-save every buffer that visits a file
+  auto-save-timeout 20              ; number of seconds idle time before auto-save (default: 30)
+  auto-save-interval 200            ; number of keystrokes between auto-saves (default: 300)
+  )
 
 
 ;; Email
@@ -147,12 +145,6 @@ SCHEDULED: %t")))
                         ("date:7d..now" "Last 7 days" ?w)
                         ("mime:image/*" "Messages with images" ?p))))
 
-(setq org-journal-dir "~/org")
-
-
-;; Temp Fixes Waiting on upstream
-(after! org (setq org-agenda-window-setup 'popup-window))
-
 ;; Keybinds
 
 ;; Leader key
@@ -161,3 +153,6 @@ SCHEDULED: %t")))
         :desc "Open Mail"             "M" #'=mu4e
         )
       )
+
+;; Corrects (and improves) org-mode's native fontification.
+(doom-themes-org-config)

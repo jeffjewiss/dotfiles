@@ -4,10 +4,14 @@
 
 ;;; Code:
 
-(doom! :completion
-       company           ; the ultimate code completion backend
-      ;helm              ; the *other* search engine for love and life
-      ;ido               ; the other *other* search engine...
+(doom! :input
+       ;;chinese
+       ;;japanese
+
+       :completion
+       company            ; the ultimate code completion backend
+       ;helm              ; the *other* search engine for love and life
+       ;ido               ; the other *other* search engine...
        (ivy              ; a search engine for love and life
          +icons)
 
@@ -34,6 +38,7 @@
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
        window-select     ; visually switch windows
        workspaces        ; tab emulation, persistence & separate workspaces
+       zen               ; distraction-free coding or writing
 
        :editor
        (evil +everywhere); come to the dark side, we have cookies
@@ -62,14 +67,17 @@
        term              ; terminals in Emacs
       ;vterm             ; another terminals in Emacs
 
+       :checkers
+       syntax            ; tasing you for every semicolon you forget
+       spell             ; tasing you for misspelling mispelling
+       ;;grammar         ; tasing grammar mistake every you make
+
        :tools
        direnv
        ;;docker
        editorconfig      ; let someone else argue about tabs vs spaces
        ;ein              ; tame Jupyter notebooks with emacs
        (eval +overlay)   ; run code, run (also, repls)
-       flycheck          ; tasing you for every semicolon you forget
-       flyspell          ; tasing you for misspelling mispelling
        gist              ; interacting with github gists
        (lookup           ; helps you navigate your code and documentation
         +docsets)        ; ...or in Dash docsets locally
