@@ -41,11 +41,7 @@
 (circadian-setup)
 
 ;; Org Mode Config
-(load-library "find-lisp")
 (setq org-directory "~/org/"
-  org-agenda-files (append
-    (find-lisp-find-files "~/Code" "\.org$")
-    (find-lisp-find-files "~/org" "\.org$"))
   org-agenda-file-regexp "\\`[^.].*\\.org\\'\\|\\`[0-9]+\\'"
   org-journal-dir "~/org"
   org-journal-file-format "%Y%m%d.org"
