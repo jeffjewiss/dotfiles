@@ -53,6 +53,9 @@
   (add-to-list 'org-modules 'org-checklist)
   (add-to-list 'org-modules 'org-habit t))
 
+;; Deft
+(setq deft-directory "~/org/notes")
+
 ;; Helm Dash Docsets
 (setq helm-dash-common-docsets '("EmberJS" "Elixir" "JavaScript"))
 
