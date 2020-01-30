@@ -155,3 +155,7 @@
 
 ;; Corrects (and improves) org-mode's native fontification.
 (doom-themes-org-config)
+
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
