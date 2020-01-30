@@ -9,11 +9,14 @@
        ;;japanese
 
        :completion
-       company            ; the ultimate code completion backend
-       ;helm              ; the *other* search engine for love and life
-       ;ido               ; the other *other* search engine...
+       company           ; the ultimate code completion backend
+       ;helm             ; the *other* search engine for love and life
+       ;ido              ; the other *other* search engine...
        (ivy              ; a search engine for love and life
-         +icons)
+         +fuzzy          ; fuzzy search for files
+         +prescient      ; filter and sort search results
+         +childframe     ; use a floating frame for results
+         +icons)         ; use icons for file types
 
        :ui
        deft              ; notational velocity for Emacs
