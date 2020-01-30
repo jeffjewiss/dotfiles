@@ -33,8 +33,8 @@
         +all             ; catch all popups that start with an asterix
         +defaults)       ; default popup rules
        (pretty-code      ; replace bits of code with pretty symbols
-         +fira)
-      ;tabbar            ; FIXME an (incomplete) tab bar for Emacs
+         +fira)          ; use the Fira Code fontface
+       tabs              ; a tab bar for Emacs
       ;unicode           ; extended unicode support for various languages
        treemacs          ; a project drawer, like neotree but cooler
        vc-gutter         ; vcs diff in the fringe
@@ -44,7 +44,8 @@
        zen               ; distraction-free coding or writing
 
        :editor
-       (evil +everywhere); come to the dark side, we have cookies
+       (evil
+        +everywhere)     ; come to the dark side, we have cookies
        file-templates    ; auto-snippets for empty files
        fold              ; (nigh) universal code folding
       ;(format +onsave)  ; automated prettiness
@@ -109,7 +110,7 @@
        go                ; the hipster dialect
       ;(haskell +intero) ; a language that's lazier than I am
       ;hy                ; readability of scheme w/ speed of python
-       (java +meghanada) ; the poster child for carpal tunnel syndrome
+      ;(java +meghanada) ; the poster child for carpal tunnel syndrome
        javascript        ; all(hope(abandon(ye(who(enter(here))))))
       ;julia             ; a better, faster MATLAB
       ;latex             ; writing papers in Emacs has never been so fun
@@ -153,13 +154,6 @@
        ;irc              ; how neckbeards socialize
        (rss +org)        ; emacs as an RSS reader
        ;twitter          ; twitter client https://twitter.com/vnought
-       ;(write            ; emacs as a word processor (latex + org + markdown)
-       ;+wordnut         ; wordnet (wn) search
-       ;+langtool)       ; a proofreader (grammar/style check) for Emacs
-
-      ;:collab
-      ;floobits          ; peer programming for a price
-      ;impatient-mode    ; show off code over HTTP
 
        :config
        ;; The default module set reasonable defaults for Emacs. It also provides
