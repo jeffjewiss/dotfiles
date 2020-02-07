@@ -34,7 +34,7 @@
         +defaults)       ; default popup rules
        (pretty-code      ; replace bits of code with pretty symbols
          +fira)          ; use the Fira Code fontface
-       tabs              ; a tab bar for Emacs
+      ;tabs              ; a tab bar for Emacs
       ;unicode           ; extended unicode support for various languages
        treemacs          ; a project drawer, like neotree but cooler
        vc-gutter         ; vcs diff in the fringe
