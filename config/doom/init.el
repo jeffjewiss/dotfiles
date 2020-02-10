@@ -1,6 +1,7 @@
-;;; package --- Personal Init
+;;; init.el --- Initialization file for Emacs
+;;;
 ;;; Commentary:
-;;; ~/.config/doom/init.el -*- lexical-binding: t; -*-
+;;; Emacs Startup File --- initialization for Emacs
 
 ;;; Code:
 
@@ -153,7 +154,6 @@
        ;calendar
        ;irc              ; how neckbeards socialize
        (rss +org)        ; emacs as an RSS reader
-       ;twitter          ; twitter client https://twitter.com/vnought
 
        :config
        ;; The default module set reasonable defaults for Emacs. It also provides
@@ -174,3 +174,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(provide 'init)
+
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
+
+;;; init.el ends here
