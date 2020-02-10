@@ -1,6 +1,7 @@
-;;; package --- Personal Config
+;;; config.el --- Personal Config
+;;;
 ;;; Commentary:
-;;; ~/.config/doom/config.el -*- lexical-binding: t; -*-
+;;; Emacs Config File --- config for Emacs
 
 ;;; Code:
 
@@ -150,6 +151,7 @@
 (map! :leader
       (:prefix-map ("o" . "open")
         :desc "Open Mail"             "M" #'=mu4e
+        :desc "Open Feed Reader"      "F" #'=rss
         )
       )
 
@@ -159,3 +161,8 @@
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
 ;; End:
+;;
+
+(provide 'config)
+
+;;; config.el ends here
