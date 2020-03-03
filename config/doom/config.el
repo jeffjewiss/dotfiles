@@ -72,6 +72,8 @@
 (setq alchemist-iex-program-name "~/.asdf/shims/iex")
 ; (setq alchemist-hooks-compile-on-save t)
 
+;; Pocket
+(add-to-list 'evil-emacs-state-modes 'pocket-reader-mode)
 
 ;; Nov.el
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
@@ -98,7 +100,6 @@
   auto-save-timeout 20              ; number of seconds idle time before auto-save (default: 30)
   auto-save-interval 200            ; number of keystrokes between auto-saves (default: 300)
   )
-
 
 ;; Email
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp/mu/mu4e")
@@ -154,6 +155,10 @@
         :desc "Open Feed Reader"      "F" #'=rss
         )
       )
+
+(map! :after elfeed
+  :map elfeed-show-mode-map
+  :n "G" #'pocket-reader-add-link)
 
 ;; Corrects (and improves) org-mode's native fontification.
 (doom-themes-org-config)

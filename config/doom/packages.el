@@ -1,6 +1,5 @@
 ;;; package --- Personal Packages
 ;;; Commentary:
-;; no-byte-compile: t; -*-
 ;;; ~/.config/doom/packages.el
 
 ;;; Code:
@@ -12,6 +11,8 @@
 (package! lsp-ui)
 (package! company-lsp)
 (package! circadian)
+(package! pocket-reader)
+
 ;; (package! atomic-chrome)
 ;; (package!
 ;;     greview
@@ -20,5 +21,10 @@
 ;;        :repo "charignon/greview"
 ;;        :files ("greview.el")))
 
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
+
 (provide `packages)
+
 ;;; packages.el ends here
