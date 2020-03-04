@@ -83,6 +83,12 @@
 (add-hook 'nov-mode-hook 'visual-line-mode)
 (add-hook 'nov-mode-hook 'visual-fill-column-mode)
 
+;; Lookup / Dash Docsets
+(setq +lookup-open-url-fn #'eww)
+(set-docsets! 'elixir-mode "Elixir")
+(set-docsets! 'js2-mode "JavaScript" "EmberJS")
+(set-docsets! 'rjsx-mode :add "React")
+
 ;; Backup / Temp file config
 (setq backup-directory-alist
   `((".*" . ,"~/.emacs-backups")))

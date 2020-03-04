@@ -85,7 +85,9 @@
        (eval +overlay)   ; run code, run (also, repls)
        gist              ; interacting with github gists
        (lookup           ; helps you navigate your code and documentation
-        +docsets)        ; ...or in Dash docsets locally
+         (+dictionary    ; Enable word definition and thesaurus lookup functionality
+           +offline)     ; Install and prefer offline dictionary/thesaurus
+        +docsets)        ; Enable integration with Dash.app docsets
       ;lsp
        macos             ; MacOS-specific commands
        make              ; run make tasks from Emacs
