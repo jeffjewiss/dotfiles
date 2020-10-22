@@ -32,14 +32,14 @@
 (doom-themes-treemacs-config)
 
 ;; Reduce the delay for showing help popup
-(setq which-key-idle-delay 0.1)
+;; (setq which-key-idle-delay 0.1)
 
-;; Circadian
-(setq calendar-latitude 43.653225
-  calendar-longitude -79.383186
-  circadian-themes '((:sunrise . doom-nord-light)
-                      (:sunset . doom-nord)))
-(circadian-setup)
+;; Light/Dark Mode
+(add-hook 'ns-system-appearance-change-functions
+          #'(lambda (appearance)
+              (pcase appearance
+                ('light (load-theme 'doom-nord-light t))
+                ('dark (load-theme 'doom-nord-dark t)))))
 
 ;; Org Mode Config
 (setq org-directory "~/org/"
