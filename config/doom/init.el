@@ -3,6 +3,20 @@
 ;;; Commentary:
 ;;; Emacs Startup File --- initialization for Emacs
 
+;; This file controls what Doom modules are enabled and what order they load
+;; in. Remember to run 'doom sync' after modifying it!
+
+;; NOTE Press 'SPC h d h' (or 'C-h d h' for non-vim users) to access Doom's
+;;      documentation. There you'll find a "Module Index" link where you'll find
+;;      a comprehensive list of Doom's modules and what flags they support.
+
+;; NOTE Move your cursor over a module's name (or its flags) and press 'K' (or
+;;      'C-c c k' for non-vim users) to view its documentation. This works on
+;;      flags as well (those symbols that start with a plus).
+;;
+;;      Alternatively, press 'gd' (or 'C-c c d') on a module to browse its
+;;      directory (for easy access to its source code).
+;;
 ;;; Code:
 
 (doom! :input
@@ -24,8 +38,10 @@
        doom              ; what makes DOOM look the way it does
        doom-dashboard    ; a nifty splash screen for Emacs
        doom-quit         ; DOOM quit-message prompts when you quit Emacs
+       (emoji +unicode)  ; 🙂
       ;fill-column       ; a `fill-column' indicator
        hl-todo           ; highlight TODO/FIXME/NOTE tags
+       minimap           ; show a map of the code on the side
        modeline          ; a snazzy Atom-inspired mode-line
        nav-flash         ; blink the current line after jumping
        ;neotree          ; a project drawer, like NERDTree for vim
@@ -33,11 +49,11 @@
        (popup            ; tame sudden yet inevitable temporary windows
         +all             ; catch all popups that start with an asterix
         +defaults)       ; default popup rules
-       (pretty-code      ; replace bits of code with pretty symbols
+       (ligatures        ; replace bits of code with pretty symbols
          +fira)          ; use the Fira Code fontface
       ;tabs              ; a tab bar for Emacs
+      ;treemacs          ; a project drawer, like neotree but cooler
       ;unicode           ; extended unicode support for various languages
-       treemacs          ; a project drawer, like neotree but cooler
        vc-gutter         ; vcs diff in the fringe
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
        window-select     ; visually switch windows
@@ -64,13 +80,14 @@
          +icons)         ; colorful icons for dired-mode
        electric          ; smarter, keyword-based electric-indent
        ibuffer           ; interactive buffer management
+       undo              ; persistent, smarter undo for your inevitable mistakes
        vc                ; version-control and Emacs, sitting in a tree
 
        :term
-      ;eshell            ; a consistent, cross-platform shell (WIP)
-       ;;shell             ; a terminal REPL for Emacs
-       term              ; terminals in Emacs
-      ;vterm             ; another terminals in Emacs
+      ;eshell            ; the elisp shell that works everywhere
+      ;shell             ; simple shell REPL for Emacs
+      ;term              ; basic terminal emulator for Emacs
+       vterm             ; the best terminal emulation in Emacs
 
        :checkers
        syntax            ; tasing you for every semicolon you forget
@@ -89,21 +106,24 @@
            +offline)     ; Install and prefer offline dictionary/thesaurus
         +docsets)        ; Enable integration with Dash.app docsets
       ;lsp
-       macos             ; MacOS-specific commands
        make              ; run make tasks from Emacs
-       magit             ; It's Magit! A Git porcelain inside Emacs
+       (magit +forge)    ; It's Magit! A Git porcelain inside Emacs
        pdf               ; pdf enhancements
-      ;prodigy           ; Managing external services
+       prodigy           ; Managing external services
        rgb               ; creating color strings
       ;tmux              ; an API for interacting with tmux
       ;upload            ; map local to remote projects via ssh/ftp
 
+       :os
+       (:if IS-MAC macos); MacOS-specific commands
+      ;tty               ; improve the terminal Emacs experience
+
        :lang
       ;assembly          ; assembly for fun or debugging
-      ;cc                ; C/C++/Obj-C madness
+       cc                ; C/C++/Obj-C madness
       ;crystal           ; ruby at the speed of c
       ;clojure           ; java with a lisp
-      ;csharp            ; unity, .NET, and mono shenanigans
+       csharp            ; unity, .NET, and mono shenanigans
        data              ; config/data formats
        erlang            ; an elegant language for a more civilized age
        elixir            ; erlang done right
@@ -127,6 +147,8 @@
         +attach          ; custom attachment system
         +babel           ; running code in org
         +capture         ; org-capture in and outside of Emacs
+        +journal
+        +pretty
         +export          ; Exporting org to whatever you want
         +habit           ; Keep track of your habits
         ;+hugo           ; use Emacs for hugo blogging
@@ -137,7 +159,7 @@
       ;purescript        ; javascript, but functional
        python            ; beautiful is better than ugly
        rest              ; Emacs as a REST client
-       ruby              ; 1.step do {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
+       (ruby +rails)     ; 1.step do {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
        rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
       ;scala             ; java, but good
        sh                ; she sells (ba|z)sh shells on the C xor
@@ -149,12 +171,9 @@
        ;;notmuch
        ;;(wanderlust +gmail)
 
-       ;; Applications are complex and opinionated modules that transform Emacs
-       ;; toward a specific purpose. They may have additional dependencies and
-       ;; should be loaded late.
        :app
-       ;calendar
-       ;irc              ; how neckbeards socialize
+      ;calendar
+      ;irc               ; how neckbeards socialize
        (rss +org)        ; emacs as an RSS reader
 
        :config
