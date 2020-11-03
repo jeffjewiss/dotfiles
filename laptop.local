@@ -35,14 +35,11 @@ brew "w3m"
 brew "youtube-dl"
 cask "1password"
 cask "alfred"
-cask "bartender"
 cask "dash"
 cask "docker"
-cask "emacs"
-cask "firefox"
+cask "emacs-plus@28 --with-mailutils --without-imagemagick --with-xwidgets"
 cask "firefox-developer-edition"
 cask "flux"
-cask "google-chrome-dev"
 cask "insomnia"
 cask "iterm2"
 cask "karabiner-elements"
@@ -58,6 +55,7 @@ EOF
 # NPM
 npm install -g \
 browser-sync \
+dockerfile-language-server-nodejs \
 ember-cli \
 foreman \
 gatsby-cli \
@@ -67,6 +65,7 @@ vmd
 
 # Elixir
 # TODO: fix (no such language)
+install_asdf_language "erlang"
 install_asdf_language "elixir"
 
 # Tmux
