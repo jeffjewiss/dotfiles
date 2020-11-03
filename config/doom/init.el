@@ -96,7 +96,8 @@
 
        :tools
        direnv
-       ;;docker
+       (docker
+         +lsp)
        editorconfig      ; let someone else argue about tabs vs spaces
        ;ein              ; tame Jupyter notebooks with emacs
        (eval +overlay)   ; run code, run (also, repls)
@@ -159,7 +160,7 @@
       ;purescript        ; javascript, but functional
        python            ; beautiful is better than ugly
        rest              ; Emacs as a REST client
-       (ruby +rails)     ; 1.step do {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
+       (ruby +rails +lsp); 1.step do {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
        rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
       ;scala             ; java, but good
        sh                ; she sells (ba|z)sh shells on the C xor
