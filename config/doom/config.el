@@ -15,8 +15,6 @@
   doom-variable-pitch-font (font-spec :family "Noto Sans" :size 16)
   doom-big-font (font-spec :family "Fira Code" :size 20))
 
-(require 'doom-themes)
-
 (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
       projectile-project-search-path '("~/Code")
       doom-themes-enable-italic t) ; if nil, italics is universally disabled
@@ -27,12 +25,6 @@
 
 ;; Enable flashing mode-line on errors
 (doom-themes-visual-bell-config)
-
-;; or for treemacs users
-(doom-themes-treemacs-config)
-
-;; Reduce the delay for showing help popup
-;; (setq which-key-idle-delay 0.1)
 
 ;; Light/Dark Mode
 (add-hook 'ns-system-appearance-change-functions
@@ -58,9 +50,6 @@
 ;; Deft
 (setq deft-directory "~/org/notes")
 
-;; Helm Dash Docsets
-(setq helm-dash-common-docsets '("EmberJS" "Elixir" "JavaScript"))
-
 ;; MacOS Settings
 (when IS-MAC
   (setq ns-use-thin-smoothing t)
@@ -85,10 +74,13 @@
 (add-hook 'nov-mode-hook 'visual-fill-column-mode)
 
 ;; Lookup / Dash Docsets
-(setq +lookup-open-url-fn #'eww)
+(setq +lookup-open-url-fn #'+lookup-xwidget-webkit-open-url-fn)
 (set-docsets! 'elixir-mode "Elixir")
 (set-docsets! 'js2-mode "JavaScript" "EmberJS")
+(set-docsets! 'typescript-mode "TypeScript")
 (set-docsets! 'rjsx-mode :add "React")
+(set-docsets! 'ruby-mode "Ruby 2")
+(set-docsets! 'projectile-rails-mode :add "Ruby on Rails 6")
 
 ;; Backup / Temp file config
 (setq backup-directory-alist
@@ -124,9 +116,6 @@
   (setq mu4e-view-show-images t)
   (setq mu4e-attachment-dir  "~/Downloads")
 
-  ;; Use imagemagick, if available.
-  (when (fboundp 'imagemagick-register-types)
-      (imagemagick-register-types))
   ; (setq mu4e-compose-in-new-frame t)
   ;; Add option to open message in a browser
   (add-to-list 'mu4e-view-actions '("View in browser" . mu4e-action-view-in-browser) t)
@@ -165,7 +154,9 @@
 
 (map! :after elfeed
   :map elfeed-show-mode-map
-  :n "G" #'pocket-reader-add-link)
+  :n "G" #'pocket-reader-add-link
+  :map elfeed-search-mode-map
+  :n "D" #'elfeed-update)
 
 ;; Corrects (and improves) org-mode's native fontification.
 (doom-themes-org-config)
