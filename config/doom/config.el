@@ -12,8 +12,8 @@
   +workspaces-switch-project-function #'ignore
   +pretty-code-enabled-modes t
   doom-font (font-spec :family "Fira Code" :size 12)
-  doom-variable-pitch-font (font-spec :family "Noto Sans" :size 16)
-  doom-big-font (font-spec :family "Fira Code" :size 20))
+  doom-variable-pitch-font (font-spec :family "Overpass" :size 12)
+  doom-big-font (font-spec :family "Overpass" :size 20))
 
 (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
       projectile-project-search-path '("~/Code")
