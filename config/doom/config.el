@@ -102,8 +102,9 @@
 
 ;; Email
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp/mu/mu4e")
+(setq +mu4e-backend 'offlineimap)
+
 (after! mu4e
-  (setq +mu4e-backend 'offlineimap)
   (setq mu4e-mu-binary "/usr/local/bin/mu")
   (setq mu4e-installation-path "/usr/local/share/emacs/site-lisp/mu/mu4e")
   (setq send-mail-function 'smtpmail-send-it)
