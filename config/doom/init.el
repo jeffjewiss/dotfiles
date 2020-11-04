@@ -24,7 +24,8 @@
        ;;japanese
 
        :completion
-       company           ; the ultimate code completion backend
+       (company          ; the ultimate code completion backend
+         +childframe)     ; ... when your children are better than you
        ;helm             ; the *other* search engine for love and life
        ;ido              ; the other *other* search engine...
        (ivy              ; a search engine for love and life
@@ -56,7 +57,8 @@
       ;unicode           ; extended unicode support for various languages
        vc-gutter         ; vcs diff in the fringe
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
-       window-select     ; visually switch windows
+       (window-select    ; visually switch windows
+        +numbers)
        workspaces        ; tab emulation, persistence & separate workspaces
        zen               ; distraction-free coding or writing
 
@@ -65,7 +67,7 @@
         +everywhere)     ; come to the dark side, we have cookies
        file-templates    ; auto-snippets for empty files
        fold              ; (nigh) universal code folding
-      ;(format +onsave)  ; automated prettiness
+       (format +onsave)  ; automated prettiness
       ;lispy             ; vim for lisp, for people who dont like vim
        multiple-cursors  ; editing in many places at once
       ;objed             ; text object editing for the innocent
@@ -79,8 +81,10 @@
          +ranger         ; bringing the goodness of ranger to dired
          +icons)         ; colorful icons for dired-mode
        electric          ; smarter, keyword-based electric-indent
-       ibuffer           ; interactive buffer management
-       undo              ; persistent, smarter undo for your inevitable mistakes
+       (ibuffer          ; interactive buffer management
+        +icons)
+       (undo             ; persistent, smarter undo for your inevitable mistakes
+        +tree)
        vc                ; version-control and Emacs, sitting in a tree
 
        :term
@@ -168,7 +172,7 @@
        web               ; the tubes
 
        :email
-       (mu4e +gmail)
+       (mu4e +org)
        ;;notmuch
        ;;(wanderlust +gmail)
 
