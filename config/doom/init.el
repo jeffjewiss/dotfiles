@@ -110,7 +110,7 @@
          (+dictionary    ; Enable word definition and thesaurus lookup functionality
            +offline)     ; Install and prefer offline dictionary/thesaurus
         +docsets)        ; Enable integration with Dash.app docsets
-      ;lsp
+       lsp
        make              ; run make tasks from Emacs
        (magit +forge)    ; It's Magit! A Git porcelain inside Emacs
        pdf               ; pdf enhancements
