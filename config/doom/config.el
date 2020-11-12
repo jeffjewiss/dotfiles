@@ -92,7 +92,6 @@
   backup-by-copying t               ; don't clobber symlinks
   version-control t                 ; version numbers for backup files
   delete-old-versions t             ; delete excess backup files silently
-  delete-by-moving-to-trash t
   kept-old-versions 6               ; oldest versions to keep when a new numbered backup is made (default: 2)
   kept-new-versions 9               ; newest versions to keep when a new numbered backup is made (default: 2)
   auto-save-default t               ; auto-save every buffer that visits a file
