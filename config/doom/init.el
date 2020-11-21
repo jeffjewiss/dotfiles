@@ -134,7 +134,7 @@
        elm               ; care for a cup of TEA?
        emacs-lisp        ; drown in parentheses
        ess               ; emacs speaks statistics
-       go                ; the hipster dialect
+       (go +lsp)         ; the hipster dialect
       ;(haskell +intero) ; a language that's lazier than I am
       ;hy                ; readability of scheme w/ speed of python
       ;(java +meghanada) ; the poster child for carpal tunnel syndrome
@@ -169,6 +169,7 @@
        sh                ; she sells (ba|z)sh shells on the C xor
        swift             ; who asked for emoji variables?
        web               ; the tubes
+       yaml              ; JSON, but readable
 
        :email
        (mu4e +org)
