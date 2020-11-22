@@ -64,6 +64,10 @@
 (setq alchemist-iex-program-name "~/.asdf/shims/iex")
 ; (setq alchemist-hooks-compile-on-save t)
 
+;; Elixir-LSP
+(after! elixir-mode
+  (add-to-list 'exec-path "~/Code/elixir-ls/release"))
+
 ;; Pocket
 (add-to-list 'evil-emacs-state-modes 'pocket-reader-mode)
 
