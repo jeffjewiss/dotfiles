@@ -61,7 +61,10 @@ foreman \
 gatsby-cli \
 gulp \
 standard \
-vmd
+typescript-language-server \
+vmd \
+vscode-css-languageserver-bin \
+vscode-html-languageserver-bin
 
 # Elixir
 # TODO: fix (no such language)
