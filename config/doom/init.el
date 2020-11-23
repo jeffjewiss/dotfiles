@@ -98,6 +98,7 @@
        grammar           ; tasing grammar mistake every you make
 
        :tools
+       (debugger +lsp)
        direnv
        (docker
          +lsp)
@@ -109,7 +110,7 @@
          (+dictionary    ; Enable word definition and thesaurus lookup functionality
            +offline)     ; Install and prefer offline dictionary/thesaurus
         +docsets)        ; Enable integration with Dash.app docsets
-       (lsp +peek)       ; auto completion and language server
+       (lsp +eglot)      ; auto completion and language server
        make              ; run make tasks from Emacs
        (magit +forge)    ; It's Magit! A Git porcelain inside Emacs
        pdf               ; pdf enhancements
@@ -124,16 +125,16 @@
 
        :lang
       ;assembly          ; assembly for fun or debugging
-       cc                ; C/C++/Obj-C madness
+      ;cc                ; C/C++/Obj-C madness
       ;crystal           ; ruby at the speed of c
       ;clojure           ; java with a lisp
-       csharp            ; unity, .NET, and mono shenanigans
+      ;csharp            ; unity, .NET, and mono shenanigans
        data              ; config/data formats
        erlang            ; an elegant language for a more civilized age
        (elixir +lsp)     ; erlang done right
-       elm               ; care for a cup of TEA?
+      ;elm               ; care for a cup of TEA?
        emacs-lisp        ; drown in parentheses
-       ess               ; emacs speaks statistics
+      ;ess               ; emacs speaks statistics
        (go +lsp)         ; the hipster dialect
       ;(haskell +intero) ; a language that's lazier than I am
       ;hy                ; readability of scheme w/ speed of python
@@ -141,7 +142,7 @@
        (javascript +lsp) ; all(hope(abandon(ye(who(enter(here))))))
       ;julia             ; a better, faster MATLAB
       ;latex             ; writing papers in Emacs has never been so fun
-       ledger            ; an accounting system in Emacs
+      ;ledger            ; an accounting system in Emacs
       ;lua               ; one-based indices? one-based indices
        markdown          ; writing docs for people to ignore
       ;nim               ; python + lisp at the speed of c
