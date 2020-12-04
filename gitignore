@@ -15,3 +15,4 @@ tmp/**/*
 tmux-client-*.log
 TODO.org
 .dir-locals.el
+build/
