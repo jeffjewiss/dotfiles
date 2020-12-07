@@ -66,6 +66,8 @@
 
 ;; Elixir-LSP
 (after! elixir-mode
+  (setq lsp-enable-file-watchers nil)
+  (setq lsp-completion-provider :capf)
   (add-to-list 'exec-path "~/Code/elixir-ls/release"))
 
 ;; Pocket
