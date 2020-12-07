@@ -43,3 +43,4 @@ source $HOME/.asdf/asdf.sh
 
 # Elixir
 export ERL_AFLAGS="-kernel shell_history enabled"
+export PATH=~/Code/elixir-ls/release:$PATH
