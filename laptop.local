@@ -66,6 +66,9 @@ vmd \
 vscode-css-languageserver-bin \
 vscode-html-languageserver-bin
 
+# Ruby
+gem_install_or_update "solargraph"
+
 # Elixir
 # TODO: fix (no such language)
 install_asdf_language "erlang"
