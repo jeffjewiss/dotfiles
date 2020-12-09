@@ -16,8 +16,13 @@
   doom-big-font (font-spec :family "Overpass" :size 20))
 
 (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-      projectile-project-search-path '("~/Code")
-      doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  projectile-project-search-path '("~/Code")
+  doom-modeline-buffer-file-name-style 'relative-to-project
+  doom-modeline-github t
+  doom-modeline-major-mode-icon t
+  doom-modeline-persp-name t
+  doom-modeline-enable-word-count t
+  doom-themes-enable-italic t) ; if nil, italics is universally disabled
 
 ;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each theme
 ;; may have their own settings.
