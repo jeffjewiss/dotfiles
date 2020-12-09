@@ -60,7 +60,10 @@ ember-cli \
 foreman \
 gatsby-cli \
 gulp \
+markdownlint \
 standard \
+tslint \
+typescript \
 typescript-language-server \
 vmd \
 vscode-css-languageserver-bin \
