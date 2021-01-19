@@ -114,7 +114,7 @@
        make              ; run make tasks from Emacs
        (magit +forge)    ; It's Magit! A Git porcelain inside Emacs
        pdf               ; pdf enhancements
-       prodigy           ; Managing external services
+      ;prodigy           ; Managing external services
        rgb               ; creating color strings
       ;tmux              ; an API for interacting with tmux
       ;upload            ; map local to remote projects via ssh/ftp
@@ -150,15 +150,13 @@
       ;nix               ; I hereby declare "nix geht mehr!"
       ;ocaml             ; an objective camel
        (org              ; organize your plain life in plain text
-        +attach          ; custom attachment system
-        +babel           ; running code in org
-        +capture         ; org-capture in and outside of Emacs
         +journal
+        +noter
+        +pandoc
         +pretty
-        +export          ; Exporting org to whatever you want
-        +habit           ; Keep track of your habits
-        ;+hugo           ; use Emacs for hugo blogging
-        +present)        ; Emacs for presentations
+        +present
+        +roam
+         )
       ;perl              ; write code no one else can comprehend
        php               ; perl's insecure younger brother
       ;plantuml          ; diagrams for confusing people more
