@@ -45,22 +45,17 @@
   org-journal-dir "~/org"
   org-journal-file-format "%Y%m%d.org"
   org-journal-enable-agenda-integration t
+  org-noter-notes-search-path '("~/org/notes")
+  org-roam-directory "~/org/notes"
+  deft-directory "~/org/notes"
+  deft-extensions '("org" "md" "markdown" "txt" "text")
+
   org-todo-keywords
   '((sequence "TODO" "IN-PROGRESS" "WAITING" "|" "DONE" "CANCELED")))
 
-(after! org
-  (add-to-list 'org-modules 'org-checklist)
-  (add-to-list 'org-modules 'org-habit t))
-
-;; Deft
-(setq deft-directory "~/org/notes")
-
 ;; MacOS Settings
 (when IS-MAC
-  (setq ns-use-thin-smoothing t)
-  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
-  (add-to-list 'default-frame-alist '(ns-appearance . dark))
-  (add-hook 'window-setup-hook #'toggle-frame-maximized))
+  (setq ns-use-thin-smoothing t))
 
 ;; Alchemist
 (setq alchemist-mix-command "~/.asdf/shims/mix")
