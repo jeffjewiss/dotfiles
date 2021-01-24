@@ -6,10 +6,9 @@
 (package! org-journal)
 (package! nov)
 (package! treemacs-icons-dired)
-(package! lsp-mode)
-(package! lsp-ui)
-(package! company-lsp)
 (package! pocket-reader)
+(package! org-sidebar)
+(package! keycast)
 
 ;; (package! atomic-chrome)
 ;; (package!
