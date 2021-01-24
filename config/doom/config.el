@@ -26,7 +26,7 @@
 
 ;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each theme
 ;; may have their own settings.
-(load-theme 'doom-nord t)
+(load-theme 'doom-one t)
 
 ;; Enable flashing mode-line on errors
 (doom-themes-visual-bell-config)
@@ -36,8 +36,8 @@
   #'(lambda (appearance)
       ;;(mapc #'disable-theme custom-enabled-themes)
       (pcase appearance
-        ('light (load-theme 'doom-nord-light t))
-        ('dark (load-theme 'doom-nord t)))))
+        ('light (load-theme 'doom-one-light t))
+        ('dark (load-theme 'doom-one t)))))
 
 ;; Org Mode Config
 (setq org-directory "~/org/"
