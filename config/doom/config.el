@@ -101,9 +101,9 @@
 
 ;; Backup / Temp file config
 (setq backup-directory-alist
-  `((".*" . ,"~/.emacs-backups")))
+  `(("." . ,"~/.emacs-backups")))
 (setq auto-save-file-name-transforms
-  `((".*" ,"~/.emacs-backups" t)))
+  `(("." ,"~/.emacs-backups" t)))
 (setq make-backup-files t           ; backup of a file the first time it is saved.
   create-lockfiles nil              ; don't create lockfiles
   backup-by-copying t               ; don't clobber symlinks
