@@ -79,12 +79,21 @@
 (add-to-list 'evil-emacs-state-modes 'pocket-reader-mode)
 
 ;; Nov.el
+(defun custom-nov-font-setup ()
+  (face-remap-add-relative 'variable-pitch :family "ETBembo"
+                                           :height 1.8))
+
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
 (setq nov-text-width t)
 (setq nov-save-place-file "~/SynologyDrive/config/nov-places")
 (setq visual-fill-column-center-text t)
 (add-hook 'nov-mode-hook 'visual-line-mode)
 (add-hook 'nov-mode-hook 'visual-fill-column-mode)
+(add-hook 'nov-mode-hook 'hide-mode-line-mode)
+(add-hook 'nov-mode-hook 'custom-nov-font-setup)
+(add-hook 'nov-mode-hook (lambda ()
+            (set-fill-column 120)))
+
 
 ;; Lookup / Dash Docsets
 (setq +lookup-open-url-fn #'+lookup-xwidget-webkit-open-url-fn)
