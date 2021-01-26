@@ -64,7 +64,8 @@
 (setq alchemist-iex-program-name "~/.asdf/shims/iex")
 ; (setq alchemist-hooks-compile-on-save t)
 
-;; Elixir-LSP
+;; LSP
+(setq lsp-enable-file-watchers nil)
 (after! elixir-mode
   (setq lsp-enable-file-watchers nil)
   (setq lsp-completion-provider :capf)
