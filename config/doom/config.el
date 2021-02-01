@@ -90,6 +90,8 @@
 (add-hook 'nov-mode-hook (lambda ()
             (set-fill-column 120)))
 
+;; Magit
+(add-hook 'magit-mode-hook (lambda () (magit-delta-mode +1)))
 
 ;; Lookup / Dash Docsets
 (setq +lookup-open-url-fn #'+lookup-xwidget-webkit-open-url-fn)

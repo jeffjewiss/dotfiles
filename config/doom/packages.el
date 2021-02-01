@@ -9,6 +9,7 @@
 (package! pocket-reader)
 (package! org-sidebar)
 (package! keycast)
+(package! magit-delta)
 
 ;; (package! atomic-chrome)
 ;; (package!
