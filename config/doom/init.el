@@ -25,13 +25,13 @@
 
        :completion
        (company          ; the ultimate code completion backend
-         +childframe)     ; ... when your children are better than you
+        +childframe)     ; ... when your children are better than you
        ;helm             ; the *other* search engine for love and life
        ;ido              ; the other *other* search engine...
        (ivy              ; a search engine for love and life
          +fuzzy          ; fuzzy search for files
          +prescient      ; filter and sort search results
-         +childframe     ; use a floating frame for results
+        ;+childframe     ; use a floating frame for results
          +icons)         ; use icons for file types
 
        :ui
@@ -39,7 +39,9 @@
        doom              ; what makes DOOM look the way it does
        doom-dashboard    ; a nifty splash screen for Emacs
        doom-quit         ; DOOM quit-message prompts when you quit Emacs
-       (emoji +unicode)  ; 🙂
+       (emoji
+        +github
+        +unicode)  ; 🙂
       ;fill-column       ; a `fill-column' indicator
        hl-todo           ; highlight TODO/FIXME/NOTE tags
        minimap           ; show a map of the code on the side
@@ -57,7 +59,8 @@
       ;unicode           ; extended unicode support for various languages
        vc-gutter         ; vcs diff in the fringe
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
-       window-select    ; visually switch windows
+       (window-select    ; visually switch windows
+         +numbers)
        workspaces        ; tab emulation, persistence & separate workspaces
        zen               ; distraction-free coding or writing
 
@@ -93,8 +96,10 @@
        vterm             ; the best terminal emulation in Emacs
 
        :checkers
-       syntax            ; tasing you for every semicolon you forget
-       spell             ; tasing you for misspelling mispelling
+       (syntax           ; tasing you for every semicolon you forget
+        +childframe)
+       (spell            ; tasing you for misspelling mispelling
+         +aspell)
        grammar           ; tasing grammar mistake every you make
 
        :tools
