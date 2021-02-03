@@ -39,6 +39,9 @@
         ('light (load-theme 'doom-one-light t))
         ('dark (load-theme 'doom-one t)))))
 
+;; Markdown
+(add-to-list 'auto-mode-alist '("\\.mdx\\'" . markdown-mode))
+
 ;; Org Mode Config
 (setq org-directory "~/org/"
   org-agenda-file-regexp "\\`[^.].*\\.org\\'\\|\\`[0-9]+\\'"
