@@ -3,8 +3,12 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ~='cd ~'
-alias la='ls -la'
+alias ls='lsd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
 alias ll='ls -lh'
+alias lt='ls --tree'
 alias ld='tree --dirsfirst -ChFupDaLg 1'
 
 # Network
@@ -17,13 +21,11 @@ alias fix="git diff --name-only | uniq | xargs nvim"
 # Utilities
 alias a="ag --ignore=.git --ignore=log --ignore=tags --ignore=tmp --ignore=vendor"
 alias b="bundle exec"
-alias c="pygmentize -O style=monokai -f console256 -g"
 alias d="du -h -d=1"
 alias df="df -h"
 alias grep='GREP_COLOR="1;37;45" LANG=C grep --color=auto'
 alias h="history"
 alias nv="nvim ."
-alias view="vim -p -R"
 alias tma='tmux attach -d -t'
 
 # Node Related
@@ -31,6 +33,5 @@ alias nom="rm -rf node_modules && npm cache clear && npm i"
 alias bom="rm -rf bower_components && bower cache clean && bower install"
 alias nombom="nom && bom"
 
-alias mutt="cd ~/Desktop && neomutt"
-alias email="cd ~/Desktop && neomutt"
+# Emacs
 alias emacs='emacs -nw'
