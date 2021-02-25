@@ -1,9 +1,13 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 _has() {
   type "$1" &> /dev/null
 }
-
-# Prompt
-[[ -f "$HOME/.zsh_prompt" ]] && source "$HOME/.zsh_prompt"
 
 # Common
 [[ -s "$HOME/.commonrc" ]] && source "$HOME/.commonrc"
@@ -16,7 +20,6 @@ source `brew --prefix`/share/antigen/antigen.zsh
 
 # fast prompt
 antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
 
 # Tracks your most used directories, based on 'frecency'.
 antigen bundle rupa/z
@@ -33,6 +36,9 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 
 # suggestions as you type
 antigen bundle tarruda/zsh-autosuggestions
+
+# theme
+antigen theme romkatv/powerlevel10k
 
 antigen apply
 
@@ -57,3 +63,6 @@ setopt nocorrectall
 
 # direnv
 eval "$(direnv hook zsh)"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
