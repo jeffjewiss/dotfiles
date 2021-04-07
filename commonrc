@@ -21,6 +21,8 @@ export npm_config_save_exact=true
 export npm_config_init_license=MIT
 export npm_config_init_author_name=Jeff Jewiss
 export npm_config_init_author_email=jeff@jeffjewiss.com
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Go
 export PATH=$GOPATH/bin:$PATH
