@@ -96,6 +96,24 @@
 ;; Magit
 (add-hook 'magit-mode-hook (lambda () (magit-delta-mode +1)))
 
+;; Tailwind
+;; (use-package! lsp-tailwindcss)
+
+(setq +format-with-lsp nil)
+
+(after! spell-fu
+  (setq spell-fu-idle-delay 5))
+
+(setf (alist-get 'markdown-mode +spell-excluded-faces-alist)
+      '(markdown-code-face
+        markdown-reference-face
+        markdown-link-face
+        markdown-url-face
+        markdown-markup-face
+        markdown-html-attr-value-face
+        markdown-html-attr-name-face
+        markdown-html-tag-name-face))
+
 ;; Lookup / Dash Docsets
 (setq +lookup-open-url-fn #'+lookup-xwidget-webkit-open-url-fn)
 (set-docsets! 'elixir-mode "Elixir")
@@ -139,16 +157,16 @@ Saves to a temp file and puts the filename in the kill ring."
 (setq +mu4e-backend 'offlineimap)
 
 (after! mu4e
-  (setq mu4e-mu-binary "/usr/local/bin/mu")
-  (setq mu4e-installation-path "/usr/local/share/emacs/site-lisp/mu/mu4e")
-  (setq send-mail-function 'smtpmail-send-it)
-  (setq message-send-mail-function 'smtpmail-send-it)
-  (setq mu4e-sent-messages-behavior 'delete)
-  (setq mu4e-view-show-addresses 't)
-  (setq mu4e-compose-format-flowed t)
-  (setq mu4e-compose-dont-reply-to-self t)
-  (setq mu4e-html2text-command "w3m -dump -T text/html -o display_link_number=true")
-  (setq mu4e-view-show-images t)
+  ;; (setq mu4e-mu-binary "/opt/homebrew/bin/mu")
+  ;; (setq mu4e-installation-path "/usr/local/share/emacs/site-lisp/mu/mu4e")
+  ;; (setq send-mail-function 'smtpmail-send-it)
+  ;; (setq message-send-mail-function 'smtpmail-send-it)
+  ;; (setq mu4e-sent-messages-behavior 'delete)
+  ;; (setq mu4e-view-show-addresses 't)
+  ;; (setq mu4e-compose-format-flowed t)
+  ;; (setq mu4e-compose-dont-reply-to-self t)
+  ;; (setq mu4e-html2text-command "w3m -dump -T text/html -o display_link_number=true")
+  ;; (setq mu4e-view-show-images t)
   (setq mu4e-attachment-dir  "~/Downloads")
 
   ; (setq mu4e-compose-in-new-frame t)
