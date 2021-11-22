@@ -10,6 +10,10 @@
 (package! org-sidebar)
 (package! keycast)
 (package! magit-delta)
+;; (package! lsp-tailwindcss :recipe (:host github :repo "merrickluo/lsp-tailwindcss"))
+(package! prettier)
+(package! prettier-js)
+(package! web-beautify)
 
 ;; (package! atomic-chrome)
 ;; (package!

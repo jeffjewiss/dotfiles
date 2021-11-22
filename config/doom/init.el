@@ -25,14 +25,16 @@
 
        :completion
        (company          ; the ultimate code completion backend
-        +childframe)     ; ... when your children are better than you
+        )     ; ... when your children are better than you
        ;helm             ; the *other* search engine for love and life
        ;ido              ; the other *other* search engine...
-       (ivy              ; a search engine for love and life
-         +fuzzy          ; fuzzy search for files
-         +prescient      ; filter and sort search results
-        ;+childframe     ; use a floating frame for results
-         +icons)         ; use icons for file types
+       ;(ivy              ; a search engine for love and life
+       ; +fuzzy          ; fuzzy search for files
+       ; +prescient      ; filter and sort search results
+       ; +childframe     ; use a floating frame for results
+       ; +icons)         ; use icons for file types
+       (vertico          ; the search engine of the future
+         +icons)
 
        :ui
        deft              ; notational velocity for Emacs
@@ -67,9 +69,9 @@
        :editor
        (evil
         +everywhere)     ; come to the dark side, we have cookies
-       file-templates    ; auto-snippets for empty files
+      ;file-templates    ; auto-snippets for empty files
        fold              ; (nigh) universal code folding
-      ;(format +onsave)  ; automated prettiness
+      (format +onsave)   ; automated prettiness
       ;lispy             ; vim for lisp, for people who dont like vim
        multiple-cursors  ; editing in many places at once
       ;objed             ; text object editing for the innocent
@@ -169,7 +171,7 @@
        python            ; beautiful is better than ugly
        rest              ; Emacs as a REST client
        (ruby +rails +lsp); 1.step do {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
-       rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
+      ;rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
       ;scala             ; java, but good
        (sh +lsp)         ; she sells (ba|z)sh shells on the C xor
        (swift +lsp)      ; who asked for emoji variables?
@@ -184,7 +186,7 @@
        :app
       ;calendar
       ;irc               ; how neckbeards socialize
-       (rss +org)        ; emacs as an RSS reader
+      ;(rss +org)        ; emacs as an RSS reader
       ;twitter           ; twitter client
 
        :config
