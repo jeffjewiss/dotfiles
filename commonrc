@@ -43,6 +43,9 @@ export SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.ssh
 # Initialize asdf
 source $HOME/.asdf/asdf.sh
 
+# Emacs / Doom
+export PATH=~/.emacs.d/bin:$PATH
+
 # Elixir
 export ERL_AFLAGS="-kernel shell_history enabled"
 export PATH=~/Code/elixir-ls/release:$PATH
