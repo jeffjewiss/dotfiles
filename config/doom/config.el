@@ -94,10 +94,12 @@
             (set-fill-column 120)))
 
 ;; Magit
-(add-hook 'magit-mode-hook (lambda () (magit-delta-mode +1)))
-
-;; Tailwind
-;; (use-package! lsp-tailwindcss)
+(use-package! magit-delta
+  :hook (magit-mode . magit-delta-mode))
+(after! magit
+  (setq
+    magit-delta-default-dark-theme "OneHalfDark"
+    magit-delta-default-light-theme "GitHub"))
 
 (setq +format-with-lsp nil)
 
