@@ -25,16 +25,16 @@
 
        :completion
        (company          ; the ultimate code completion backend
-        )     ; ... when your children are better than you
+        +childframe)     ; ... when your children are better than you
        ;helm             ; the *other* search engine for love and life
        ;ido              ; the other *other* search engine...
-       ;(ivy              ; a search engine for love and life
-       ; +fuzzy          ; fuzzy search for files
-       ; +prescient      ; filter and sort search results
-       ; +childframe     ; use a floating frame for results
-       ; +icons)         ; use icons for file types
-       (vertico          ; the search engine of the future
-         +icons)
+        (ivy              ; a search engine for love and life
+         +fuzzy          ; fuzzy search for files
+         +prescient      ; filter and sort search results
+         +childframe     ; use a floating frame for results
+         +icons)         ; use icons for file types
+       ;(vertico          ; the search engine of the future
+        ;+icons)
 
        :ui
        deft              ; notational velocity for Emacs
