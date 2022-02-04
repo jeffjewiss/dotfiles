@@ -46,7 +46,9 @@
         +unicode)  ; 🙂
       ;fill-column       ; a `fill-column' indicator
        hl-todo           ; highlight TODO/FIXME/NOTE tags
-       minimap           ; show a map of the code on the side
+       (ligatures        ; replace bits of code with pretty symbols
+         +fira)          ; use the Fira Code fontface
+      ;minimap           ; show a map of the code on the side
        modeline          ; a snazzy Atom-inspired mode-line
        nav-flash         ; blink the current line after jumping
        ;neotree          ; a project drawer, like NERDTree for vim
@@ -54,8 +56,6 @@
        (popup            ; tame sudden yet inevitable temporary windows
         +all             ; catch all popups that start with an asterix
         +defaults)       ; default popup rules
-       (ligatures        ; replace bits of code with pretty symbols
-         +fira)          ; use the Fira Code fontface
       ;tabs              ; a tab bar for Emacs
       ;treemacs          ; a project drawer, like neotree but cooler
       ;unicode           ; extended unicode support for various languages
@@ -128,7 +128,7 @@
 
        :os
        (:if IS-MAC macos); MacOS-specific commands
-      ;tty               ; improve the terminal Emacs experience
+       tty               ; improve the terminal Emacs experience
 
        :lang
       ;assembly          ; assembly for fun or debugging
@@ -165,28 +165,33 @@
         +roam
          )
       ;perl              ; write code no one else can comprehend
-       php               ; perl's insecure younger brother
+      ;php               ; perl's insecure younger brother
       ;plantuml          ; diagrams for confusing people more
       ;purescript        ; javascript, but functional
-       python            ; beautiful is better than ugly
+      ;python            ; beautiful is better than ugly
        rest              ; Emacs as a REST client
        (ruby +rails +lsp); 1.step do {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
       ;rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
       ;scala             ; java, but good
        (sh +lsp)         ; she sells (ba|z)sh shells on the C xor
-       (swift +lsp)      ; who asked for emoji variables?
-       (web +lsp)        ; the tubes
+      ;(swift +lsp)      ; who asked for emoji variables?
+       (web
+         +css
+         +lsp
+         +html)          ; the tubes
        (yaml +lsp)       ; JSON, but readable
 
        :email
-       (mu4e +org)
-       ;;notmuch
+       mu4e
+      ;notmuch
        ;;(wanderlust +gmail)
 
        :app
       ;calendar
+      ;emms
+       everywhere        ; *leave* Emacs!? You must be joking
       ;irc               ; how neckbeards socialize
-      ;(rss +org)        ; emacs as an RSS reader
+       (rss +org)        ; emacs as an RSS reader
       ;twitter           ; twitter client
 
        :config
