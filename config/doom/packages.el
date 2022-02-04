@@ -8,7 +8,7 @@
 (package! treemacs-icons-dired)
 (package! pocket-reader)
 (package! org-sidebar)
-;; (package! lsp-tailwindcss)
+(package! lsp-tailwindcss :recipe (:host github :repo "merrickluo/lsp-tailwindcss"))
 (package! magit-delta
   :pin "ccc3795a72554439f230969322c0e3239252c193")
 

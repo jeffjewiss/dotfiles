@@ -71,10 +71,35 @@
 
 ;; LSP
 (setq lsp-enable-file-watchers nil)
+(setq lsp-tailwindcss-add-on-mode t)
 (after! elixir-mode
   (setq lsp-enable-file-watchers nil)
   (setq lsp-completion-provider :capf)
   (add-to-list 'exec-path "~/Code/elixir-ls/release"))
+
+(after! lsp-mode
+  (add-to-list 'lsp-language-id-configuration '(".*\\.heex$" . "html"))
+  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\.log\\'")
+  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\.next\\'")
+  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]__snapshots?__\\'"))
+
+(after! dap-mode
+  (require 'dap-firefox)
+  (dap-firefox-setup))
+
+(use-package! lsp-tailwindcss
+  :when (featurep! +lsp)
+  :after lsp-mode
+  :init
+  (setq lsp-tailwindcss-add-on-mode t)
+  :config
+  (add-hook 'before-save-hook 'lsp-tailwindcss-rustywind-before-save)
+  (setq lsp-tailwindcss-major-modes '(web-mode css-mode rjsx-mode typescript-tsx-mode)
+        lsp-tailwindcss-emmet-completions (featurep 'emmet-mode)))
+
+
+(set-docsets! '(web-mode css-mode rjsx-mode typescript-tsx-mode)
+  :add "Tailwind_CSS")
 
 ;; Pocket
 (add-to-list 'evil-emacs-state-modes 'pocket-reader-mode)
@@ -144,6 +169,15 @@
   auto-save-interval 200            ; number of keystrokes between auto-saves (default: 300)
   )
 
+
+
+
+(use-package! request)
+
+(use-package! graphql-mode
+  :mode ("\\.gql\\'" "\\.graphql\\'")
+  :config (setq-hook! 'graphql-mode-hook tab-width graphql-indent-level))
+
 ;; https://www.reddit.com/r/emacs/comments/idz35e/emacs_27_can_take_svg_screenshots_of_itself/
 (defun screenshot-svg ()
   "Save a screenshot of the current frame as an SVG image.
@@ -170,7 +204,7 @@ Saves to a temp file and puts the filename in the kill ring."
   ;; (setq mu4e-compose-format-flowed t)
   ;; (setq mu4e-compose-dont-reply-to-self t)
   ;; (setq mu4e-html2text-command "w3m -dump -T text/html -o display_link_number=true")
-  ;; (setq mu4e-view-show-images t)
+  (setq mu4e-view-show-images t)
   (setq mu4e-attachment-dir  "~/Downloads")
 
   ; (setq mu4e-compose-in-new-frame t)
@@ -182,6 +216,7 @@ Saves to a temp file and puts the filename in the kill ring."
 
   (set-email-account! "Personal"
     '((user-mail-address      . "jeff@jeffjewiss.com")
+      (mu4e-inbox-folder       . "/jeff@jeffjewiss.com/Inbox")
       (mu4e-sent-folder       . "/jeff@jeffjewiss.com/Sent")
       (mu4e-drafts-folder     . "/jeff@jeffjewiss.com/Drafts")
       (mu4e-trash-folder      . "/jeff@jeffjewiss.com/Trash")
