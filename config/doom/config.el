@@ -9,15 +9,17 @@
 (setq-default
   user-full-name    "Jeff Jewiss"
   user-mail-address "jeff@jeffjewiss.com"
-  +workspaces-switch-project-function #'ignore
   +pretty-code-enabled-modes t
-  doom-font (font-spec :family "Fira Code" :size 12)
-  doom-variable-pitch-font (font-spec :family "Overpass" :size 12)
-  doom-big-font (font-spec :family "Overpass" :size 20))
+  doom-font (font-spec :family "Fira Code" :size 14)
+  doom-variable-pitch-font (font-spec :family "Overpass" :size 14)
+  doom-big-font (font-spec :family "Overpass" :size 24))
+
+(setq fancy-splash-image "~/.misc/blackhole-lines.svg")
 
 (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
   projectile-project-search-path '("~/Code")
   doom-modeline-buffer-file-name-style 'relative-to-project
+  doom-modeline-env-version t
   doom-modeline-github t
   doom-modeline-major-mode-icon t
   doom-modeline-persp-name t
