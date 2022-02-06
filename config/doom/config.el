@@ -30,7 +30,7 @@
 
 ;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each theme
 ;; may have their own settings.
-(load-theme 'doom-one t)
+(load-theme 'doom-dark+ t)
 
 ;; Enable flashing mode-line on errors
 (doom-themes-visual-bell-config)
@@ -40,8 +40,8 @@
   #'(lambda (appearance)
       ;;(mapc #'disable-theme custom-enabled-themes)
       (pcase appearance
-        ('light (load-theme 'doom-one-light t))
-        ('dark (load-theme 'doom-one t)))))
+        ('light (load-theme 'doom-flatwhite t))
+        ('dark (load-theme 'doom-dark+ t)))))
 
 ;; Markdown
 (add-to-list 'auto-mode-alist '("\\.mdx\\'" . markdown-mode))
