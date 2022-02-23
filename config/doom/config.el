@@ -10,10 +10,30 @@
   user-full-name    "Jeff Jewiss"
   user-mail-address "jeff@jeffjewiss.com"
   +pretty-code-enabled-modes t
-  doom-font (font-spec :family "Fira Code" :size 14)
+  doom-font (font-spec :family "Victor Mono" :size 14)
   doom-variable-pitch-font (font-spec :family "Overpass" :size 14)
   doom-big-font (font-spec :family "Overpass" :size 24))
 
+(setq-default
+ delete-by-moving-to-trash t                      ; Delete files to trash
+ window-combination-resize t                      ; take new window space from all other windows (not just current)
+ x-stretch-cursor t)                              ; Stretch cursor to the glyph width
+
+(setq undo-limit 80000000                         ; Raise undo-limit to 80Mb
+      evil-want-fine-undo t                       ; By default while in insert all changes are one big blob. Be more granular
+      auto-save-default t                         ; Nobody likes to loose work, I certainly don't
+      truncate-string-ellipsis "…"                ; Unicode ellispis are nicer than "...", and also save /precious/ space
+      scroll-margin 2)                            ; It's nice to maintain a little margin
+
+(unless (string-match-p "^Power N/A" (battery))   ; On laptops...
+  (display-battery-mode 1))                       ; it's nice to know how much power you have
+
+(global-subword-mode 1)                           ; Iterate through CamelCase words
+
+(setq doom-fallback-buffer-name "► Doom"
+      +doom-dashboard-name "► Doom")
+
+;; Theming
 (setq fancy-splash-image "~/.misc/blackhole-lines.svg")
 
 (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
