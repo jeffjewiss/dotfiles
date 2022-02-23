@@ -28,12 +28,12 @@
         +childframe)     ; ... when your children are better than you
        ;helm             ; the *other* search engine for love and life
        ;ido              ; the other *other* search engine...
-        (ivy              ; a search engine for love and life
+        (ivy             ; a search engine for love and life
          +fuzzy          ; fuzzy search for files
          +prescient      ; filter and sort search results
          +childframe     ; use a floating frame for results
          +icons)         ; use icons for file types
-       ;(vertico          ; the search engine of the future
+       ;(vertico         ; the search engine of the future
         ;+icons)
 
        :ui
@@ -162,7 +162,7 @@
         +pandoc
         +pretty
         +present
-        +roam
+        +roam2
          )
       ;perl              ; write code no one else can comprehend
       ;php               ; perl's insecure younger brother
