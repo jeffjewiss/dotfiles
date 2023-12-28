@@ -11,31 +11,34 @@
 --   command_mode = "c",
 
 local opts = { noremap = true, silent = true }
-local term_opts = { silent = true }
-local keymap = vim.api.nvim_set_keymap
-local function nmap(comb, cmd, desc)
-  vim.api.nvim_set_keymap("n", comb, cmd, { noremap = true, silent = true, desc = desc })
+local nor_opts = function(desc)
+  return { noremap = true, silent = true, desc = desc }
 end
+local keymap = vim.api.nvim_set_keymap
 
-keymap("n", "<leader>fs", "<cmd>w<cr><esc>", { desc = "File save" })
+keymap("n", "<leader>fs", "<cmd>w<cr><esc>", nor_opts("File save"))
 
 -- Smooth scrolling
-nmap("n", "<C-d>", "<C-d>zz")
-nmap("n", "<C-u>", "<C-u>zz")
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
 vim.o.scrolloff = 8
 
 -- Move to window using the <ctrl> hjkl keys
-vim.keymap.set("n", "<leader>wh", "<C-w>h", { desc = "Go to left window" })
-vim.keymap.set("n", "<leader>wj", "<C-w>j", { desc = "Go to bottom window" })
-vim.keymap.set("n", "<leader>wk", "<C-w>k", { desc = "Go to top window" })
-vim.keymap.set("n", "<leader>wl", "<C-w>l", { desc = "Go to right window" })
-vim.keymap.set("n", "<leader>wq", "<C-w>c", { desc = "Window quit" })
-vim.keymap.set("n", "<leader>wc", "<C-w>c", { desc = "Window close" })
+keymap("n", "<leader>wh", "<C-w>h", nor_opts("Go to left window"))
+keymap("n", "<leader>wj", "<C-w>j", { desc = "Go to bottom window" })
+keymap("n", "<leader>wk", "<C-w>k", { desc = "Go to top window" })
+keymap("n", "<leader>wl", "<C-w>l", { desc = "Go to right window" })
+keymap("n", "<leader>wq", "<C-w>c", { desc = "Window quit" })
+keymap("n", "<leader>wc", "<C-w>c", { desc = "Window close" })
 
 -- Neogit
-vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Neogit" })
-vim.keymap.set("n", "<leader>gs", "<cmd>Neogit kind=auto<cr>", { desc = "Neogit status" })
+keymap("n", "<leader>gg", "<cmd>Neogit<cr>", nor_opts("Neogit"))
+keymap("n", "<leader>gs", "<cmd>Neogit kind=auto<cr>", nor_opts("Neogit status"))
 
 --  Searching files
-nmap("<C-p>", ':lua require"telescope.builtin".git_files{use_git_root=false} <CR>', "Search git files")
-nmap("<C-f>", "<CMD> Telescope live_grep <CR>", "Grep through files")
+-- keymap("<C-p>", ':lua require"telescope.builtin".git_files{use_git_root=false} <CR>', "Search git files", opts)
+-- keymap("<C-f>", "<CMD> Telescope live_grep <CR>", "Grep through files", opts)
+
+-- Package Info
+keymap("n", "<LEADER>cps", "<cmd>lua require('package-info').show()<cr>", nor_opts("Show package versions"))
+keymap("n", "<LEADER>cpc", "<cmd>lua require('package-info').hide()<cr>", nor_opts("Hide package versions"))
