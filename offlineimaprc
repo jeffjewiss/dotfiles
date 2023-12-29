@@ -4,39 +4,6 @@ accounts = Personal
 pythonfile = ~/.mutt/offlineimap.py
 fsync = False
 
-[Account Google]
-localrepository = Google-Local
-remoterepository = Google-Remote
-postsynchook = notmuch new
-
-[Repository Google-Local]
-type = Maildir
-localfolders = ~/Mail/jeffjewiss@gmail.com
-nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
-                            'sent':    '[Gmail]/Sent Mail',
-                            'flagged': '[Gmail]/Starred',
-                            'trash':   '[Gmail]/Trash',
-                            'archive': '[Gmail]/All Mail',
-                            }.get(folder, folder)
-
-[Repository Google-Remote]
-maxconnections = 1
-type = Gmail
-remoteuser = jeffjewiss@gmail.com
-remotepasseval = get_keychain_pass(account="jeffjewiss@gmail.com", server="imap.gmail.com")
-realdelete = no
-sslcacertfile = /usr/local/etc/openssl/cert.pem
-nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
-                            '[Gmail]/Sent Mail': 'sent',
-                            '[Gmail]/Starred':   'flagged',
-                            '[Gmail]/Trash':     'trash',
-                            '[Gmail]/All Mail':  'archive',
-                            }.get(folder, folder)
-folderfilter = lambda folder: folder not in ['[Gmail]/Trash',
-                                             '[Gmail]/Important',
-                                             '[Gmail]/Spam',
-                                             ]
-
 [Account Personal]
 localrepository = Personal-Local
 remoterepository = Personal-Remote
@@ -58,7 +25,7 @@ remotehost = imap.fastmail.com
 remoteuser = jeff@jeffjewiss.com
 remotepasseval = get_keychain_pass(account="jeff@jeffjewiss.com", server="imap.fastmail.com")
 realdelete = no
-sslcacertfile = /usr/local/etc/openssl/cert.pem
+sslcacertfile = /opt/homebrew/etc/openssl@1.1/cert.pem
 nametrans = lambda folder: {'/Drafts':    'drafts',
                             '/Sent':      'sent',
                             '/Trash':     'trash',
