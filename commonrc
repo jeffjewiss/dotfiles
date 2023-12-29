@@ -49,6 +49,5 @@ export PATH=~/.emacs.d/bin:$PATH
 # Elixir
 export ERL_AFLAGS="-kernel shell_history enabled"
 export PATH=~/Code/elixir-ls/release:$PATH
-eval "$(_GIGALIXIR_COMPLETE=source gigalixir)"
 
 GATSBY_TELEMETRY_DISABLED=1
