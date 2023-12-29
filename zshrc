@@ -56,7 +56,7 @@ if _has fzf && _has ag; then
 fi
 
 # virtualenv
-source /usr/local/bin/virtualenvwrapper.sh
+# source /usr/local/bin/virtualenvwrapper.sh
 
 # Disable command corrections
 setopt nocorrectall
