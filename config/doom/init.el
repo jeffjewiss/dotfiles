@@ -20,21 +20,19 @@
 ;;; Code:
 
 (doom! :input
-       ;;chinese
-       ;;japanese
 
        :completion
        (company          ; the ultimate code completion backend
         +childframe)     ; ... when your children are better than you
        ;helm             ; the *other* search engine for love and life
        ;ido              ; the other *other* search engine...
-        (ivy             ; a search engine for love and life
-         +fuzzy          ; fuzzy search for files
-         +prescient      ; filter and sort search results
-         +childframe     ; use a floating frame for results
-         +icons)         ; use icons for file types
-       ;(vertico         ; the search engine of the future
-        ;+icons)
+       ;(ivy             ; a search engine for love and life
+       ; +fuzzy          ; fuzzy search for files
+       ; +prescient      ; filter and sort search results
+       ; +childframe     ; use a floating frame for results
+       ; +icons)         ; use icons for file types
+       (vertico          ; the search engine of the future
+        +icons)
 
        :ui
        deft              ; notational velocity for Emacs
@@ -43,11 +41,12 @@
        doom-quit         ; DOOM quit-message prompts when you quit Emacs
        (emoji
         +github
-        +unicode)  ; 🙂
+        +unicode)        ; 🙂
       ;fill-column       ; a `fill-column' indicator
        hl-todo           ; highlight TODO/FIXME/NOTE tags
-       (ligatures        ; replace bits of code with pretty symbols
-         +fira)          ; use the Fira Code fontface
+      ;hydra
+      ;indent-guides     ; highlighted indent columns
+       ligatures         ; replace bits of code with pretty symbols
       ;minimap           ; show a map of the code on the side
        modeline          ; a snazzy Atom-inspired mode-line
        nav-flash         ; blink the current line after jumping
@@ -72,6 +71,7 @@
       ;file-templates    ; auto-snippets for empty files
        fold              ; (nigh) universal code folding
       (format +onsave)   ; automated prettiness
+      ;god               ; run Emacs commands without modifier keys
       ;lispy             ; vim for lisp, for people who dont like vim
        multiple-cursors  ; editing in many places at once
       ;objed             ; text object editing for the innocent
@@ -145,7 +145,7 @@
        (go +lsp)         ; the hipster dialect
       ;(haskell +intero) ; a language that's lazier than I am
       ;hy                ; readability of scheme w/ speed of python
-      ;(java +meghanada) ; the poster child for carpal tunnel syndrome
+       (java +lsp)       ; the poster child for carpal tunnel syndrome
        (javascript +lsp) ; all(hope(abandon(ye(who(enter(here))))))
        (json  +lsp)      ; At least it ain't XML
       ;julia             ; a better, faster MATLAB
