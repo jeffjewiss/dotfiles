@@ -32,12 +32,15 @@ keymap("n", "<leader>wq", "<C-w>c", { desc = "Window quit" })
 keymap("n", "<leader>wc", "<C-w>c", { desc = "Window close" })
 
 -- Neogit
-keymap("n", "<leader>gg", "<cmd>Neogit<cr>", nor_opts("Neogit"))
+keymap("n", "<leader>gg", "<cmd>Neogit kind=auto<cr>", nor_opts("Neogit status"))
 keymap("n", "<leader>gs", "<cmd>Neogit kind=auto<cr>", nor_opts("Neogit status"))
 
 --  Searching files
 -- keymap("<C-p>", ':lua require"telescope.builtin".git_files{use_git_root=false} <CR>', "Search git files", opts)
 -- keymap("<C-f>", "<CMD> Telescope live_grep <CR>", "Grep through files", opts)
+
+-- Writing
+keymap("n", "<leader>uz", "<cmd>ZenMode<cr>", nor_opts("Toggle Zen Mode"))
 
 -- Package Info
 keymap("n", "<LEADER>cps", "<cmd>lua require('package-info').show()<cr>", nor_opts("Show package versions"))
