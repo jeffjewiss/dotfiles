@@ -51,3 +51,9 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 export PATH=~/Code/elixir-ls/release:$PATH
 
 GATSBY_TELEMETRY_DISABLED=1
+
+# Zed editor
+if [[ ${TERM_PROGRAM} = "zed" ]]; then
+    export EDITOR="zed --wait"
+    export VISUAL="zed --wait"
+fi
