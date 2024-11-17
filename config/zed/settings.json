@@ -18,5 +18,11 @@
   },
   "ui_font_size": 16,
   "buffer_font_size": 16,
-  "buffer_font_fallbacks": ["VictorMono Nerd Font Mono"]
+  "buffer_font_fallbacks": ["VictorMono Nerd Font Mono"],
+  "terminal": {
+    "env": {
+      "TERM": "xterm-256color",
+      "EDITOR": "zed --wait"
+    }
+  }
 }
