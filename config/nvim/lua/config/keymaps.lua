@@ -33,16 +33,7 @@ keymap("n", "<leader>wq", "<C-w>c", nor_opts("Quit window"))
 keymap("n", "<leader>ws", "<C-w>s", nor_opts("Split window below"))
 keymap("n", "<leader>wv", "<C-w>v", nor_opts("Split window to the right"))
 
--- Neogit
-keymap("n", "<leader>gg", "<cmd>Neogit kind=auto<cr>", nor_opts("Neogit status"))
-keymap("n", "<leader>gs", "<cmd>Neogit kind=auto<cr>", nor_opts("Neogit status"))
-
---  Searching files
--- keymap("<C-p>", ':lua require"telescope.builtin".git_files{use_git_root=false} <CR>', "Search git files", opts)
--- keymap("<C-f>", "<CMD> Telescope live_grep <CR>", "Grep through files", opts)
-
 -- UI
-keymap("n", "<leader>uz", "<cmd>ZenMode<cr>", nor_opts("Toggle Zen Mode"))
 keymap("n", "<leader>umc", "<cmd>lua MiniMap.close()<cr>", nor_opts("Close Mini Map"))
 keymap("n", "<leader>umf", "<cmd>lua MiniMap.toggle_focus()<cr>", nor_opts("Toggle Focus Side of Mini Map"))
 keymap("n", "<leader>umo", "<cmd>lua MiniMap.open()<cr>", nor_opts("Open Mini Map"))
