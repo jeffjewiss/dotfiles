@@ -218,3 +218,9 @@ if.app-id = "com.apple.MobileSMS"
 [[on-window-detected]]
 if.app-id = "com.apple.reminders"
     run = "layout floating"
+
+[[on-window-detected]]
+if.app-id="com.mitchellh.ghostty"
+run= [
+  "layout tiling",
+]
