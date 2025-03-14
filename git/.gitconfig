@@ -1,0 +1,79 @@
+[user]
+  name = Jeff Jewiss
+  email = jeff@jeffjewiss.com
+  signingkey = jeff@jeffjewiss.com
+
+[alias]
+  loq = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+  pr = "!f() { git fetch origin pull/$1/head:pr-$1 && git checkout pr-$1; }; f"
+
+[branch]
+  autosetuprebase = always
+
+[color]
+  ui = auto
+
+[core]
+  pager = delta
+  quotepath = false
+  whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  trustctime = false
+  excludesfile = ~/.gitignore
+
+[interactive]
+  diffFilter = delta --color-only
+
+[apply]
+  whitespace = nowarn
+
+[color]
+  ui = auto
+
+[credential]
+  helper = osxkeychain
+
+[merge]
+  summary = true
+
+[difftool]
+  prompt = false
+
+[merge]
+  log = true
+
+[push]
+  default = simple
+
+[rerere]
+  enabled = 1
+
+[url "git@github.com:"]
+  insteadOf     = "gh:"
+  pushInsteadOf = "github:"
+  pushInsteadOf = "git://github.com/"
+
+[url "git://github.com/"]
+  insteadOf = "github:"
+
+[url "git@gist.github.com:"]
+  insteadOf     = "gst:"
+  pushInsteadOf = "gist:"
+  pushInsteadOf = "git://gist.github.com/"
+
+[url "git://gist.github.com/"]
+  insteadOf = "gist:"
+
+; [commit]
+;   gpgsign = true
+
+[github]
+  user = jeffjewiss
+
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+[init]
+	defaultBranch = main
+
