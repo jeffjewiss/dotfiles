@@ -1,6 +1,7 @@
 # Add custom scripts
 export PATH=/usr/local/opt/asdf/shims:/usr/local/bin:/usr/local/sbin:$PATH
 
+export HOMEBREW_BREWFILE_APPSTORE=0
 
 # Add Homebrew to PATH
 eval "$(/opt/homebrew/bin/brew shellenv)"
