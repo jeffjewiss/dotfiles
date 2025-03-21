@@ -1,3 +1,4 @@
+
 # tap repositories and their packages
 
 tap homebrew/core
@@ -77,6 +78,7 @@ brew jpeg-turbo
 brew jpeg-xl
 brew jq
 brew lame
+brew lazygit
 brew leptonica
 brew libarchive
 brew libass
@@ -235,6 +237,7 @@ cask openscad
 cask orcaslicer
 cask qmk-toolbox
 cask sonos
+cask spotify
 cask zed
 
 tap felixkratz/formulae
