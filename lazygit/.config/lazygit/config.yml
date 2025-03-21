@@ -1,0 +1,4 @@
+update:
+  method: prompt
+  days: 7
+
