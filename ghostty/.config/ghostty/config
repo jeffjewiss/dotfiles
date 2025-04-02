@@ -1,10 +1,13 @@
-theme = dark:tokyonight,light:tokyonight-day
+theme = tokyonight
 font-size = 14
 font-family = "JetBrains Mono Nerd Font"
 background-opacity = 0.9
 background-blur-radius = 20
 macos-titlebar-style = hidden
 macos-option-as-alt = true
+macos-window-shadow = false
+macos-icon-frame = plastic
+window-padding-y = 8
 quick-terminal-animation-duration = 0
 keybind = global:cmd+grave_accent=toggle_quick_terminal
 
