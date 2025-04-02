@@ -20,7 +20,7 @@ export LANG=en_US.UTF-8
 # Misc settings
 export EDITOR=nvim
 export GOPATH=$HOME/Go
-export GOROOT=/usr/local/opt/go/libexec
+export GOROOT=/opt/homebrew/opt/go/libexec
 export TERM=xterm-ghostty
 
 # Node
@@ -48,6 +48,11 @@ export SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.ssh
 
 # Initialize asdf
 source $HOME/.asdf/asdf.sh
+
+# Java
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Elixir
 export ERL_AFLAGS="-kernel shell_history enabled"
