@@ -1,6 +1,6 @@
 return {
   {
-    "echasnovski/mini.map",
+    "nvim-mini/mini.map",
     version = "*",
     dependencies = "lewis6991/gitsigns.nvim",
     lazy = false,
