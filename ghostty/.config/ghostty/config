@@ -1,6 +1,6 @@
 theme = tokyonight
 font-size = 14
-font-family = "JetBrains Mono Nerd Font"
+font-family = "VictorMono Nerd Font Mono"
 background-opacity = 0.9
 background-blur-radius = 20
 macos-titlebar-style = hidden
