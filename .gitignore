@@ -1,0 +1,18 @@
+**/.local/share/
+**/.local/state/
+
+.DS_Store
+**/.DS_Store
+
+**/TODO.md
+
+# IDE
+.idea/
+*.swp
+*.swo
+.nvim.lua
+
+**/local
+**/tmp
+**/secrets
+**/private/*
