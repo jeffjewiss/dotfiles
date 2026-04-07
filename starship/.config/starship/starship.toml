@@ -17,9 +17,9 @@ $time\
 \n$character"""
 
 [directory]
-style = "fg:#e3e5e5 bg:#769ff0"
 format = "[ $path ]($style)"
-truncation_length = 3
+style = "fg:#e3e5e5 bg:#769ff0"
+fish_style_pwd_dir_length = 1
 truncation_symbol = "…/"
 
 [directory.substitutions]
@@ -27,6 +27,23 @@ truncation_symbol = "…/"
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
+
+[aws]
+format = 'on [$symbol($profile )(\($region\) )]($style)'
+style = 'bold blue'
+symbol = '🅰 '
+
+[azure]
+disabled = false
+format = 'on [$symbol($subscription)]($style) '
+symbol = '󰠅 '
+style = 'blue bold'
+
+[direnv]
+disabled = false
+
+[docker_context]
+format = 'via [🐋 $context](blue bold)'
 
 [git_branch]
 symbol = ""
