@@ -1,0 +1,5 @@
+return {
+  {
+    "andythigpen/nvim-coverage",
+  },
+}
