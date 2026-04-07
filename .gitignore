@@ -16,3 +16,4 @@
 **/tmp
 **/secrets
 **/private/*
+**/tmux/plugins/*
