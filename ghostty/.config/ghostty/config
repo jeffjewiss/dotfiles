@@ -1,4 +1,4 @@
-theme = tokyonight
+theme = dark:TokyoNight Night,light:TokyoNight Day
 font-size = 14
 font-family = "VictorMono Nerd Font Mono"
 background-opacity = 0.9
