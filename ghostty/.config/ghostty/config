@@ -10,4 +10,5 @@ macos-icon-frame = plastic
 window-padding-y = 8
 quick-terminal-animation-duration = 0
 keybind = global:cmd+grave_accent=toggle_quick_terminal
+keybind = alt+backspace=text:\x1b\x7f
 
