@@ -30,8 +30,6 @@ export npm_config_save_exact=true
 export npm_config_init_license=MIT
 export npm_config_init_author_name=Jeff Jewiss
 export npm_config_init_author_email=jeff@jeffjewiss.com
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Go
 export PATH=$GOPATH/bin:$PATH
@@ -118,6 +116,9 @@ fi
 # Disable command corrections
 setopt nocorrectall
 
+# Mise
+eval "$(mise activate zsh)"
+
 # Zoxide
 eval "$(zoxide init zsh)"
 
@@ -127,10 +128,10 @@ eval "$(direnv hook zsh)"
 vv() {
   # Assumes all configs exist in directories named ~/.config/nvim-*
   local config=$(fd --max-depth 1 --glob 'nvim-*' ~/.config | fzf --prompt="Neovim Configs > " --height=~50% --layout=reverse --border --exit-0)
- 
+
   # If I exit fzf without selecting a config, don't open Neovim
   [[ -z $config ]] && echo "No config selected" && return
- 
+
   # Open Neovim with the selected config
   NVIM_APPNAME=$(basename $config) nvim $@
 }
