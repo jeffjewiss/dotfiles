@@ -13,6 +13,9 @@ export PATH="/opt/homebrew/sbin:$PATH"
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
+# Bun
+export PATH=$PATH:$HOME/.bun/bin
+
 # Locale
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
