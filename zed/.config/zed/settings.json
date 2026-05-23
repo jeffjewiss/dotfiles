@@ -7,7 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "theme": "Catppuccin Mocha",
+  "theme": "Tokyo Night",
   "vim_mode": true,
   "features": {
     "inline_completion_provider": "supermaven"

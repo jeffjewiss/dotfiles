@@ -77,7 +77,6 @@ alias la='lsd -a'
 alias lla='lsd -la'
 alias lt='lsd --tree'
 alias ll='lsd -lh'
-alias lt='lsd --tree'
 alias ld='lsd --tree --group-directories-first -hFaLg'
 
 # Network
@@ -91,7 +90,7 @@ alias fix="git diff --name-only | uniq | xargs nvim"
 alias a="ag --ignore=.git --ignore=log --ignore=tags --ignore=tmp --ignore=vendor"
 alias b="bundle exec"
 alias d="du -h -d=1"
-alias df="df -h"
+alias df="df -h"         # shadows system df, shows human-readable
 alias grep='GREP_COLOR="1;37;45" LANG=C grep --color=auto'
 alias h="history"
 alias nv="nvim ."

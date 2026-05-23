@@ -2,6 +2,7 @@
 # tap repositories and their packages
 
 tap homebrew/core
+brew abseil
 brew aom
 brew aribb24
 brew arm-none-eabi-binutils
@@ -12,14 +13,15 @@ brew awk
 brew bash
 brew bat
 brew bats-core
+brew bc
 brew bdw-gc
+brew beads
 brew boost
 brew bootloadhid
 brew brotli
 brew ca-certificates
 brew cairo
 brew capstone
-brew certifi
 brew cjson
 brew clang-format
 brew cmake
@@ -30,9 +32,11 @@ brew dfu-programmer
 brew dfu-util
 brew direnv
 brew docker-compose
+brew dolt
 brew dtc
 brew efm-langserver
 brew exercism
+brew eza
 brew fd
 brew ffmpeg
 brew flac
@@ -67,6 +71,7 @@ brew harfbuzz
 brew hidapi
 brew highway
 brew icu4c@76
+brew icu4c@78
 brew imagemagick
 brew imath
 brew isl
@@ -78,11 +83,14 @@ brew jpeg-turbo
 brew jpeg-xl
 brew jq
 brew lame
+brew lazydocker
 brew lazygit
+brew lazysql
 brew leptonica
 brew libarchive
 brew libass
 brew libassuan
+brew libavif
 brew libb2
 brew libbluray
 brew libde265
@@ -94,6 +102,7 @@ brew libgcrypt
 brew libgit2
 brew libgpg-error
 brew libheif
+brew libiconv
 brew libidn
 brew libidn2
 brew libimagequant
@@ -119,6 +128,8 @@ brew libssh2
 brew libtasn1
 brew libtiff
 brew libtool
+brew libudfread
+brew libultrahdr
 brew libunibreak
 brew libunistring
 brew libusb
@@ -128,7 +139,6 @@ brew libvidstab
 brew libvmaf
 brew libvorbis
 brew libvpx
-brew libvterm
 brew libx11
 brew libxau
 brew libxcb
@@ -136,7 +146,9 @@ brew libxdmcp
 brew libxext
 brew libxrender
 brew libyaml
+brew libzip
 brew little-cms2
+brew llhttp
 brew lpeg
 brew lsd
 brew luajit
@@ -144,21 +156,28 @@ brew luv
 brew lz4
 brew lzo
 brew m4
+brew mailutils
 brew make
-brew mbedtls
+brew mas
+brew mbedtls@3
+brew mise
+brew mosh
 brew mpdecimal
 brew mpfr
 brew mpg123
-brew msgpack
 brew mu
 brew ncurses
 brew neovim
 brew nettle
+brew nowplaying-cli
 brew npth
+brew nushell
 brew oniguruma
+brew opencode
 brew opencore-amr
 brew openexr
 brew openjpeg
+brew openjph
 brew openssl@3
 brew opus
 brew p11-kit
@@ -167,14 +186,24 @@ brew pcre2
 brew pillow
 brew pinentry
 brew pinentry-mac
+brew pipx
 brew pixman
 brew pkgconf
 brew pnpm
+brew podman
+brew podman-compose
+brew protobuf
 brew python-packaging
 brew python-setuptools
+brew python@3.10
+brew python@3.11
+brew python@3.12
 brew python@3.13
+brew python@3.14
+brew python@3.9
 brew qemu
 brew rav1e
+brew rcm
 brew readline
 brew ripgrep
 brew rubberband
@@ -182,6 +211,7 @@ brew sdl2
 brew shared-mime-info
 brew snappy
 brew speex
+brew spotify_player
 brew sqlite
 brew srt
 brew starship
@@ -193,10 +223,13 @@ brew texinfo
 brew theora
 brew tig
 brew tmux
+brew tpm
 brew tree-sitter
 brew unbound
 brew unibilium
+brew usage
 brew utf8proc
+brew uv
 brew vde
 brew webp
 brew x264
@@ -216,20 +249,25 @@ cask affinity-designer
 cask affinity-photo
 cask affinity-publisher
 cask alfred
+cask arc
 cask blender
 cask font-et-book
 cask font-jetbrains-mono
 cask font-jetbrains-mono-nerd-font
+cask font-monaspice-nerd-font
 cask font-noto-sans
+cask font-noto-sans-symbols-2
 cask font-overpass
 cask font-source-code-pro
 cask font-victor-mono
 cask font-victor-mono-nerd-font
 cask font-work-sans
+cask garmin-express
 cask ghostty
 cask gpg-suite
 cask karabiner-elements
 cask keepingyouawake
+cask kitlangton-hex
 cask linear-linear
 cask melodics
 cask obsidian
@@ -238,11 +276,36 @@ cask orcaslicer
 cask qmk-toolbox
 cask sonos
 cask spotify
+cask steam
+cask tailscale-app
+cask vlc
+cask warp
 cask zed
+cask zoom
+
+tap homebrew/services
+
+tap 1password/tap
+
+tap anomalyco/tap
+
+tap cormacrelf/tap
+brew dark-notify
+
+tap d12frosted/emacs-plus
+brew emacs-plus@29 --with-native-comp --with-imagemagick
+
+tap dicklesworthstone/tap
+brew bv
+
+tap docker/tap
+cask sbx
 
 tap felixkratz/formulae
 brew borders
 brew sketchybar
+
+tap jesseduffield/lazydocker
 
 tap nikitabobko/tap
 cask aerospace
@@ -255,6 +318,9 @@ tap osx-cross/avr
 brew avr-binutils
 brew avr-gcc@8
 
+tap oven-sh/bun
+brew bun
+
 tap qmk/qmk
 brew hid_bootloader_cli
 brew mdloader
@@ -262,3 +328,6 @@ brew qmk
 
 tap rcmdnk/file
 brew brew-file
+
+tap typewhisper/tap
+cask typewhisper
