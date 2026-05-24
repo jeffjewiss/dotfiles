@@ -1,12 +1,12 @@
 [tools]
 node = "latest"
 python = "latest"
+bun = "latest"
 gh = "latest"
-"bun:@devcontainers/cli" = "latest"
-"bun:@withgraphite/graphite-cli" = "latest"
-"bun:hunkdiff" = "latest"
-"bun:@earendil-works/pi-coding-agent" = "latest"
+"npm:@devcontainers/cli" = "latest"
+"npm:@withgraphite/graphite-cli" = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node", "python", "java"]
+minimum_release_age = "7d"
 experimental = true
