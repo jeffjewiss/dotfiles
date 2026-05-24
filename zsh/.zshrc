@@ -124,7 +124,7 @@ fi
 setopt nocorrectall
 
 # Mise
-eval "$(mise activate zsh)"
+eval "$(mise activate zsh --shims)"
 
 # Zoxide
 eval "$(zoxide init zsh)"
