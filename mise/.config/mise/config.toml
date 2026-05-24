@@ -1,0 +1,12 @@
+[tools]
+node = "latest"
+python = "latest"
+gh = "latest"
+"bun:@devcontainers/cli" = "latest"
+"bun:@withgraphite/graphite-cli" = "latest"
+"bun:hunkdiff" = "latest"
+"bun:@earendil-works/pi-coding-agent" = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = ["node", "python", "java"]
+experimental = true
