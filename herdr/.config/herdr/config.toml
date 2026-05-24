@@ -1,0 +1,101 @@
+onboarding = false
+
+[theme]
+name = "tokyo-night"
+
+[theme.custom]
+# panel_bg = "reset"
+# accent = "#f5c2e7"
+# red = "#ff6188"
+# green = "#a6e3a1"
+
+[terminal]
+default_shell = "zsh"
+
+[keys]
+# prefix = "ctrl+b"
+# help = "prefix+?"
+# settings = "prefix+s"
+# detach = "prefix+q"
+# reload_config = "prefix+shift+r"
+# open_notification_target = "prefix+o"
+# workspace_picker = "prefix+w"
+# new_workspace = "prefix+shift+n"
+# new_worktree = "prefix+shift+g"
+# open_worktree = ""
+# remove_worktree = ""
+# rename_workspace = "prefix+shift+w"
+# close_workspace = "prefix+shift+d"
+# previous_workspace = ""
+# next_workspace = ""
+# previous_agent = ""
+# next_agent = ""
+# focus_agent = ""
+# new_tab = "prefix+c"
+# rename_tab = "prefix+shift+t"
+# previous_tab = "prefix+p"
+# next_tab = "prefix+n"
+# switch_tab = "prefix+1..9"
+# switch_workspace = ""
+# close_tab = "prefix+shift+x"
+# rename_pane = "prefix+shift+p"
+# edit_scrollback = "prefix+e"
+# focus_pane_left = "prefix+h"
+# focus_pane_down = "prefix+j"
+# focus_pane_up = "prefix+k"
+# focus_pane_right = "prefix+l"
+# cycle_pane_next = "prefix+tab"
+# cycle_pane_previous = "prefix+shift+tab"
+# split_vertical = "prefix+v"
+# split_horizontal = "prefix+minus"
+# close_pane = "prefix+x"
+# zoom = "prefix+z"
+# resize_mode = "prefix+r"
+# toggle_sidebar = "prefix+b"
+
+# [[keys.command]]
+# key = "prefix+g"
+# type = "pane"
+# command = "lazygit"
+
+# [keys.indexed]
+# tabs = ""
+# workspaces = ""
+# agents = ""
+
+# [worktrees]
+# directory = "~/.herdr/worktrees"
+
+[ui]
+# sidebar_width = 26
+# sidebar_min_width = 18
+# sidebar_max_width = 36
+# mouse_capture = true
+# mouse_scroll_lines = 3
+# confirm_close = true
+# prompt_new_tab_name = true
+show_agent_labels_on_pane_borders = true
+# agent_panel_scope = "all"
+# accent = "cyan"
+
+[ui.toast]
+delivery = "terminal"
+
+[ui.sound]
+# enabled = true
+# path = "sounds/notification.mp3"
+# done_path = "sounds/done.mp3"
+# request_path = "sounds/request.mp3"
+
+# [ui.sound.agents]
+# droid = "off"
+
+[experimental]
+# allow_nested = false
+# kitty_graphics = false
+# reveal_hidden_cursor_for_cjk_ime = false
+# cjk_ime_agents = []
+# cjk_ime_cursor_shape = "steady_block"
+
+[advanced]
+# scrollback_limit_bytes = 10000000
