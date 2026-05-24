@@ -1,6 +1,7 @@
 [tools]
 node = "latest"
 python = "latest"
+go = "latest"
 bun = "latest"
 gh = "latest"
 "npm:@devcontainers/cli" = "latest"

@@ -26,8 +26,6 @@ export LANG=en_US.UTF-8
 
 # Misc settings
 export EDITOR=nvim
-export GOPATH=$HOME/Go
-export GOROOT=/opt/homebrew/opt/go/libexec
 export TERM=xterm-ghostty
 
 # Node
@@ -37,10 +35,6 @@ export npm_config_save_exact=true
 export npm_config_init_license=MIT
 export npm_config_init_author_name=Jeff Jewiss
 export npm_config_init_author_email=jeff@jeffjewiss.com
-
-# Go
-export PATH=$GOPATH/bin:$PATH
-export PATH=$GOROOT/bin:$PATH
 
 # Mappings for Ctrl/Option-left-arrow and Ctrl/Option-right-arrow for
 # moving across words.
