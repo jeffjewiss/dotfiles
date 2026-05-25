@@ -1,0 +1,7 @@
+keybindings:
+  prs:
+    - key: T
+      command: >-
+        tmux new-window '
+          gh enhance -R {{.RepoName}} {{.PrNumber}}
+        '
