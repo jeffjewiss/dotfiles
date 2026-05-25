@@ -2,3 +2,8 @@ update:
   method: prompt
   days: 7
 
+ git:
+    autoFetch: false
+    pagers:
+      - pager: hunk pager
+
