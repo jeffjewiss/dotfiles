@@ -1,7 +1,7 @@
 theme = dark:TokyoNight Night,light:TokyoNight Day
 font-size = 14
 font-family = "VictorMono Nerd Font Mono"
-background-opacity = 0.9
+background-opacity = 1
 background-blur-radius = 20
 macos-titlebar-style = hidden
 macos-option-as-alt = true
