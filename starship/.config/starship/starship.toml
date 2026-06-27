@@ -18,6 +18,7 @@ $time\
 ($container)"""
 
 right_format = """
+$env_var.ZMX_SESSION\
 $kubernetes\
 $c\
 $cpp\
@@ -92,6 +93,11 @@ format = ' $symbol($version) '
 [python]
 python_binary = [['mise', 'exec', '--', 'python']]
 format = ' $symbol($version) '
+
+[env_var.ZMX_SESSION]
+symbol = " "
+format = "[$symbol$env_value]($style) "
+style = "bold magenta"
 
 [time]
 disabled = false
