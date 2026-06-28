@@ -18,7 +18,7 @@ $time\
 ($container)"""
 
 right_format = """
-$env_var.ZMX_SESSION\
+${custom.zmx_session}\
 $kubernetes\
 $c\
 $cpp\
@@ -94,9 +94,12 @@ format = ' $symbol($version) '
 python_binary = [['mise', 'exec', '--', 'python']]
 format = ' $symbol($version) '
 
-[env_var.ZMX_SESSION]
+[custom.zmx_session]
+command = "echo $ZMX_SESSION"
+when = "test -n \"$ZMX_SESSION\""
+shell = "zsh"
 symbol = " "
-format = "[$symbol$env_value]($style) "
+format = "[$symbol$output]($style) "
 style = "bold magenta"
 
 [time]
