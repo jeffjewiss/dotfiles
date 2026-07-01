@@ -184,10 +184,10 @@ zmx-select() {
   zmx attach "$session_name"
 }
 
-# zmx session picker
-if command -v zmx &> /dev/null && command -v fzf &> /dev/null && [[ -z "$ZMX_SESSION" ]]; then
-  zmx-select && exit
-fi
+# # zmx session picker
+# if command -v zmx &> /dev/null && command -v fzf &> /dev/null && [[ -z "$ZMX_SESSION" ]]; then
+#   zmx-select && exit
+# fi
 
 
 ######################
