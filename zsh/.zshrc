@@ -144,11 +144,6 @@ vv() {
 
 export NVIM_APPNAME=nvim-personal
 
-# zmx session picker
-if command -v zmx &> /dev/null && command -v fzf &> /dev/null && [[ -z "$ZMX_SESSION" ]]; then
-  zmx-select && exit
-fi
-
 zmx-select() {
   local display
   display=$(zmx list 2>/dev/null | while IFS=$'\t' read -r name pid clients created dir; do
@@ -188,6 +183,12 @@ zmx-select() {
 
   zmx attach "$session_name"
 }
+
+# zmx session picker
+if command -v zmx &> /dev/null && command -v fzf &> /dev/null && [[ -z "$ZMX_SESSION" ]]; then
+  zmx-select && exit
+fi
+
 
 ######################
 # Work configuration #
