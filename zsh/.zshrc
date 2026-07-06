@@ -196,3 +196,7 @@ zmx-select() {
 if [[ -f ~/.config/private/work.zsh ]]; then
   source ~/.config/private/work.zsh
 fi
+
+if command -v wt >/dev/null 2>&1; then
+  eval "$(command wt config shell init zsh)";
+fi
