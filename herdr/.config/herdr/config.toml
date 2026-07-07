@@ -21,9 +21,9 @@ reload_config = "prefix+shift+r"
 # open_notification_target = "prefix+o"
 # workspace_picker = "prefix+w"
 # new_workspace = "prefix+shift+n"
-new_worktree = "prefix+ctrl+w"
-open_worktree = "prefix+ctrl+o"
-remove_worktree = "prefix+ctrl+x"
+# new_worktree = "prefix+ctrl+w"
+# open_worktree = "prefix+ctrl+o"
+# remove_worktree = "prefix+ctrl+x"
 # rename_workspace = "prefix+shift+w"
 # close_workspace = "prefix+shift+d"
 # previous_workspace = ""
@@ -52,6 +52,20 @@ close_pane = "prefix+x"
 zoom = "prefix+z"
 # resize_mode = "prefix+r"
 # toggle_sidebar = "prefix+b"
+
+# Override herdr's built-in "new worktree" key (prefix+shift+g) with worktrunk's
+# switch/create picker:
+[[keys.command]]
+key = "prefix+shift+g"
+type = "plugin_action"
+command = "worktrunk.open"
+description = "Worktree: switch / create"
+
+[[keys.command]]
+key = "prefix+shift+d"
+type = "plugin_action"
+command = "worktrunk.remove"
+description = "Worktree: remove"
 
 # [[keys.command]]
 # key = "prefix+g"
