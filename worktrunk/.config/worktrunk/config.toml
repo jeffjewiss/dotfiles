@@ -1,0 +1,2 @@
+[aliases]
+pick = "wt switch --format=json | jq -r '.branch'"
