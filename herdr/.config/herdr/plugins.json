@@ -1,0 +1,119 @@
+[
+  {
+    "plugin_id": "jt.command-palette",
+    "name": "Command Palette (fzf)",
+    "version": "0.1.0",
+    "min_herdr_version": "0.7.0",
+    "description": "An fzf command palette for herdr: pops up a fuzzy-searchable list of every action exposed by every installed plugin (via `herdr plugin action list`) and invokes the one you pick. The picker runs in an overlay pane so fzf gets a real TTY; the origin workspace's cwd is forwarded so context-aware actions resolve the right repo.",
+    "manifest_path": "/Users/jeff/.config/herdr/plugins/github/jt.command-palette-24905dca5f16/herdr-plugin.toml",
+    "plugin_root": "/Users/jeff/.config/herdr/plugins/github/jt.command-palette-24905dca5f16",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos"
+    ],
+    "actions": [
+      {
+        "id": "open",
+        "title": "Command palette (all plugin actions)",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "bash",
+          "open.sh"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "palette",
+        "title": "Command palette",
+        "placement": "overlay",
+        "command": [
+          "bash",
+          "-c",
+          "exec \"$HERDR_PLUGIN_ROOT/palette.sh\""
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "JanTvrdik",
+      "repo": "herdr-command-palette",
+      "resolved_commit": "eab940018c2135ac23718efa11e23e9dddcd2a75",
+      "managed_path": "/Users/jeff/.config/herdr/plugins/github/jt.command-palette-24905dca5f16",
+      "installed_unix_ms": 1783364923929
+    }
+  },
+  {
+    "plugin_id": "worktrunk",
+    "name": "Worktrunk",
+    "version": "0.1.0",
+    "min_herdr_version": "0.7.0",
+    "description": "Switch, create, or remove git worktrees via worktrunk",
+    "manifest_path": "/Users/jeff/.config/herdr/plugins/github/worktrunk-7fb519583f31/herdr-plugin.toml",
+    "plugin_root": "/Users/jeff/.config/herdr/plugins/github/worktrunk-7fb519583f31",
+    "enabled": true,
+    "platforms": [
+      "macos",
+      "linux"
+    ],
+    "actions": [
+      {
+        "id": "open",
+        "title": "Worktree: switch / create",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "bash",
+          "-c",
+          "cwd=$(jq -r '.workspace_cwd // .focused_pane_cwd' <<<\"$HERDR_PLUGIN_CONTEXT_JSON\"); exec \"$HERDR_BIN_PATH\" plugin pane open --plugin \"$HERDR_PLUGIN_ID\" --entrypoint picker --placement split --direction down --cwd \"$cwd\" --focus"
+        ]
+      },
+      {
+        "id": "remove",
+        "title": "Worktree: remove",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "bash",
+          "-c",
+          "cwd=$(jq -r '.workspace_cwd // .focused_pane_cwd' <<<\"$HERDR_PLUGIN_CONTEXT_JSON\"); exec \"$HERDR_BIN_PATH\" plugin pane open --plugin \"$HERDR_PLUGIN_ID\" --entrypoint remover --placement split --direction down --cwd \"$cwd\" --focus"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "picker",
+        "title": "Worktrunk",
+        "placement": "split",
+        "command": [
+          "bash",
+          "-c",
+          "exec bash \"$HERDR_PLUGIN_ROOT/picker.sh\""
+        ]
+      },
+      {
+        "id": "remover",
+        "title": "Worktrunk — remove",
+        "placement": "split",
+        "command": [
+          "bash",
+          "-c",
+          "exec bash \"$HERDR_PLUGIN_ROOT/remove.sh\""
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "devashish2203",
+      "repo": "herdr-worktrunk",
+      "resolved_commit": "fd49fb3f95ccdd04b5b928142769ae7a75f987c8",
+      "managed_path": "/Users/jeff/.config/herdr/plugins/github/worktrunk-7fb519583f31",
+      "installed_unix_ms": 1783363246804
+    }
+  }
+]
