@@ -67,6 +67,12 @@ type = "plugin_action"
 command = "worktrunk.remove"
 description = "Worktree: remove"
 
+[[keys.command]]
+key = "ctrl+p"
+type = "plugin_action"
+command = "jt.command-palette.open"
+description = "Command palette"
+
 # [[keys.command]]
 # key = "prefix+g"
 # type = "pane"
