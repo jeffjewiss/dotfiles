@@ -4,8 +4,8 @@ python = "latest"
 go = "latest"
 bun = "latest"
 gh = "latest"
+rust = "latest"
 "npm:@devcontainers/cli" = "latest"
-"npm:@withgraphite/graphite-cli" = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node", "python", "java"]
