@@ -2,6 +2,7 @@
 export PATH=/usr/local/opt/asdf/shims:/usr/local/bin:/usr/local/sbin:$PATH
 
 export HOMEBREW_BREWFILE_APPSTORE=0
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # Add Homebrew to PATH
 eval "$(/opt/homebrew/bin/brew shellenv)"
