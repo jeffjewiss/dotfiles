@@ -26,7 +26,6 @@ require("lazy").setup({
 		-- add LazyVim and import its plugins
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
 		-- import any extras modules here
-		{ import = "lazyvim.plugins.extras.ai.sidekick" },
 		{ import = "lazyvim.plugins.extras.coding.mini-comment" },
 		{ import = "lazyvim.plugins.extras.coding.mini-surround" },
 		{ import = "lazyvim.plugins.extras.coding.yanky" },
@@ -53,7 +52,6 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.ui.mini-animate" },
 		{ import = "lazyvim.plugins.extras.ui.smear-cursor" },
 		{ import = "lazyvim.plugins.extras.util.dot" },
-		{ import = "lazyvim.plugins.extras.util.gh" },
 		{ import = "lazyvim.plugins.extras.util.mini-hipatterns" },
 		{ import = "lazyvim.plugins.extras.util.octo" },
 		{ import = "lazyvim.plugins.extras.util.project" },
