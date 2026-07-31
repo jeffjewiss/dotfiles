@@ -138,8 +138,6 @@ vv() {
   NVIM_APPNAME=$(basename $config) nvim $@
 }
 
-export NVIM_APPNAME=nvim-personal
-
 zmx-select() {
   local display
   display=$(zmx list 2>/dev/null | while IFS=$'\t' read -r name pid clients created dir; do
