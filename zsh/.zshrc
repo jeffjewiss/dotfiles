@@ -1,5 +1,5 @@
 # Add custom scripts
-export PATH=/usr/local/opt/asdf/shims:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 export HOMEBREW_BREWFILE_APPSTORE=0
 export HOMEBREW_NO_AUTO_UPDATE=1
@@ -45,9 +45,6 @@ bindkey "\e\e[D" backward-word
 # GPG
 export GPG_TTY=$(tty)
 export SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.ssh
-
-# Initialize asdf
-source $HOME/.asdf/asdf.sh
 
 # Elixir
 export ERL_AFLAGS="-kernel shell_history enabled"
