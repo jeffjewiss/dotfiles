@@ -1,0 +1,39 @@
+theme = "tokyo-night-storm"
+appearance = "system"
+theme_dark = "tokyo-night-storm"
+theme_light = "tokyo-night-day"
+
+diff_view = "side-by-side"
+ignore_whitespace = false
+show_file_list = true
+mouse = true
+leader = ","
+comment_vim = false
+comment_tab_width = 4
+wrap = false
+cursor_line = true
+transparent_background = true
+scroll_offset = 5
+no_update_check = false
+review_watch_interval_ms = 1000
+
+backend = "libgit2"
+
+comment_types = [
+  { id = "note", label = "question", definition = "ask for clarification", color = "yellow" },
+  { id = "suggestion", definition = "possible improvements" },
+  { id = "issue", definition = "problems to fix" },
+  { id = "praise", definition = "positive feedback" },
+  { id = "nit", label = "nitpick", definition = "small optional tweaks", color = "#d19a66" },
+]
+
+[forge]
+comment_type_prefix = true
+
+[export]
+intro = "I reviewed your code and have the following comments. Please address them."
+scope_line = true
+pr_metadata = true
+comments_header = "## Local tuicr Comments"
+remote_comments_header = "## Existing GitHub Comments"
+legend = true
