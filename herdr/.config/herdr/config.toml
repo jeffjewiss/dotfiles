@@ -2,6 +2,7 @@ onboarding = false
 
 [theme]
 name = "tokyo-night"
+auto_switch = true
 
 [theme.custom]
 # panel_bg = "reset"
@@ -26,15 +27,15 @@ reload_config = "prefix+shift+r"
 # remove_worktree = "prefix+ctrl+x"
 # rename_workspace = "prefix+shift+w"
 # close_workspace = "prefix+shift+d"
-# previous_workspace = ""
-# next_workspace = ""
-# previous_agent = ""
-# next_agent = ""
+previous_workspace = "prefix+ctrl+minus"
+next_workspace = "prefix+ctrl+backtick"
+previous_agent = "prefix+ctrl+comma"
+next_agent = "prefix+ctrl+period"
 # focus_agent = ""
 new_tab = "prefix+c"
 rename_tab = "prefix+T"
-previous_tab = "prefix+H"
-next_tab = "prefix+L"
+previous_tab = "prefix+p"
+next_tab = "prefix+n"
 # switch_tab = "prefix+1..9"
 switch_workspace = "prefix+ctrl+1..9"
 # close_tab = "prefix+shift+x"
@@ -88,12 +89,14 @@ description = "Command palette"
 
 [ui]
 # sidebar_width = 26
-# sidebar_min_width = 18
-# sidebar_max_width = 36
+sidebar_min_width = 36 
+sidebar_max_width = 48
+tab_bar_position = "bottom"
 # mouse_capture = true
 # mouse_scroll_lines = 3
 # confirm_close = true
 # prompt_new_tab_name = true
+status_indicators = "symbols"
 show_agent_labels_on_pane_borders = true
 # agent_panel_scope = "all"
 # accent = "cyan"
