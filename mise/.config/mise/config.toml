@@ -8,6 +8,7 @@ gh = "latest"
 rust = "latest"
 "npm:@devcontainers/cli" = "latest"
 "github:agavra/tuicr" = "latest"
+atuin = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node", "python", "java"]

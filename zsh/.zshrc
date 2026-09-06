@@ -119,6 +119,9 @@ eval "$(zoxide init zsh)"
 # direnv
 eval "$(direnv hook zsh)"
 
+# Atuin
+eval "$(atuin init zsh)"
+
 # zmx completions
 if command -v zmx &> /dev/null; then
   eval "$(zmx completions zsh)"
