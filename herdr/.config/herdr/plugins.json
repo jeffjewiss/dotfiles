@@ -94,11 +94,80 @@
     ],
     "source": {
       "kind": "github",
-      "owner": "chmarax",
+      "owner": "ChmaraX",
       "repo": "herdr-nvim",
       "resolved_commit": "e652ebf7b3d6713992e68a30aec588822e69fae5",
       "managed_path": "/Users/jeff/.config/herdr/plugins/github/chmarax.herdr-nvim-178624809c23",
-      "installed_unix_ms": 1789073824079
+      "installed_unix_ms": 1789074333881
+    }
+  },
+  {
+    "plugin_id": "herdr.auto-title",
+    "name": "Auto Title",
+    "version": "0.5.0",
+    "min_herdr_version": "0.8.2",
+    "description": "Automatically generates contextual tab titles",
+    "manifest_path": "/Users/jeff/.config/herdr/plugins/github/herdr.auto-title-4b7d61f48ce8/herdr-plugin.toml",
+    "plugin_root": "/Users/jeff/.config/herdr/plugins/github/herdr.auto-title-4b7d61f48ce8",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "build": [
+      {
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "go",
+          "build",
+          "-o",
+          "herdr-auto-title",
+          "./cmd/herdr-auto-title"
+        ]
+      },
+      {
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "go",
+          "build",
+          "-o",
+          "herdr-auto-title.exe",
+          "./cmd/herdr-auto-title"
+        ]
+      }
+    ],
+    "startup": [
+      {
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./herdr-auto-title"
+        ]
+      },
+      {
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "./herdr-auto-title.exe"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "kryptamine",
+      "repo": "herdr-auto-title",
+      "resolved_commit": "7fcec810280696b8b38b5bd884be2b340c73e02b",
+      "managed_path": "/Users/jeff/.config/herdr/plugins/github/herdr.auto-title-4b7d61f48ce8",
+      "installed_unix_ms": 1789074356531
     }
   },
   {
@@ -322,7 +391,7 @@
     "name": "Worktrunk",
     "version": "0.1.0",
     "min_herdr_version": "0.7.0",
-    "description": "Switch, create, or remove git worktrees via worktrunk",
+    "description": "Switch, create, remove, or merge git worktrees via worktrunk",
     "manifest_path": "/Users/jeff/.config/herdr/plugins/github/worktrunk-7fb519583f31/herdr-plugin.toml",
     "plugin_root": "/Users/jeff/.config/herdr/plugins/github/worktrunk-7fb519583f31",
     "enabled": true,
@@ -332,15 +401,63 @@
     ],
     "actions": [
       {
-        "id": "open",
-        "title": "Worktree: switch / create",
+        "id": "merge",
+        "title": "Worktree: merge into the target branch",
         "contexts": [
           "workspace"
         ],
         "command": [
           "bash",
           "-c",
-          "cwd=$(jq -r '.workspace_cwd // .focused_pane_cwd' <<<\"$HERDR_PLUGIN_CONTEXT_JSON\"); exec \"$HERDR_BIN_PATH\" plugin pane open --plugin \"$HERDR_PLUGIN_ID\" --entrypoint picker --placement split --direction down --cwd \"$cwd\" --focus"
+          "exec bash \"$HERDR_PLUGIN_ROOT/open.sh\" merger"
+        ]
+      },
+      {
+        "id": "merge-no-squash",
+        "title": "Worktree: merge into the target branch, keeping every commit",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "bash",
+          "-c",
+          "exec bash \"$HERDR_PLUGIN_ROOT/open.sh\" merger-no-squash"
+        ]
+      },
+      {
+        "id": "open",
+        "title": "Worktree: switch / create from default branch",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "bash",
+          "-c",
+          "exec bash \"$HERDR_PLUGIN_ROOT/open.sh\" picker-default"
+        ]
+      },
+      {
+        "id": "open-current",
+        "title": "Worktree: switch / create from current branch",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "bash",
+          "-c",
+          "exec bash \"$HERDR_PLUGIN_ROOT/open.sh\" picker-current"
+        ]
+      },
+      {
+        "id": "open-with-remotes",
+        "title": "Worktree: switch / create from local or remote branches",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "bash",
+          "-c",
+          "exec bash \"$HERDR_PLUGIN_ROOT/open.sh\" picker-with-remotes"
         ]
       },
       {
@@ -352,19 +469,59 @@
         "command": [
           "bash",
           "-c",
-          "cwd=$(jq -r '.workspace_cwd // .focused_pane_cwd' <<<\"$HERDR_PLUGIN_CONTEXT_JSON\"); exec \"$HERDR_BIN_PATH\" plugin pane open --plugin \"$HERDR_PLUGIN_ID\" --entrypoint remover --placement split --direction down --cwd \"$cwd\" --focus"
+          "exec bash \"$HERDR_PLUGIN_ROOT/open.sh\" remover"
         ]
       }
     ],
     "panes": [
       {
-        "id": "picker",
-        "title": "Worktrunk",
+        "id": "merger",
+        "title": "Worktrunk — merge",
         "placement": "split",
         "command": [
           "bash",
           "-c",
-          "exec bash \"$HERDR_PLUGIN_ROOT/picker.sh\""
+          "exec bash \"$HERDR_PLUGIN_ROOT/merge.sh\""
+        ]
+      },
+      {
+        "id": "merger-no-squash",
+        "title": "Worktrunk — merge (no squash)",
+        "placement": "split",
+        "command": [
+          "bash",
+          "-c",
+          "exec bash \"$HERDR_PLUGIN_ROOT/merge.sh\" --no-squash"
+        ]
+      },
+      {
+        "id": "picker-current",
+        "title": "Worktrunk — current branch",
+        "placement": "split",
+        "command": [
+          "bash",
+          "-c",
+          "exec bash \"$HERDR_PLUGIN_ROOT/picker.sh\" --create-base=current"
+        ]
+      },
+      {
+        "id": "picker-default",
+        "title": "Worktrunk — default branch",
+        "placement": "split",
+        "command": [
+          "bash",
+          "-c",
+          "exec bash \"$HERDR_PLUGIN_ROOT/picker.sh\" --create-base=default"
+        ]
+      },
+      {
+        "id": "picker-with-remotes",
+        "title": "Worktrunk — local and remote branches",
+        "placement": "split",
+        "command": [
+          "bash",
+          "-c",
+          "exec bash \"$HERDR_PLUGIN_ROOT/picker.sh\" --show-with-remotes"
         ]
       },
       {
@@ -382,9 +539,9 @@
       "kind": "github",
       "owner": "devashish2203",
       "repo": "herdr-worktrunk",
-      "resolved_commit": "fd49fb3f95ccdd04b5b928142769ae7a75f987c8",
+      "resolved_commit": "4be9bbbaab1dfbecc81b298d30624052d0c432d1",
       "managed_path": "/Users/jeff/.config/herdr/plugins/github/worktrunk-7fb519583f31",
-      "installed_unix_ms": 1783363246804
+      "installed_unix_ms": 1789074279461
     }
   }
 ]
