@@ -112,6 +112,13 @@ delivery = "terminal"
 
 # [ui.sound.agents]
 # droid = "off"
+[ui.sidebar.spaces]
+rows = [
+  ["state_icon", "workspace"],
+  ["branch", "git_status"],
+  ["$pr", "$pr_checks", "$pr_review"],
+  ["$pr_threads"],
+]
 
 [experimental]
 # allow_nested = false
