@@ -140,6 +140,13 @@ type = "plugin_action"
 command = "ray.plugin-manager.open"
 description = "open plugin manager"
 
+# herdr-bar
+[[keys.command]]
+key = "prefix+k"
+type = "plugin_action"
+command = "herdr-bar.open"
+description = "command bar"
+
 [experimental]
 # allow_nested = false
 # kitty_graphics = false

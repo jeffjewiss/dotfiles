@@ -102,6 +102,57 @@
     }
   },
   {
+    "plugin_id": "herdr-bar",
+    "name": "Bar",
+    "version": "0.3.0",
+    "min_herdr_version": "0.7.4",
+    "description": "Cmd+K command bar: fuzzy-jump to any tab, pane, or agent",
+    "manifest_path": "/Users/jeff/.config/herdr/plugins/github/herdr-bar-96eebe452a9c/herdr-plugin.toml",
+    "plugin_root": "/Users/jeff/.config/herdr/plugins/github/herdr-bar-96eebe452a9c",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos"
+    ],
+    "actions": [
+      {
+        "id": "open",
+        "title": "Open bar",
+        "description": "Fuzzy-jump to any tab, pane, or agent",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "sh",
+          "-c",
+          "herdr_bin=\"${HERDR_BIN_PATH:-herdr}\"; [ -x \"$herdr_bin\" ] || herdr_bin=herdr; exec \"$herdr_bin\" plugin pane open --plugin herdr-bar --entrypoint bar --placement popup"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "bar",
+        "title": "Bar",
+        "description": "Fuzzy-jump to any tab, pane, or agent",
+        "placement": "popup",
+        "width": "74%",
+        "height": "62%",
+        "command": [
+          "python3",
+          "run.py"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "jeffarese",
+      "repo": "herdr-bar",
+      "resolved_commit": "b57aa342f88f9db78f3deb20629ccebf162a6f57",
+      "managed_path": "/Users/jeff/.config/herdr/plugins/github/herdr-bar-96eebe452a9c",
+      "installed_unix_ms": 1789074709018
+    }
+  },
+  {
     "plugin_id": "herdr.auto-title",
     "name": "Auto Title",
     "version": "0.5.0",
