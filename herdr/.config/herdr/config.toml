@@ -142,7 +142,7 @@ description = "open plugin manager"
 
 # herdr-bar
 [[keys.command]]
-key = "prefix+k"
+key = "prefix+alt+k"
 type = "plugin_action"
 command = "herdr-bar.open"
 description = "command bar"
